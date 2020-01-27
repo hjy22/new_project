@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "@mdi/font": "^4.8.95",
     "npm": "^6.13.6",
     "vue": "^2.6.11",
     "vue-router": "^3.0.1",
