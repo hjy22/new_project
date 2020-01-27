@@ -1,26 +1,42 @@
 <template>
   <div id="app">
-    <v-app id="inspire">
-      <v-tabs
-        fixed-tabs
-        background-color="indigo"
-        dark
-      >
-        <v-tab>
-          Option
-        </v-tab>
-        <v-tab>
-          Another Selection
-        </v-tab>
-        <v-tab>
-          Items
-        </v-tab>
-        <v-tab>
-          Another Screen
-        </v-tab>
-      </v-tabs>
-    </v-app>
-  </div>
+  <!-- <v-app id="inspire"> -->
+    <v-card
+      color="grey lighten-4"
+      flat
+      height="200px"
+      tile
+    >
+      <v-toolbar extended>
+        <v-app-bar-nav-icon></v-app-bar-nav-icon>
+  
+        <!-- <v-toolbar-title>Title</v-toolbar-title> -->
+
+        <v-btn text>Button</v-btn>
+        <v-spacer/>
+        <v-btn text>Button</v-btn>
+        <v-spacer/>
+        <v-btn text>Button</v-btn>
+         <v-spacer/>
+        <v-btn text>Button</v-btn>
+  
+        <v-spacer/>
+  
+        <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+  
+        <v-btn icon>
+          <v-icon>mdi-heart</v-icon>
+        </v-btn>
+  
+        <v-btn icon>
+          <v-icon>mdi-dots-vertical</v-icon>
+        </v-btn>
+      </v-toolbar>
+    </v-card>
+  <!-- </v-app> -->
+</div>
 </template>
 
 <script>
