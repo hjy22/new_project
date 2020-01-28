@@ -2,8 +2,10 @@
   <v-content>
     <Menu/>
     <v-container>
+    <v-layout row wrap>
       <InfoCard/>
       <AssignCard/>
+    </v-layout>
     </v-container>
   </v-content>
 </template>

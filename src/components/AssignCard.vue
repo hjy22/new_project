@@ -6,6 +6,7 @@
   >
     <v-card-title>
       <div class="display-1 mb-2">COMP107</div>
+      <div class="title font-weight-regular grey--text">Designing Systems For The Digital Society</div>
       <div class="title font-weight-regular grey--text">Deadline: 2nd April, 12:30 PM</div>
     </v-card-title>
 
@@ -16,19 +17,15 @@
         class="mr-2"
         @click="lights"
       >
-        <v-icon left>mdi-brightness-5</v-icon>
-        Send Email
+        <v-icon left>mdi-email</v-icon>
+        Email
       </v-chip>
       <v-chip
         class="mr-2"
         @click="alarm"
       >
-        <v-icon left>mdi-alarm-check</v-icon>
-        xxxxx
-      </v-chip>
-      <v-chip @click="blinds">
-        <v-icon left>mdi-blinds</v-icon>
-        xxxxx
+        <v-icon left>mdi-file-check</v-icon>
+         Feedback
       </v-chip>
     </v-card-text>
   </v-card>
@@ -39,9 +36,6 @@
     methods: {
       alarm () {
         alert('Turning on alarm...')
-      },
-      blinds () {
-        alert('Toggling Blinds...')
       },
       lights () {
         alert('Toggling lights...')
