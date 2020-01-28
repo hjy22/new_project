@@ -11,11 +11,11 @@
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
-        <v-btn text>Button</v-btn>
+        <v-btn text>HOME</v-btn>
         <v-spacer/>
-        <v-btn text>Button</v-btn>
+        <v-btn text>FEEDBACK</v-btn>
         <v-spacer/>
-        <v-btn text>Button</v-btn>
+        <v-btn text>COURSE</v-btn>
          <v-spacer/>
         <v-btn text>Button</v-btn>
   

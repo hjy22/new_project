@@ -3,7 +3,9 @@
     <Menu/>
     <v-container>
     <v-layout row wrap>
-      <InfoCard/>
+      <v-flex v-for="(Info, id) in getInfoList" :key="id" xs12 sm8 md4>
+        <InfoCard :name="Info.name" :ID="Info.ID" :character="Info.character"/>
+      </v-flex>
       <AssignCard/>
     </v-layout>
     </v-container>
@@ -11,12 +13,13 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import Menu from "../components/Menu";
 import InfoCard from "../components/InfoCard";
 import AssignCard from "../components/AssignCard";
 
 export default {
-  name: 'HelloWorld',
+  name: 'HomePage',
   data () {
     return {
     }
@@ -26,6 +29,11 @@ export default {
     InfoCard,
     AssignCard
   },
+  computed: {
+    ...mapGetters([
+      "getInfoList",
+    ])
+  }
 }
 </script>
 

@@ -6,7 +6,7 @@
   >
     <v-card-title>
       <div class="display-1 mb-2">COMP107</div>
-      <div class="title font-weight-regular grey--text">Designing Systems For The Digital Society</div>
+      <div class="title font-weight-regular grey--text text-no-wrap">Designing Systems For The Digital Society</div>
       <div class="title font-weight-regular grey--text">Deadline: 2nd April, 12:30 PM</div>
     </v-card-title>
 

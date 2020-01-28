@@ -1,8 +1,10 @@
 <template>
+<!-- <v-app> -->
   <div id="app">
     <!-- <Menu/> -->
     <router-view/>
   </div>
+  <!-- </v-app> -->
 </template>
 
 <script>

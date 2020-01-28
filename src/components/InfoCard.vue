@@ -17,9 +17,9 @@
             <v-flex xs7>
             <v-card-title primary-title>
                 <div>
-                <div class="headline">Name: {{ people.name }}</div>
-                <div>ID: {{ people.id }}</div>
-                <div>Identity: {{ people.character }}</div>
+                <div class="headline">Name: {{ name }}</div>
+                <div>ID: {{ ID }}</div>
+                <div>Identity: {{ character }}</div>
                 </div>
             </v-card-title>
             </v-flex>
@@ -31,14 +31,10 @@
 
 <script>
 export default {
-    data () {
-      return {
-        people: 
-          { name: 'Florida', id: '0001', character: 'Lecturer'},
-        //   { name: 'Jack', id: '2013123456', character: 'Student'}
-        
-      }
-    }
+    props: ['name', 'ID', 'character']
+        // people: 
+        //   { name: 'Florida', ID: '0001', character: 'Lecturer'},
+        //   { name: 'Jack', ID: '2013123456', character: 'Student'}
 }
 </script>
 
