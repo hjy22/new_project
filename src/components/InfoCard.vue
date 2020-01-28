@@ -17,9 +17,9 @@
             <v-flex xs7>
             <v-card-title primary-title>
                 <div>
-                <div class="headline">ID: 234567</div>
-                <div>Age: 25</div>
-                <div>Identity: Teacher</div>
+                <div class="headline">Name: {{ people.name }}</div>
+                <div>ID: {{ people.id }}</div>
+                <div>Identity: {{ people.character }}</div>
                 </div>
             </v-card-title>
             </v-flex>
@@ -31,6 +31,14 @@
 
 <script>
 export default {
+    data () {
+      return {
+        people: 
+          { name: 'Florida', id: '0001', character: 'Lecturer'},
+        //   { name: 'Jack', id: '2013123456', character: 'Student'}
+        
+      }
+    }
 }
 </script>
 
