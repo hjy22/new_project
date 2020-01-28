@@ -3,6 +3,7 @@
     <Menu/>
     <v-container>
       <InfoCard/>
+      <AssignCard/>
     </v-container>
   </v-content>
 </template>
@@ -10,6 +11,7 @@
 <script>
 import Menu from "../components/Menu";
 import InfoCard from "../components/InfoCard";
+import AssignCard from "../components/AssignCard";
 
 export default {
   name: 'HelloWorld',
@@ -19,7 +21,8 @@ export default {
   },
   components: {
     Menu,
-    InfoCard
+    InfoCard,
+    AssignCard
   },
 }
 </script>

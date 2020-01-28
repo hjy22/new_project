@@ -8,10 +8,9 @@
       tile
     >
       <v-toolbar extended>
-        <v-app-bar-nav-icon></v-app-bar-nav-icon>
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
-
+        <v-spacer/>
         <v-btn text>Button</v-btn>
         <v-spacer/>
         <v-btn text>Button</v-btn>
