@@ -6,7 +6,10 @@
       <v-flex v-for="(Info, id) in getInfoList" :key="id" xs12 sm8 md4>
         <InfoCard :name="Info.name" :ID="Info.ID" :character="Info.character"/>
       </v-flex>
-      <AssignCard/>
+      <v-flex v-for="(course) in getCourseList" :key="course.index" xs12 sm8 md4>
+        <AssignCard :code="course.code" :name="course.name" :ddl="course.ddl"/>
+      </v-flex>
+      <!-- <AssignCard/> -->
     </v-layout>
     </v-container>
   </v-content>
@@ -32,6 +35,7 @@ export default {
   computed: {
     ...mapGetters([
       "getInfoList",
+      "getCourseList"
     ])
   }
 }

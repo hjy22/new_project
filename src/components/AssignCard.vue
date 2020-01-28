@@ -2,14 +2,15 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="450"
+    max-width="500px"
   >
-    <v-card-title>
-      <div class="display-1 mb-2">COMP107</div>
-      <div class="title font-weight-regular grey--text text-no-wrap">Designing Systems For The Digital Society</div>
-      <div class="title font-weight-regular grey--text">Deadline: 2nd April, 12:30 PM</div>
+   <v-layout xs7>
+    <v-card-title primary-title>
+      <div class="text--primary display-1 mb-2 text-left">Code: {{ code }}</div>
+      <div class="title font-weight-regular grey--text">Name: {{ name }}</div>
+      <div class="title font-weight-regular grey--text">Deadline: {{ ddl }} </div>
     </v-card-title>
-
+  </v-layout>
     <v-divider class="mt-6 mx-4"></v-divider>
 
     <v-card-text>
@@ -33,6 +34,7 @@
 
 <script>
   export default {
+    props: ['code', 'name', 'ddl'],
     methods: {
       alarm () {
         alert('Turning on alarm...')

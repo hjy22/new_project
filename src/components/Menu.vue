@@ -4,10 +4,10 @@
     <v-card
       color="grey lighten-4"
       flat
-      height="200px"
+      height="100px"
       tile
     >
-      <v-toolbar extended>
+      <v-toolbar >
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
