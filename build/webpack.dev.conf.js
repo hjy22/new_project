@@ -55,7 +55,13 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html',
-      inject: true
+      inject: true,
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'feedback.html',
+      template: 'src/secondView/feedback.html',
+      inject: true,
+      chunks: ['feedback']
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
