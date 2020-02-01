@@ -9,11 +9,9 @@
 </template>
 
 <script>
-
 export default {
   name: 'feedback',
 }
-
 </script>
 
-<style >
+<style > 

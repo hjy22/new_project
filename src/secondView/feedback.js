@@ -3,7 +3,7 @@ import feedback from './feedback.vue'
 
 Vue.config.productionTip = false
 
- 
+
 
 /* eslint-disable no-new */
 var main = new Vue({
@@ -12,4 +12,3 @@ var main = new Vue({
   render: h => h(feedback)
 
 })
-
