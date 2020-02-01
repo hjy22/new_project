@@ -59,7 +59,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }),
     new HtmlWebpackPlugin({
       filename: 'feedback.html',
-      template: 'src/feedbackView/feedback.html',
+      template: 'src/feedbackView/FeedbackPage.html',
       inject: true,
       chunks: ['feedback']
     }),

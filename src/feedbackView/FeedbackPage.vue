@@ -1,15 +1,15 @@
 <template>
-<v-container>
-<Menu/>
-<h1>aaaaaaaa</h1>
-</v-container>
+<v-content>
+  <Menu/>
+<!-- <h1>aaaaaaaa</h1> -->
+</v-content>
 </template>
 
 <script>
 import Menu from "../components/Menu";
 
 export default {
-  name: 'feedback',
+  name: 'FeedbackPage',
   components: {
     Menu,
   },

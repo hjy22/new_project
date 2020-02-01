@@ -15,7 +15,7 @@
         <v-spacer/>
         <v-btn a href="feedback.html" text>FEEDBACK</v-btn>
         <v-spacer/>
-        <v-btn text>COURSE</v-btn>
+        <v-btn a href="CoursePage.html" text>COURSE</v-btn>
          <v-spacer/>
         <v-btn text>Button</v-btn>
   

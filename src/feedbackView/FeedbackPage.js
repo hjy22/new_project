@@ -2,7 +2,7 @@ import Vue from 'vue'
 import vuetify from '@/plugins/vuetify'
 import router from '../router'
 import store from '../store'
-import feedback from './feedback.vue'
+import FeedbackPage from './FeedbackPage.vue'
 
 Vue.config.productionTip = false
 
@@ -13,7 +13,7 @@ new Vue({
   vuetify,
   router,
   store,
-  el: '#feedback',
-  render: h => h(feedback)
+  el: '#FeedbackPage',
+  render: h => h(FeedbackPage)
 
 })

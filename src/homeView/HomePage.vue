@@ -2,7 +2,7 @@
   <v-content>
     <Menu/>
     <v-container>
-      <a href="CoursePage.html">feedback</a>
+      <!-- <a href="CoursePage.html">feedback</a> -->
     <v-layout row wrap>
       <v-flex v-for="(Info, id) in getInfoList" :key="id" xs12 sm8 md4>
         <InfoCard :name="Info.name" :ID="Info.ID" :character="Info.character"/>

@@ -76,8 +76,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunks: ['manifest', 'vendor', 'index']
     }),
     new HtmlWebpackPlugin({
-      filename: config.build.feedback,
-      template: 'feedback.html',
+      filename: config.build.FeedbackPage,
+      template: 'FeedbackPage.html',
       inject: true,
       minify: {
         removeComments: true,
@@ -85,7 +85,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         removeAttributeQuotes: true
       },
       chunksSortMode: 'dependency',
-      chunks: ['manifest', 'vendor', 'feedback']
+      chunks: ['manifest', 'vendor', 'FeedbackPage']
     }),
     new HtmlWebpackPlugin({
       filename: config.build.CoursePage,
