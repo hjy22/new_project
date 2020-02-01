@@ -14,7 +14,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js',
-    feedback: './src/secondView/feedback.js',
+    feedback: './src/view/feedback.js',
   },
   output: {
     path: config.build.assetsRoot,
