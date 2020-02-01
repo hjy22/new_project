@@ -1,16 +1,16 @@
 <template>
-
-<div id="feedback">
-
-    <h1>111111</h1>
-
-</div>
+<Menu/>
 
 </template>
 
 <script>
+import Menu from "../components/Menu";
+
 export default {
   name: 'feedback',
+  components: {
+    Menu,
+  },
 }
 </script>
 

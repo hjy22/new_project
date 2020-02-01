@@ -11,9 +11,9 @@
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
-        <v-btn text>HOME</v-btn>
+        <v-btn a href="index.html" text>HOME</v-btn>
         <v-spacer/>
-        <v-btn text>FEEDBACK</v-btn>
+        <v-btn a href="feedback.html" text>FEEDBACK</v-btn>
         <v-spacer/>
         <v-btn text>COURSE</v-btn>
          <v-spacer/>
