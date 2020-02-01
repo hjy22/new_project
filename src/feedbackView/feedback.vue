@@ -1,6 +1,8 @@
 <template>
+<v-container>
 <Menu/>
-
+<h1>aaaaaaaa</h1>
+</v-container>
 </template>
 
 <script>

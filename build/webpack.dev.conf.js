@@ -59,9 +59,15 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }),
     new HtmlWebpackPlugin({
       filename: 'feedback.html',
-      template: 'src/secondView/feedback.html',
+      template: 'src/feedbackView/feedback.html',
       inject: true,
       chunks: ['feedback']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'CoursePage.html',
+      template: 'src/courseView/CoursePage.html',
+      inject: true,
+      chunks: ['CoursePage']
     }),
     // copy custom static assets
     new CopyWebpackPlugin([
