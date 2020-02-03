@@ -10,6 +10,11 @@ export default new Router({
       path: '/',
       name: 'HomePage',
       component: HomePage
-    }
+    },
+    {
+      path: '/FeedbackPage',
+      name: 'FeedbackPage',
+      component: () => import('../feedbackView/FeedbackPage.vue'),
+    },
   ]
 })

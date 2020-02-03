@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
 import Menu from "../components/Menu";
 import FeedbackList from "../components/FeedbackList";
 
@@ -18,13 +18,14 @@ export default {
     Menu,
     FeedbackList
   },
-  computed: {
-    ...mapGetters([
-      "getFeedbackPageSearch",
-      "getFeedbackPageHeaderList",
-      "getFeedbackPageDessertList",
-    ])
-  }
+  // computed: {
+  //   ...mapGetters([
+  //     "getFeedbackPageExpand",
+  //     "getFeedbackPageSearch",
+  //     "getFeedbackPageHeaderList",
+  //     "getFeedbackPageDessertList",
+  //   ])
+  // }
 }
 </script>
 

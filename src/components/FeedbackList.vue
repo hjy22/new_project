@@ -24,11 +24,24 @@
       hide-default-footer
       class="elevation-1"
     >
-      <template v-slot:expanded-item="{ headers }">
+    <!-- <template v-slot:items="props">
+      <td>{{ props.item.GroupID }}</td>
+      <td class="text-xs-right">{{ props.item.Leader }}</td>
+      <td class="text-xs-right">{{ props.item.Members }}</td>
+      <td class="text-xs-right">{{ props.item.Scores }}</td>
+      <td class="text-xs-right">{{ props.item.FeedbackID }}</td>
+    </template> -->
+      <!-- <template v-slot:expanded-item="{ headers }">
         <td :colspan="headers.length">
             <v-btn a href="index.html" text>URL</v-btn>
         </td>
-      </template>
+      </template> -->
+      <template v-slot:expanded-item="{ headers, item }">
+      <td :colspan="headers.length">
+        <!-- <pre>{{item.expanded}}</pre> -->
+         <v-btn a href="index.html" text>{{item.expanded}}</v-btn>
+      </td>
+    </template>
     </v-data-table>
     </v-card>
   </v-app>
@@ -39,9 +52,10 @@
 export default {
     data () {
         return {
+        // props: ['expanded', 'search', 'headers', 'desserts'],
         expanded: [],
         search: '',
-        singleExpand: false,
+        singleExpand: true,
       headers: [
         {
           text: 'Group ID',
@@ -62,6 +76,7 @@ export default {
           Members: 6.0,
           Scores: 24,
           FeedbackID: 4.0,
+          expanded:"aaa"
         },
         {
           GroupID: 'Ice cream sandwich',
@@ -69,6 +84,7 @@ export default {
           Members: 9.0,
           Scores: 37,
           FeedbackID: 4.3,
+          expanded:"ccc"
         },
         {
           GroupID: 'Eclair',
@@ -76,6 +92,7 @@ export default {
           Members: 16.0,
           Scores: 23,
           FeedbackID: 6.0,
+          expanded:"kkk"
         },
         {
           GroupID: 'Cupcake',
@@ -83,6 +100,7 @@ export default {
           Members: 3.7,
           Scores: 67,
           FeedbackID: 4.3,
+          expanded:"bbb"
         },
         {
           GroupID: 'Gingerbread',
@@ -90,6 +108,7 @@ export default {
           Members: 16.0,
           Scores: 49,
           FeedbackID: 3.9,
+          expanded:"ccc"
         },
         {
           GroupID: 'Jelly bean',
@@ -97,6 +116,7 @@ export default {
           Members: 0.0,
           Scores: 94,
           FeedbackID: 0.0,
+          expanded:"ddd"
         },
       ],
         }
