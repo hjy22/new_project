@@ -7,7 +7,7 @@
         {{ courses.code }} Feedback
         <v-spacer></v-spacer>
         <v-text-field
-          v-model="getFeedbackPageCourseList.search"
+          v-model="courses.search"
           label="Search"
           single-line
           hide-details
