@@ -16,7 +16,7 @@
       </v-card-title>
       <v-data-table
       :headers="courses.headers"
-      :items="courses.desserts"
+      :items="courses.groupInfo"
       :search="courses.search"
       :single-expand="true"
       :expanded.sync="courses.expanded"

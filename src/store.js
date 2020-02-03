@@ -44,57 +44,124 @@ export default new Vuex.Store({
         { text: 'Feedback ID', value: 'FeedbackID' },
         { text: '', value: 'data-table-expand' },
       ],
-      desserts: [
+      groupInfo: [
         {
-          GroupID: 'Frozen Yogurt',
-          Leader: 159,
-          Members: 6.0,
-          Scores: 24,
-          FeedbackID: 4.0,
+          GroupID: '1072020001',
+          Leader: 'Jack',
+          Members: 'Peter, Bob',
+          Scores: 71,
+          FeedbackID: '1072020100',
           expanded:"aaa"
         },
         {
-          GroupID: 'Ice cream sandwich',
-          Leader: 237,
+          GroupID: '1072020002',
+          Leader: 'Anna',
           Members: 9.0,
           Scores: 37,
-          FeedbackID: 4.3,
+          FeedbackID: '1072020099',
           expanded:"ccc"
         },
         {
-          GroupID: 'Eclair',
-          Leader: 262,
+          GroupID: '1072020003',
+          Leader: 'Tom',
           Members: 16.0,
           Scores: 23,
-          FeedbackID: 6.0,
+          FeedbackID: '1072020098',
           expanded:"kkk"
         },
         {
-          GroupID: 'Cupcake',
-          Leader: 305,
+          GroupID: '1072020004',
+          Leader: 'Jess',
           Members: 3.7,
           Scores: 67,
-          FeedbackID: 4.3,
+          FeedbackID: '1072020097',
           expanded:"bbb"
         },
         {
-          GroupID: 'Gingerbread',
-          Leader: 356,
+          GroupID: '1072020005',
+          Leader: 'Sam',
           Members: 16.0,
           Scores: 49,
-          FeedbackID: 3.9,
+          FeedbackID: '1072020096',
           expanded:"ccc"
         },
         {
-          GroupID: 'Jelly bean',
-          Leader: 375,
+          GroupID: '1072020006',
+          Leader: 'Lisa',
           Members: 0.0,
           Scores: 94,
-          FeedbackID: 0.0,
+          FeedbackID: '1072020095',
           expanded:"ddd"
         },
       ],
-        }]
+        },
+        {
+          code: "COMP201",
+          headers: [
+          {
+            text: 'Group ID',
+            align: 'left',
+            sortable: true,
+            value: 'GroupID',
+          },
+          { text: 'Leader', value: 'Leader' },
+          { text: 'Members', value: 'Members' },
+          { text: 'Scores', value: 'Scores' },
+          { text: 'Feedback ID', value: 'FeedbackID' },
+          { text: '', value: 'data-table-expand' },
+        ],
+        groupInfo: [
+          {
+            GroupID: 'Frozen Yogurt',
+            Leader: 159,
+            Members: 6.0,
+            Scores: 24,
+            FeedbackID: 4.0,
+            expanded:"aaa"
+          },
+          {
+            GroupID: 'Ice cream sandwich',
+            Leader: 237,
+            Members: 9.0,
+            Scores: 37,
+            FeedbackID: 4.3,
+            expanded:"ccc"
+          },
+          {
+            GroupID: 'Eclair',
+            Leader: 262,
+            Members: 16.0,
+            Scores: 23,
+            FeedbackID: 6.0,
+            expanded:"kkk"
+          },
+          {
+            GroupID: 'Cupcake',
+            Leader: 305,
+            Members: 3.7,
+            Scores: 67,
+            FeedbackID: 4.3,
+            expanded:"bbb"
+          },
+          {
+            GroupID: 'Gingerbread',
+            Leader: 356,
+            Members: 16.0,
+            Scores: 49,
+            FeedbackID: 3.9,
+            expanded:"ccc"
+          },
+          {
+            GroupID: 'Jelly bean',
+            Leader: 375,
+            Members: 0.0,
+            Scores: 94,
+            FeedbackID: 0.0,
+            expanded:"ddd"
+          },
+        ],
+          },
+      ]
     }
 
   },
@@ -102,9 +169,5 @@ export default new Vuex.Store({
     getInfoList: state => state.HomePage.infoList,
     getCourseList: state => state.HomePage.courseList,
     getFeedbackPageCourseList: state => state.FeedbackPage.courses,
-    getFeedbackPageExpand: state => state.FeedbackPage.expanded,
-    getFeedbackPageSearch: state => state.FeedbackPage.search,
-    getFeedbackPageHeaderList: state => state.FeedbackPage.headerList,
-    getFeedbackPageDessertList: state => state.FeedbackPage.dessertList,
   }
 })

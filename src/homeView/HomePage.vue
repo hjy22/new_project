@@ -1,13 +1,13 @@
 <template>
   <v-content>
     <Menu/>
-    <v-container>
+    <v-container >
       <!-- <a href="CoursePage.html">feedback</a> -->
     <v-layout row wrap>
       <v-flex v-for="(Info, id) in getInfoList" :key="id" xs12 sm8 md4>
         <InfoCard :name="Info.name" :ID="Info.ID" :character="Info.character"/>
       </v-flex>
-      <v-flex v-for="(course) in getCourseList" :key="course.index" xs12 sm8 md4>
+      <v-flex v-for="(course) in getCourseList" :key="course.index" xs12 sm8 md6>
         <AssignCard :code="course.code" :name="course.name" :ddl="course.ddl"/>
       </v-flex>
       <!-- <AssignCard/> -->
