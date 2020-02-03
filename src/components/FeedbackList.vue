@@ -3,7 +3,7 @@
   <v-app id="inspire">
     <v-card>
       <v-card-title>
-        COMP107 Feedback
+        {{ code }} Feedback
         <v-spacer></v-spacer>
         <v-text-field
           v-model="search"
@@ -53,6 +53,7 @@ export default {
     data () {
         return {
         // props: ['expanded', 'search', 'headers', 'desserts'],
+        code: "COMP107",
         expanded: [],
         search: '',
         singleExpand: true,
