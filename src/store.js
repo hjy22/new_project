@@ -29,10 +29,9 @@ export default new Vuex.Store({
       ],
     },
     FeedbackPage:{
-        expanded: [],
-        search: '',
-        singleExpand: false,
-      headers: [
+      courses: [{
+        code: "COMP107",
+        headers: [
         {
           text: 'Group ID',
           align: 'left',
@@ -52,6 +51,7 @@ export default new Vuex.Store({
           Members: 6.0,
           Scores: 24,
           FeedbackID: 4.0,
+          expanded:"aaa"
         },
         {
           GroupID: 'Ice cream sandwich',
@@ -59,6 +59,7 @@ export default new Vuex.Store({
           Members: 9.0,
           Scores: 37,
           FeedbackID: 4.3,
+          expanded:"ccc"
         },
         {
           GroupID: 'Eclair',
@@ -66,6 +67,7 @@ export default new Vuex.Store({
           Members: 16.0,
           Scores: 23,
           FeedbackID: 6.0,
+          expanded:"kkk"
         },
         {
           GroupID: 'Cupcake',
@@ -73,6 +75,7 @@ export default new Vuex.Store({
           Members: 3.7,
           Scores: 67,
           FeedbackID: 4.3,
+          expanded:"bbb"
         },
         {
           GroupID: 'Gingerbread',
@@ -80,6 +83,7 @@ export default new Vuex.Store({
           Members: 16.0,
           Scores: 49,
           FeedbackID: 3.9,
+          expanded:"ccc"
         },
         {
           GroupID: 'Jelly bean',
@@ -87,14 +91,17 @@ export default new Vuex.Store({
           Members: 0.0,
           Scores: 94,
           FeedbackID: 0.0,
+          expanded:"ddd"
         },
       ],
+        }]
     }
 
   },
   getters: {
     getInfoList: state => state.HomePage.infoList,
     getCourseList: state => state.HomePage.courseList,
+    getFeedbackPageCourseList: state => state.FeedbackPage.courses,
     getFeedbackPageExpand: state => state.FeedbackPage.expanded,
     getFeedbackPageSearch: state => state.FeedbackPage.search,
     getFeedbackPageHeaderList: state => state.FeedbackPage.headerList,

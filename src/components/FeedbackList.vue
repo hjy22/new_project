@@ -1,13 +1,13 @@
 <template>
 <div id="app">
   <v-app id="inspire">
-    <v-flex v-for="(course, id) in courses" :key="id">
+    <v-flex v-for="(courses, id) in getFeedbackPageCourseList" :key="id">
     <v-card>
       <v-card-title>
-        {{ course.code }} Feedback
+        {{ courses.code }} Feedback
         <v-spacer></v-spacer>
         <v-text-field
-          v-model="course.search"
+          v-model="getFeedbackPageCourseList.search"
           label="Search"
           single-line
           hide-details
@@ -15,31 +15,18 @@
         <v-icon left>mdi-magnify</v-icon>
       </v-card-title>
       <v-data-table
-      :headers="course.headers"
-      :items="course.desserts"
-      :search="course.search"
+      :headers="courses.headers"
+      :items="courses.desserts"
+      :search="courses.search"
       :single-expand="true"
-      :expanded.sync="course.expanded"
+      :expanded.sync="courses.expanded"
       item-key="GroupID"
       show-expand
       hide-default-footer
       class="elevation-1"
     >
-    <!-- <template v-slot:items="props">
-      <td>{{ props.item.GroupID }}</td>
-      <td class="text-xs-right">{{ props.item.Leader }}</td>
-      <td class="text-xs-right">{{ props.item.Members }}</td>
-      <td class="text-xs-right">{{ props.item.Scores }}</td>
-      <td class="text-xs-right">{{ props.item.FeedbackID }}</td>
-    </template> -->
-      <!-- <template v-slot:expanded-item="{ headers }">
-        <td :colspan="headers.length">
-            <v-btn a href="index.html" text>URL</v-btn>
-        </td>
-      </template> -->
       <template v-slot:expanded-item="{ headers, item }">
       <td :colspan="headers.length">
-        <!-- <pre>{{item.expanded}}</pre> -->
          <v-btn a href="index.html" text>{{item.expanded}}</v-btn>
       </td>
     </template>
@@ -51,77 +38,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
-    data () {
-        return {
-        // props: ['expanded', 'search', 'headers', 'desserts'],
-        courses: [{
-        code: "COMP107",
-      headers: [
-        {
-          text: 'Group ID',
-          align: 'left',
-          sortable: true,
-          value: 'GroupID',
-        },
-        { text: 'Leader', value: 'Leader' },
-        { text: 'Members', value: 'Members' },
-        { text: 'Scores', value: 'Scores' },
-        { text: 'Feedback ID', value: 'FeedbackID' },
-        { text: '', value: 'data-table-expand' },
-      ],
-      desserts: [
-        {
-          GroupID: 'Frozen Yogurt',
-          Leader: 159,
-          Members: 6.0,
-          Scores: 24,
-          FeedbackID: 4.0,
-          expanded:"aaa"
-        },
-        {
-          GroupID: 'Ice cream sandwich',
-          Leader: 237,
-          Members: 9.0,
-          Scores: 37,
-          FeedbackID: 4.3,
-          expanded:"ccc"
-        },
-        {
-          GroupID: 'Eclair',
-          Leader: 262,
-          Members: 16.0,
-          Scores: 23,
-          FeedbackID: 6.0,
-          expanded:"kkk"
-        },
-        {
-          GroupID: 'Cupcake',
-          Leader: 305,
-          Members: 3.7,
-          Scores: 67,
-          FeedbackID: 4.3,
-          expanded:"bbb"
-        },
-        {
-          GroupID: 'Gingerbread',
-          Leader: 356,
-          Members: 16.0,
-          Scores: 49,
-          FeedbackID: 3.9,
-          expanded:"ccc"
-        },
-        {
-          GroupID: 'Jelly bean',
-          Leader: 375,
-          Members: 0.0,
-          Scores: 94,
-          FeedbackID: 0.0,
-          expanded:"ddd"
-        },
-      ],
-        }]
-        }
-    }
+  data () {
+      return {
+      }
+  },
+  computed: {
+    ...mapGetters(['getFeedbackPageCourseList'])
+  },
 }
 </script>
