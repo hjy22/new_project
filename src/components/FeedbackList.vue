@@ -1,12 +1,13 @@
 <template>
 <div id="app">
   <v-app id="inspire">
+    <v-flex v-for="(course, id) in courses" :key="id">
     <v-card>
       <v-card-title>
-        {{ code }} Feedback
+        {{ course.code }} Feedback
         <v-spacer></v-spacer>
         <v-text-field
-          v-model="search"
+          v-model="course.search"
           label="Search"
           single-line
           hide-details
@@ -14,11 +15,11 @@
         <v-icon left>mdi-magnify</v-icon>
       </v-card-title>
       <v-data-table
-      :headers="headers"
-      :items="desserts"
-      :search="search"
-      :single-expand="singleExpand"
-      :expanded.sync="expanded"
+      :headers="course.headers"
+      :items="course.desserts"
+      :search="course.search"
+      :single-expand="true"
+      :expanded.sync="course.expanded"
       item-key="GroupID"
       show-expand
       hide-default-footer
@@ -44,6 +45,7 @@
     </template>
     </v-data-table>
     </v-card>
+    </v-flex>
   </v-app>
 </div>
 </template>
@@ -53,10 +55,8 @@ export default {
     data () {
         return {
         // props: ['expanded', 'search', 'headers', 'desserts'],
+        courses: [{
         code: "COMP107",
-        expanded: [],
-        search: '',
-        singleExpand: true,
       headers: [
         {
           text: 'Group ID',
@@ -120,6 +120,7 @@ export default {
           expanded:"ddd"
         },
       ],
+        }]
         }
     }
 }
