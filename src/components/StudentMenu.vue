@@ -20,6 +20,16 @@
         <v-btn text>Button</v-btn>
   
         <v-spacer/>
+        <v-chip
+      class="ma-2"
+      color="indigo"
+      text-color="white"
+    >
+      <v-avatar left>
+        <v-icon>mdi-face</v-icon>
+      </v-avatar>
+      Student
+    </v-chip>
   
 
         <v-btn a href="index.html" icon>

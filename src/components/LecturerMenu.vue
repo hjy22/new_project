@@ -20,7 +20,17 @@
         <v-btn text>Button</v-btn>
   
         <v-spacer/>
-  
+
+        <v-chip
+        class="ma-2"
+        color="indigo"
+        text-color="white"
+        >
+        <v-avatar left>
+          <v-icon>mdi-account-tie</v-icon>
+        </v-avatar>
+        Lecturer
+      </v-chip>
 
         <v-btn a href="StudentHomePage.html" icon>
           <v-icon>mdi-account-convert</v-icon>
