@@ -17,6 +17,7 @@
       <!-- <AssignCard/> -->
     </v-layout>
     </v-container>
+    <Footer/>
   </v-content>
 </template>
 
@@ -25,6 +26,7 @@ import { mapGetters } from "vuex";
 import LecturerMenu from "../components/LecturerMenu";
 import InfoCard from "../components/InfoCard";
 import AssignCard from "../components/AssignCard";
+import Footer from "../components/Footer";
 
 export default {
   name: 'HomePage',
@@ -35,7 +37,8 @@ export default {
   components: {
     LecturerMenu,
     InfoCard,
-    AssignCard
+    AssignCard,
+    Footer,
   },
   computed: {
     ...mapGetters([
