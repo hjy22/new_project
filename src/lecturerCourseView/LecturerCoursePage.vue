@@ -9,7 +9,7 @@
 import LecturerMenu from "../components/LecturerMenu";
 
 export default {
-  name: 'CoursePage',
+  name: 'LecturerCoursePage',
   components: {
     LecturerMenu,
   },

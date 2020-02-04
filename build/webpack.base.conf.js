@@ -15,7 +15,7 @@ module.exports = {
   entry: {
     app: './src/main.js',
     feedback: './src/feedbackView/FeedbackPage.js',
-    CoursePage: './src/courseView/CoursePage.js',
+    LecturerCoursePage: './src/lecturerCourseView/LecturerCoursePage.js',
     StudentHomePage: './src/studentHomeView/StudentHomePage.js',
   },
   output: {

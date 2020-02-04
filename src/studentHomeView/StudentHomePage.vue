@@ -1,17 +1,17 @@
 <template>
 <v-content>
-  <LecturerMenu/>
+  <StudentMenu/>
 <!-- <h1>aaaaaaaa</h1> -->
 </v-content>
 </template>
 
 <script>
-import LecturerMenu from "../components/LecturerMenu";
+import StudentMenu from "../components/StudentMenu";
 
 export default {
   name: 'StudentHomePage',
   components: {
-    LecturerMenu,
+    StudentMenu,
   },
 }
 </script>
