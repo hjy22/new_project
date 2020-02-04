@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HomePage from '@/homeView/HomePage'
+import LecturerHomePage from '@/lecturerHomeView/LecturerHomePage'
 
 Vue.use(Router)
 
@@ -8,13 +8,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HomePage',
-      component: HomePage
+      name: 'LecturerHomePage',
+      component: LecturerHomePage
     },
     {
-      path: '/FeedbackPage',
-      name: 'FeedbackPage',
-      component: () => import('../feedbackView/FeedbackPage.vue'),
+      path: '/LecturerFeedbackPage',
+      name: 'LecturerFeedbackPage',
+      component: () => import('../lecturerFeedbackView/LecturerFeedbackPage.vue'),
     },
   ]
 })

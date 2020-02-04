@@ -19,7 +19,7 @@ import LecturerMenu from "../components/LecturerMenu";
 import FeedbackList from "../components/FeedbackList";
 
 export default {
-  name: 'FeedbackPage',
+  name: 'LecturerFeedbackPage',
   components: {
     LecturerMenu,
     FeedbackList

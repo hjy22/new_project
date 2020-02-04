@@ -40,7 +40,7 @@ module.exports = {
     // Template for index.html
     // index: path.resolve(__dirname, '../dirsePage.html'),
     index: path.resolve(__dirname, '../dist/st/index.html'),
-    feedback: path.resolve(__dirname, '../dist/FeedbackPage.html'),
+    feedback: path.resolve(__dirname, '../dist/LecturerFeedbackPage.html'),
     LecturerCoursePage: path.resolve(__dirname, '../dist/LecturerCoursePage.html'),
     StudentHomePage: path.resolve(__dirname, '../dist/st/StudentHomePage.html'),
 
