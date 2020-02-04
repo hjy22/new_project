@@ -1,4 +1,5 @@
 <template>
+    <v-container>
     <v-flex s12>
         <v-card 
             color="gray-2" 
@@ -27,6 +28,7 @@
         <v-divider light></v-divider>
         </v-card>
     </v-flex>
+    </v-container>
 </template>
 
 <script>

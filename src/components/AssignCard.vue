@@ -1,7 +1,7 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="500px"
+    max-width="400px"
   >
    <v-layout xs7>
     <v-card-title primary-title>
