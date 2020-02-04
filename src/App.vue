@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Menu from "./components/Menu";
+// import LecturerMenu from "./components/LecturerMenu";
 export default {
   name: 'App',
   components:{

@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    <Menu/>
+    <LecturerMenu/>
     <v-container>
       <!-- <a href="CoursePage.html">feedback</a> -->
     <v-layout>
@@ -22,7 +22,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import Menu from "../components/Menu";
+import LecturerMenu from "../components/LecturerMenu";
 import InfoCard from "../components/InfoCard";
 import AssignCard from "../components/AssignCard";
 
@@ -33,7 +33,7 @@ export default {
     }
   },
   components: {
-    Menu,
+    LecturerMenu,
     InfoCard,
     AssignCard
   },

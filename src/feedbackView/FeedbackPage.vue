@@ -1,6 +1,6 @@
 <template>
 <v-content>
-  <Menu/>
+  <LecturerMenu/>
   <v-container>
     <v-layout row wrap>
     <v-flex v-for="(course, id) in getFeedbackPageCourseList" :key="id">
@@ -15,13 +15,13 @@
 
 <script>
 import { mapGetters } from "vuex";
-import Menu from "../components/Menu";
+import LecturerMenu from "../components/LecturerMenu";
 import FeedbackList from "../components/FeedbackList";
 
 export default {
   name: 'FeedbackPage',
   components: {
-    Menu,
+    LecturerMenu,
     FeedbackList
   },
   methods:{
