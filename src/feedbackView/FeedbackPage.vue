@@ -2,15 +2,19 @@
 <v-content>
   <Menu/>
   <v-container>
-    <v-btn @click="returnCom"> aaa </v-btn>
+    <v-layout row wrap>
+    <v-flex v-for="(course, id) in getFeedbackPageCourseList" :key="id">
+      <v-btn @click="returnCom(course.code)"> {{course.code}} </v-btn>
+    </v-flex>
+    </v-layout>
     <FeedbackList/>
   </v-container>
-  <p id="comment">cccc</p>
+  <!-- <p id="comment">cccc</p> -->
 </v-content>
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 import Menu from "../components/Menu";
 import FeedbackList from "../components/FeedbackList";
 
@@ -21,21 +25,18 @@ export default {
     FeedbackList
   },
   methods:{
-  returnCom() {
-    const returnEle = document.querySelector("#comment");
+  returnCom(id) {
+    const returnEle = document.querySelector("#"+id);
     if (!!returnEle) {
       returnEle.scrollIntoView(true);
     }
   }
   },
-  // computed: {
-  //   ...mapGetters([
-  //     "getFeedbackPageExpand",
-  //     "getFeedbackPageSearch",
-  //     "getFeedbackPageHeaderList",
-  //     "getFeedbackPageDessertList",
-  //   ])
-  // }
+  computed: {
+    ...mapGetters([
+      "getFeedbackPageCourseList",
+    ])
+  }
 }
 </script>
 

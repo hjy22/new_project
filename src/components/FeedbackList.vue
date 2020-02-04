@@ -1,8 +1,8 @@
 <template>
 <div id="app">
   <v-app id="inspire">
-    <v-flex v-for="(courses, id) in getFeedbackPageCourseList" :key="id">
-    <v-card>
+    <v-container v-for="(courses, id) in getFeedbackPageCourseList" :key="id">
+    <v-card :id="courses.code">
       <v-card-title>
         {{ courses.code }} Feedback
         <v-spacer></v-spacer>
@@ -32,7 +32,7 @@
     </template>
     </v-data-table>
     </v-card>
-    </v-flex>
+    </v-container>
   </v-app>
 </div>
 </template>

@@ -162,8 +162,7 @@ export default new Vuex.Store({
         ],
           },
       ]
-    }
-
+    },
   },
   getters: {
     getInfoList: state => state.HomePage.infoList,
