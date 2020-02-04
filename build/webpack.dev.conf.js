@@ -69,6 +69,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       inject: true,
       chunks: ['CoursePage']
     }),
+    new HtmlWebpackPlugin({
+      filename: 'StudentHomePage.html',
+      template: 'src/studentHomeView/StudentHomePage.html',
+      inject: true,
+      chunks: ['StudentHomePage']
+    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {
@@ -76,7 +82,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
         to: config.dev.assetsSubDirectory,
         ignore: ['.*']
       }
-    ])
+    ]),
   ]
 })
 

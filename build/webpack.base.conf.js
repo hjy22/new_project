@@ -16,6 +16,7 @@ module.exports = {
     app: './src/main.js',
     feedback: './src/feedbackView/FeedbackPage.js',
     CoursePage: './src/courseView/CoursePage.js',
+    StudentHomePage: './src/studentHomeView/StudentHomePage.js',
   },
   output: {
     path: config.build.assetsRoot,
