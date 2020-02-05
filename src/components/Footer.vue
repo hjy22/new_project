@@ -36,11 +36,11 @@
   export default {
     data: () => ({
       icons: [
-        {icon:'mdi-facebook',link:'https://twitter.com/', tip:'twitter'},
+        {icon:'mdi-facebook',link:'https://www.facebook.com/', tip:'twitter'},
         {icon:'mdi-twitter',link:'https://twitter.com/', tip:'twitter'},
-        {icon:'mdi-google-plus',link:'https://twitter.com/', tip:'twitter'},
-        {icon:'mdi-linkedin',link:'https://twitter.com/', tip:'twitter'},
-        {icon:'mdi-instagram',link:'https://twitter.com/', tip:'twitter'},
+        {icon:'mdi-google-plus',link:'https://aboutme.google.com/', tip:'twitter'},
+        {icon:'mdi-linkedin',link:'https://www.linkedin.com/', tip:'twitter'},
+        {icon:'mdi-instagram',link:'https://www.instagram.com/', tip:'twitter'},
       ],
     }),
     methods:{
