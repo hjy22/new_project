@@ -14,13 +14,14 @@
         <v-spacer></v-spacer>
 
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
+          v-for="(item,index) in icons"
+          :key="icons[index].icon"
           class="mx-4"
           dark
           icon
+          @click="OpenURL(icons[index].link)"
         >
-          <v-icon size="24px">{{ icon }}</v-icon>
+          <v-icon size="24px">{{ icons[index].icon }}</v-icon>
         </v-btn>
       </v-card-title>
 
@@ -35,12 +36,17 @@
   export default {
     data: () => ({
       icons: [
-        'mdi-facebook',
-        'mdi-twitter',
-        'mdi-google-plus',
-        'mdi-linkedin',
-        'mdi-instagram',
+        {icon:'mdi-facebook',link:'https://twitter.com/', tip:'twitter'},
+        {icon:'mdi-twitter',link:'https://twitter.com/', tip:'twitter'},
+        {icon:'mdi-google-plus',link:'https://twitter.com/', tip:'twitter'},
+        {icon:'mdi-linkedin',link:'https://twitter.com/', tip:'twitter'},
+        {icon:'mdi-instagram',link:'https://twitter.com/', tip:'twitter'},
       ],
     }),
+    methods:{
+      OpenURL(url) {
+        window.open(url, '_blank')
+      }
+    }
   }
 </script>
