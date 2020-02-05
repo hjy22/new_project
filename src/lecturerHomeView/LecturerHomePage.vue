@@ -1,4 +1,5 @@
 <template>
+<v-app>
   <v-content>
     <LecturerMenu/>
     <v-container>
@@ -9,16 +10,23 @@
       </v-flex>
       </v-layout>
     </v-container>
-    <v-container>
+    <!-- <v-container>
     <v-layout>
-      <v-flex v-for="(course) in getCourseList" :key="course.index" xs12 sm8 md6>
-        <AssignCard :code="course.code" :name="course.name" :ddl="course.ddl"/>
+      <v-flex v-for="(course) in getCourseList" :key="course.index" >
+        <AssignCard :code="course.code" :name="course.name" :ddl="course.ddl" offset-sm5/>
       </v-flex>
-      <!-- <AssignCard/> -->
     </v-layout>
-    </v-container>
+    </v-container> -->
+    <v-row
+      justify='space-around'
+    >
+      <v-col v-for="(course) in getCourseList" :key="course.index" >
+        <AssignCard :code="course.code" :name="course.name" :ddl="course.ddl" offset-sm5/>
+      </v-col>
+    </v-row>
     <Footer/>
   </v-content>
+ </v-app>
 </template>
 
 <script>

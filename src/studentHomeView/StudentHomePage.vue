@@ -1,9 +1,11 @@
 <template>
+<v-app>
 <v-content>
   <StudentMenu/>
 <!-- <h1>aaaaaaaa</h1> -->
 <Footer/>
 </v-content>
+</v-app>
 </template>
 
 <script>
@@ -20,3 +22,4 @@ export default {
 </script>
 
 <style > 
+</style>

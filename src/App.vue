@@ -1,17 +1,21 @@
 <template>
-<!-- <v-app> -->
-  <div id="app">
+<v-app>
+  <!-- <div id="app"> -->
     <!-- <Menu/> -->
     <router-view/>
-  </div>
-  <!-- </v-app> -->
+    <!-- <Footer/> -->
+  <!-- </div> -->
+  </v-app>
+  
 </template>
 
 <script>
 // import LecturerMenu from "./components/LecturerMenu";
+import Footer from "./components/Footer";
 export default {
   name: 'App',
   components:{
+    Footer,
     // Menu
   }
 }

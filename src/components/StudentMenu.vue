@@ -4,7 +4,7 @@
     <v-card
       color="grey lighten-4"
       flat
-      height="100px"
+      height="auto"
       tile
     >
       <v-toolbar >

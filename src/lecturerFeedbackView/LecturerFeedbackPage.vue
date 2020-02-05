@@ -1,4 +1,5 @@
 <template>
+<v-app>
 <v-content>
   <LecturerMenu/>
   <v-container>
@@ -10,19 +11,23 @@
     <FeedbackList/>
   </v-container>
   <!-- <p id="comment">cccc</p> -->
+  <Footer />
 </v-content>
+</v-app>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
 import LecturerMenu from "../components/LecturerMenu";
 import FeedbackList from "../components/FeedbackList";
+import Footer from "../components/Footer";
 
 export default {
   name: 'LecturerFeedbackPage',
   components: {
     LecturerMenu,
-    FeedbackList
+    FeedbackList,
+    Footer
   },
   methods:{
   returnCom(id) {

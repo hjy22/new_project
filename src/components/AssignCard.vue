@@ -1,13 +1,14 @@
 <template>
+<v-container>
   <v-card
     class="mx-auto"
     max-width="400px"
   >
    <v-layout xs7>
     <v-card-title primary-title>
-      <div class="text--primary display-1 mb-2 text-left">Code: {{ code }}</div>
-      <div class="title font-weight-regular grey--text">Name: {{ name }}</div>
-      <div class="title font-weight-regular grey--text">Deadline: {{ ddl }} </div>
+      <div class="text--primary headline mb-2 text-left">Code: {{ code }}</div>
+      <div class="title headline font-weight-regular grey--text">Name: {{ name }}</div>
+      <div class="title headline font-weight-regular grey--text">Deadline: {{ ddl }} </div>
     </v-card-title>
   </v-layout>
     <v-divider class="mt-6 mx-4"></v-divider>
@@ -29,6 +30,7 @@
       </v-chip>
     </v-card-text>
   </v-card>
+</v-container>
 </template>
 
 <script>
