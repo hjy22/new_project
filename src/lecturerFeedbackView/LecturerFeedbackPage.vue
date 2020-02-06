@@ -24,6 +24,11 @@
     
   </v-container>
   <!-- <p id="comment">cccc</p> -->
+      <!-- <div @click="backTop">
+          <v-btn>mdi-facebook
+          </v-btn>
+        </div> -->
+      <BackTop/>
   <Footer />
 </v-content>
 </v-app>
@@ -35,6 +40,7 @@ import LecturerMenu from "../components/LecturerMenu";
 import FeedbackList from "../components/FeedbackList";
 import Footer from "../components/Footer";
 import FeedbackChips from "../components/FeedbackChips";
+import BackTop from "../components/BackTop";
 
 export default {
   name: 'LecturerFeedbackPage',
@@ -43,6 +49,7 @@ export default {
     FeedbackList,
     Footer,
     FeedbackChips,
+    BackTop,
   },
   methods:{
   returnCom(id) {
@@ -56,7 +63,7 @@ export default {
     ...mapGetters([
       "getFeedbackPageCourseList",
     ])
-  }
+  },
 }
 </script>
 
