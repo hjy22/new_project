@@ -15,6 +15,7 @@
           :open.sync="open"
           activatable
           color="warning"
+          open-all
           open-on-click
           transition
         >
@@ -126,7 +127,7 @@
       async fetchUsers (item) {
         // Remove in 6 months and say
         // you've made optimizations! :)
-        await pause(1500)
+        await pause(500)
 
         return fetch('static/StudentsInfo.json')
           .then(res => res.json())

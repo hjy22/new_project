@@ -16,6 +16,7 @@ import StudentsCard from "../components/StudentsCard";
 export default {
   name: 'LecturerInfoPage',
   components: {
+    LecturerMenu,
     StudentsCard
   },
 }
