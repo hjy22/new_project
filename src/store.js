@@ -167,9 +167,15 @@ export default new Vuex.Store({
       colors: [
         {
           color: 'red lighten-2',
+          code: 'COMP107',
+          ddl: 'Deadline: 4564646',
+          info:'There are 23 groups submitting the feedback sheets',
         },
         {
           color: 'purple darken-1',
+          code: 'COMP201',
+          ddl: "You haven't assign deadline",
+          info:'',
         },
         // {
         //   color: 'green lighten-1',

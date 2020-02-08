@@ -45,7 +45,9 @@ export default {
       }
   },
   computed: {
-    ...mapGetters(['getLecturerFeedbackPageCourseList'])
+    ...mapGetters([
+      'getLecturerFeedbackPageCourseList'
+      ])
   },
 }
 </script>
