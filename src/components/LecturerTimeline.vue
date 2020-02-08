@@ -1,7 +1,7 @@
 <template>
   <v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
     <v-timeline-item
-      v-for="(item, i) in items"
+      v-for="(item, i) in colors"
       :key="i"
       :color="item.color"
       icon="mdi-star"
@@ -11,10 +11,11 @@
         :color="item.color"
         dark
       >
-        <v-card-title class="title">Lorem Ipsum Dolor</v-card-title>
+        <v-card-title class="title d-none d-sm-flex">Lorem Ipsum Dolor</v-card-title>
+        <v-card-title class="subtitle-1 d-flex d-sm-none">Lorem Ipsum Dolor</v-card-title>
         <v-card-text class="white text--primary">
-          <p>Deadline: 4564646</p>
-          <p>There are 23 groups submitting the feedback sheets.</p>
+          <div>Deadline: 4564646</div>
+          <p>There are 23 groups submitting the feedback sheets</p>
           <v-btn
             :color="item.color"
             class="mx-0"
@@ -31,7 +32,7 @@
 <script>
   export default {
     data: () => ({
-      items: [
+      colors: [
         {
           color: 'red lighten-2',
         },

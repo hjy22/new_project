@@ -1,7 +1,7 @@
 <template>
 <div id="app">
   <v-app id="inspire">
-    <v-container v-for="(courses, id) in getFeedbackPageCourseList" :key="id">
+    <v-container v-for="(courses, id) in getLecturerFeedbackPageCourseList" :key="id">
     <v-card :id="courses.code">
       <v-card-title>
         {{ courses.code }} Feedback
@@ -45,7 +45,7 @@ export default {
       }
   },
   computed: {
-    ...mapGetters(['getFeedbackPageCourseList'])
+    ...mapGetters(['getLecturerFeedbackPageCourseList'])
   },
 }
 </script>

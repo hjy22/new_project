@@ -4,7 +4,7 @@
   >
     <v-slide-group multiple show-arrows>
       <v-slide-item
-        v-for="(course, id) in getFeedbackPageCourseList"
+        v-for="(course, id) in getLecturerFeedbackPageCourseList"
         :key="id"
         v-slot:default="{active}"
       >
@@ -39,7 +39,7 @@ import { mapGetters } from "vuex";
   },
   computed: {
     ...mapGetters([
-      "getFeedbackPageCourseList",
+      "getLecturerFeedbackPageCourseList",
     ])
   }
   }
