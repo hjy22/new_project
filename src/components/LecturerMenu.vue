@@ -17,7 +17,7 @@
         <v-spacer/>
         <v-btn a href="LecturerCoursePage.html" text>COURSE</v-btn>
          <v-spacer/>
-        <v-btn text>Button</v-btn>
+        <v-btn a href="LecturerInfoPage.html" text>Button</v-btn>
   
         <v-spacer/>
 

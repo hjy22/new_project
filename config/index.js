@@ -42,6 +42,7 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/st/index.html'),
     feedback: path.resolve(__dirname, '../dist/LecturerFeedbackPage.html'),
     LecturerCoursePage: path.resolve(__dirname, '../dist/LecturerCoursePage.html'),
+    LecturerInfoPage: path.resolve(__dirname, '../dist/LecturerInfoPage.html'),
     StudentHomePage: path.resolve(__dirname, '../dist/st/StudentHomePage.html'),
 
     // Paths

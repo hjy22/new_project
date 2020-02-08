@@ -70,6 +70,12 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       chunks: ['LecturerCoursePage']
     }),
     new HtmlWebpackPlugin({
+      filename: 'LecturerInfoPage.html',
+      template: 'src/LecturerInfoView/LecturerInfoPage.html',
+      inject: true,
+      chunks: ['LecturerInfoPage']
+    }),
+    new HtmlWebpackPlugin({
       filename: 'StudentHomePage.html',
       template: 'src/studentHomeView/StudentHomePage.html',
       inject: true,
