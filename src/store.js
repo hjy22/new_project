@@ -187,11 +187,22 @@ export default new Vuex.Store({
         // },
       ],
     },
+    LecturerInfoPage:{
+      courses: [
+        {
+          code: 'COMP107',
+        },
+        {
+          code:'COMP201'
+        }
+      ],
+    },
   },
   getters: {
     getLecturerHomePageInfoList: state => state.LecturerHomePage.infoList,
     getLecturerHomePageCourseList: state => state.LecturerHomePage.courseList,
     getLecturerFeedbackPageCourseList: state => state.LecturerFeedbackPage.courses,
     getLecturerCoursePageCourseList: state => state.LecturerCoursePage.colors,
+    getLecturerInfoPageCourseList: state => state.LecturerInfoPage.courses,
   }
 })

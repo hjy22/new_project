@@ -4,7 +4,7 @@
     <LecturerMenu/>
     <v-container>
     <LecturerTimeline/>
-    <StudentsCard/>
+    <!-- <StudentsCard/> -->
     </v-container>
     </v-content>
   </v-app>
@@ -13,14 +13,14 @@
 <script>
 import LecturerMenu from "../components/LecturerMenu";
 import LecturerTimeline from "../components/LecturerTimeline";
-import StudentsCard from "../components/StudentsCard";
+// import StudentsCard from "../components/StudentsCard";
 
 export default {
   name: 'LecturerCoursePage',
   components: {
     LecturerMenu,
     LecturerTimeline,
-    StudentsCard
+    // StudentsCard
   },
 }
 </script>

@@ -94,7 +94,9 @@
   const pause = ms => new Promise(resolve => setTimeout(resolve, ms))
 
   export default {
+    props: ['codes'],
     data: () => ({
+      code:'COMP107',
       active: [],
       avatar: null,
       open: [],
@@ -128,8 +130,8 @@
         // Remove in 6 months and say
         // you've made optimizations! :)
         await pause(500)
-
-        return fetch('static/StudentsInfo.json')
+        const url = "static/"+this.codes+".json"
+        return fetch(url)
           .then(res => res.json())
           .then(json => (item.children.push(...json)))
           .catch(err => console.warn(err))
