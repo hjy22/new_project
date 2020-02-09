@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-card-title class="indigo white--text headline">
-      User Directory
+      {{code}}
     </v-card-title>
     <v-row
       class="pa-4"
@@ -51,7 +51,7 @@
                 size="88"
               >
                 <v-img
-                  :src="`https://avataaars.io/${avatar}`"
+                  :src="selected.img"
                   class="mb-6"
                 ></v-img>
               </v-avatar>
@@ -82,7 +82,7 @@
   </v-card>
 </template>
 
-<script>
+// <script>
   const avatars = [
     '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
     '?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Gray02&clotheType=ShirtScoopNeck&eyeType=EyeRoll&eyebrowType=RaisedExcited&facialHairColor=Red&facialHairType=BeardMagestic&hairColor=Red&hatColor=White&mouthType=Twinkle&skinColor=DarkBrown&topType=LongHairBun',
@@ -94,9 +94,8 @@
   const pause = ms => new Promise(resolve => setTimeout(resolve, ms))
 
   export default {
-    props: ['codes'],
+    props: ['code'],
     data: () => ({
-      code:'COMP107',
       active: [],
       avatar: null,
       open: [],
@@ -130,7 +129,7 @@
         // Remove in 6 months and say
         // you've made optimizations! :)
         await pause(500)
-        const url = "static/"+this.codes+".json"
+        const url = "static/"+this.code+".json"
         return fetch(url)
           .then(res => res.json())
           .then(json => (item.children.push(...json)))

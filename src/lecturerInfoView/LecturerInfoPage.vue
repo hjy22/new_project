@@ -4,10 +4,11 @@
     <LecturerMenu/>
     <v-container>
       <v-container v-for="(course, id) in getLecturerInfoPageCourseList" :key="id">
-        <StudentsCard :codes="course.code"/>
+        <StudentsCard :code="course.code"/>
       </v-container>
     <!-- <StudentsCard/> -->
     </v-container>
+    <BackTop/>
     </v-content>
   </v-app>
 </template>
@@ -16,12 +17,14 @@
 import { mapGetters } from "vuex";
 import LecturerMenu from "../components/LecturerMenu";
 import StudentsCard from "../components/StudentsCard";
+import BackTop from "../components/BackTop";
 
 export default {
   name: 'LecturerInfoPage',
   components: {
     LecturerMenu,
-    StudentsCard
+    StudentsCard,
+    BackTop
   },
   computed: {
     ...mapGetters([
