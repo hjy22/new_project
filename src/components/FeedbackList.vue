@@ -11,6 +11,8 @@
           label="Search"
           single-line
           hide-details
+          clearable
+        clear-icon="mdi-close-circle-outline"
         ></v-text-field>
         <v-icon left>mdi-magnify</v-icon>
       </v-card-title>

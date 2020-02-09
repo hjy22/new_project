@@ -2,6 +2,16 @@
   <v-card>
     <v-card-title class="indigo white--text headline">
       {{code}}
+      <v-spacer/>
+      <v-text-field
+        v-model="search"
+        label="Search Student"
+        dark
+        flat
+        hide-details
+        clearable
+        clear-icon="mdi-close-circle-outline"
+      ></v-text-field>
     </v-card-title>
     <v-row
       class="pa-4"
@@ -9,6 +19,7 @@
     >
       <v-col cols="5">
         <v-treeview
+        :search="search"
           :active.sync="active"
           :items="items"
           :load-children="fetchUsers"
@@ -36,14 +47,14 @@
             class="title grey--text text--lighten-1 font-weight-light"
             style="align-self: center;"
           >
-            Select a User
+            Select a Student
           </div>
           <v-card
             v-else
             :key="selected.id"
-            class="pt-6 mx-auto"
+            class="pt-8 mx-auto"
             flat
-            max-width="400"
+            max-width="auto"
           >
             <v-card-text>
               <v-avatar
@@ -58,22 +69,31 @@
               <h3 class="headline mb-2">
                 {{ selected.name }}
               </h3>
-              <div class="blue--text mb-2">{{ selected.email }}</div>
-              <div class="blue--text subheading font-weight-bold">{{ selected.username }}</div>
+              <div class="blue--text subheading font-weight-bold">{{ selected.identity }}</div>
             </v-card-text>
             <v-divider></v-divider>
             <v-row
               class="text-left"
               tag="v-card-text"
             >
-              <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Company:</v-col>
+              <v-col class="text-right mr-4 mb-5" tag="strong" cols="5">Company:</v-col>
               <v-col>{{ selected.company.name }}</v-col>
-              <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Website:</v-col>
+              <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Email:</v-col>
               <v-col>
-                <a :href="`//${selected.website}`" target="_blank">{{ selected.website }}</a>
+                <a :href="`//${selected.email}`" target="_blank">{{ selected.email }}</a>
               </v-col>
               <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Phone:</v-col>
-              <v-col>{{ selected.phone }}</v-col>
+              <!-- <v-col>{{ selected.phone }}</v-col> -->
+              <v-col>
+                <v-row no-gutters>
+                  <v-col>
+                    {{ selected.company.name }}
+                  </v-col>
+                  <v-col>
+                    {{ selected.company.bs }}
+                  </v-col>
+                </v-row>
+              </v-col>
             </v-row>
           </v-card>
         </v-scroll-y-transition>
@@ -96,6 +116,7 @@
   export default {
     props: ['code'],
     data: () => ({
+      search: null,
       active: [],
       avatar: null,
       open: [],
@@ -106,7 +127,7 @@
       items () {
         return [
           {
-            name: 'Users',
+            name: this.code+' Students',
             children: this.users,
           },
         ]
