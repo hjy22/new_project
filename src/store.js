@@ -51,7 +51,7 @@ export default new Vuex.Store({
           Members: 'Peter, Bob',
           Scores: 71,
           FeedbackID: '1072020100',
-          expanded:"aaa"
+          expanded:"url"
         },
         {
           GroupID: '1072020002',

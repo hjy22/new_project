@@ -52,7 +52,7 @@
           <v-card
             v-else
             :key="selected.id"
-            class="pt-8 mx-auto"
+            class="pt-0 mx-auto"
             flat
             max-width="auto"
           >
@@ -69,15 +69,15 @@
               <h3 class="headline mb-2">
                 {{ selected.name }}
               </h3>
-              <div class="blue--text subheading font-weight-bold">{{ selected.identity }}</div>
+              <!-- <div class="blue--text subheading font-weight-bold">{{ selected.identity }}</div> -->
             </v-card-text>
             <v-divider></v-divider>
             <v-row
               class="text-left"
               tag="v-card-text"
             >
-              <v-col class="text-right mr-4 mb-5" tag="strong" cols="5">Company:</v-col>
-              <v-col>{{ selected.company.name }}</v-col>
+              <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">GroupID:</v-col>
+              <v-col>{{ selected.groupID }}</v-col>
               <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Email:</v-col>
               <v-col>
                 <a :href="`//${selected.email}`" target="_blank">{{ selected.email }}</a>
@@ -99,7 +99,7 @@
             v-for="item in selected.members"
             :key="item.name"
             cols="12"
-            sm="6"
+            sm="2"
             md="6"
             lg="6"
           >
@@ -151,7 +151,7 @@
       items () {
         return [
           {
-            name: this.code+' Students',
+            name: this.code+' Leaders',
             children: this.users,
           },
         ]
