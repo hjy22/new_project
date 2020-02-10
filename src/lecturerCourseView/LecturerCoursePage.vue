@@ -4,24 +4,33 @@
     <LecturerMenu/>
     <v-container>
     <LecturerTimeline/>
-    <!-- <StudentsCard/> -->
+    <v-divider/>
+      <v-flex v-for="(course, id) in getLecturerHomePageCourseList" :key="id">
+        <LecturerCourseCard :courseCode="course.code" :courseName="course.name"/>
+      </v-flex>
     </v-container>
     </v-content>
   </v-app>
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import LecturerMenu from "../components/LecturerMenu";
 import LecturerTimeline from "../components/LecturerTimeline";
-// import StudentsCard from "../components/StudentsCard";
+import LecturerCourseCard from "../components/LecturerCourseCard";
 
 export default {
   name: 'LecturerCoursePage',
   components: {
     LecturerMenu,
     LecturerTimeline,
-    // StudentsCard
+    LecturerCourseCard
   },
+  computed: {
+    ...mapGetters([
+      "getLecturerHomePageCourseList"
+    ])
+  }
 }
 </script>
 
