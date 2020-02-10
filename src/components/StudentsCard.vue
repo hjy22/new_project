@@ -82,9 +82,9 @@
               <v-col>
                 <a :href="`//${selected.email}`" target="_blank">{{ selected.email }}</a>
               </v-col>
-              <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Phone:</v-col>
+              <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Members:</v-col>
               <!-- <v-col>{{ selected.phone }}</v-col> -->
-              <v-col>
+              <!-- <v-col>
                 <v-row no-gutters>
                   <v-col>
                     {{ selected.company.name }}
@@ -93,7 +93,31 @@
                     {{ selected.company.bs }}
                   </v-col>
                 </v-row>
-              </v-col>
+              </v-col> -->
+              <v-row>
+          <v-col
+            v-for="item in selected.members"
+            :key="item.name"
+            cols="12"
+            sm="6"
+            md="6"
+            lg="6"
+          >
+            <v-card>
+              <v-card-title class="subtitle-1">{{ item.name }}</v-card-title>
+
+              <v-divider></v-divider>
+
+              <v-list dense>
+                <v-list-item>
+                  <!-- <v-list-item-content>Email:</v-list-item-content> -->
+                  <v-list-item-content class="align-end">{{ item.email }}</v-list-item-content>
+                </v-list-item>
+              </v-list>
+            </v-card>
+          </v-col>
+        </v-row>
+
             </v-row>
           </v-card>
         </v-scroll-y-transition>
