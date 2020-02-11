@@ -38,15 +38,40 @@
 
     <v-stepper-content step="1">
     <v-card color="grey lighten-1" class="mb-12" height="200px">
-      <DatePicker/>
+    <DatePicker/>
       
     </v-card>
     </v-stepper-content>
 
     <v-stepper-content step="2">
+      
+      <v-text-field
+        v-model="subject"
+        filled
+        color="deep-purple"
+        label="Subject"
+        style="min-height: 96px"
+      ></v-text-field>
+      <v-textarea
+        v-model="body"
+        auto-grow
+        filled
+        color="deep-purple"
+        label="body"
+        rows="5"
+      ></v-textarea>
+      <!-- <div class="mt-12 text-center">
+        Value: {{ subject }}
+      </div> -->
+      <!-- <v-btn class="ma-2" color="primary" dark>Upload
+                <v-icon dark right >Sending Emailmdi-email</v-icon>
+            </v-btn> -->
+      <!-- <a href="mailto:youemail@mail.com?subject={subject}&body=body">Sending Email</a> -->
+      <v-btn :href=sendingEmail()>Sending</v-btn>
     </v-stepper-content>
 
     <v-stepper-content step="3">
+      
     </v-stepper-content>
 
     </v-stepper>
@@ -56,8 +81,18 @@
 <script>
 import DatePicker from "./DatePicker";
 export default {
+  data: () => ({
+    subject: '',
+    body: '',
+  }),
   components:{
     DatePicker
+  },
+  methods:{
+    sendingEmail(){
+      const url = "mailto:youemail@mail.com?subject="+this.subject+"&body="+this.body
+      return url
+    }
   }
 }
 </script>
