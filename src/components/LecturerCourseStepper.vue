@@ -44,13 +44,9 @@
     </v-stepper-content>
 
     <v-stepper-content step="2">
-    <!-- <v-card color="grey lighten-1" class="mb-12" height="200px"> -->
-      <v-file-input accept="PDF/*" label="File input"></v-file-input>
-    <!-- </v-card> -->
     </v-stepper-content>
 
     <v-stepper-content step="3">
-    <v-card color="grey lighten-1" class="mb-12" height="200px"></v-card>
     </v-stepper-content>
 
     </v-stepper>

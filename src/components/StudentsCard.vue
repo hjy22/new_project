@@ -111,7 +111,9 @@
               <v-list dense>
                 <v-list-item>
                   <!-- <v-list-item-content>Email:</v-list-item-content> -->
-                  <v-list-item-content class="align-end">{{ item.email }}</v-list-item-content>
+                  <v-list-item-content class="align-end">
+                    <a :href="`//${item.email}`">{{ item.email }}</a>
+                    </v-list-item-content>
                 </v-list-item>
               </v-list>
             </v-card>

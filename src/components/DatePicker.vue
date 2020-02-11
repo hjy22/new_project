@@ -24,7 +24,12 @@
                 <v-btn text color="primary" @click="modal = false">Cancel</v-btn>
                 <v-btn text color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
             </v-date-picker>
+            
             </v-dialog>
+            <v-file-input accept="PDF/*" label="Upload Assignment Detail File"></v-file-input>
+            <v-btn class="ma-2" color="primary" dark>Upload
+                <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
+            </v-btn>
         </v-col>
         
         <v-spacer></v-spacer>
