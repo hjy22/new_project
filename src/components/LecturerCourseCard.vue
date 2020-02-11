@@ -3,7 +3,7 @@
   <v-card>
     <v-card-text>
       <v-row class="mb-4" align="center">
-        <strong class="title">{{courseCode}} {{courseName}}</strong>
+        <strong class="title" :id="courseCode">{{courseCode}} {{courseName}}</strong>
         <v-spacer></v-spacer>
       </v-row>
       <LecturerCourseStepper/>

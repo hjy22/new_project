@@ -9,6 +9,8 @@
         <LecturerCourseCard :courseCode="course.code" :courseName="course.name"/>
       </v-flex>
     </v-container>
+    <BackTop/>
+    <Footer/>
     </v-content>
   </v-app>
 </template>
@@ -18,13 +20,17 @@ import { mapGetters } from "vuex";
 import LecturerMenu from "../components/LecturerMenu";
 import LecturerTimeline from "../components/LecturerTimeline";
 import LecturerCourseCard from "../components/LecturerCourseCard";
+import BackTop from "../components/BackTop";
+import Footer from "../components/Footer";
 
 export default {
   name: 'LecturerCoursePage',
   components: {
     LecturerMenu,
     LecturerTimeline,
-    LecturerCourseCard
+    LecturerCourseCard,
+    BackTop,
+    Footer
   },
   computed: {
     ...mapGetters([

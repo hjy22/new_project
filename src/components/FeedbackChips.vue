@@ -30,13 +30,13 @@ import { mapGetters } from "vuex";
       model: null,
     }),
     methods:{
-  returnCom(id) {
-    const returnEle = document.querySelector("#"+id);
-    if (!!returnEle) {
-      returnEle.scrollIntoView(true);
-    }
-  }
-  },
+      returnCom(id) {
+        const returnEle = document.querySelector("#"+id);
+        if (!!returnEle) {
+          returnEle.scrollIntoView(true);
+        }
+      }
+    },
   computed: {
     ...mapGetters([
       "getLecturerFeedbackPageCourseList",

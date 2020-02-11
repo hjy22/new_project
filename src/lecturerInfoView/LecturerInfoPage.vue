@@ -9,6 +9,7 @@
     <!-- <StudentsCard/> -->
     </v-container>
     <BackTop/>
+    <Footer/>
     </v-content>
   </v-app>
 </template>
@@ -18,13 +19,15 @@ import { mapGetters } from "vuex";
 import LecturerMenu from "../components/LecturerMenu";
 import StudentsCard from "../components/StudentsCard";
 import BackTop from "../components/BackTop";
+import Footer from "../components/Footer";
 
 export default {
   name: 'LecturerInfoPage',
   components: {
     LecturerMenu,
     StudentsCard,
-    BackTop
+    BackTop,
+    Footer
   },
   computed: {
     ...mapGetters([

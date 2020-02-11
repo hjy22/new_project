@@ -22,6 +22,7 @@
             :color="item.color"
             class="mx-0"
             outlined
+            @click="returnCom(item.code)"
           >
             VIEW
           </v-btn>
@@ -36,29 +37,15 @@ import { mapGetters } from "vuex";
 
 export default {
   data: () => ({
-    // colors: [
-    //   {
-    //     color: 'red lighten-2',
-    //     code: 'COMP107',
-    //     ddl: 'Deadline: 4564646',
-    //     info:'There are 23 groups submitting the feedback sheets',
-    //   },
-    //   {
-    //     color: 'purple darken-1',
-    //     code: 'COMP201',
-    //     ddl: "You haven't assign deadline",
-    //     info:'',
-    //   },
-    //   // {
-    //   //   color: 'green lighten-1',
-    //   //   icon: 'mdi-airballoon',
-    //   // },
-    //   // {
-    //   //   color: 'indigo',
-    //   //   icon: 'mdi-buffer',
-    //   // },
-    // ],
   }),
+  methods:{
+      returnCom(id) {
+        const returnEle = document.querySelector("#"+id);
+        if (!!returnEle) {
+          returnEle.scrollIntoView(true);
+        }
+      }
+    },
   computed: {
   ...mapGetters([
     'getLecturerCoursePageCourseList'

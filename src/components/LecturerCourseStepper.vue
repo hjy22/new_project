@@ -12,7 +12,7 @@
           editable
           step="1"
         >
-          Select campaign settings
+          Set Deadline
         </v-stepper-step>
 
         <v-divider></v-divider>
@@ -22,7 +22,7 @@
           editable
           step="2"
         >
-          Create an ad group
+          Send Email to All Students
         </v-stepper-step>
 
         <v-divider></v-divider>
@@ -32,16 +32,21 @@
           editable
           step="3"
         >
-          Create an ad
+          Check Submit
         </v-stepper-step>
       </v-stepper-header>
 
     <v-stepper-content step="1">
-    <v-card color="grey lighten-1" class="mb-12" height="200px"></v-card>
+    <v-card color="grey lighten-1" class="mb-12" height="200px">
+      <DatePicker/>
+      
+    </v-card>
     </v-stepper-content>
 
     <v-stepper-content step="2">
-    <v-card color="grey lighten-1" class="mb-12" height="200px"></v-card>
+    <!-- <v-card color="grey lighten-1" class="mb-12" height="200px"> -->
+      <v-file-input accept="PDF/*" label="File input"></v-file-input>
+    <!-- </v-card> -->
     </v-stepper-content>
 
     <v-stepper-content step="3">
@@ -50,3 +55,14 @@
 
     </v-stepper>
   </div>
+</template>
+  
+<script>
+import DatePicker from "./DatePicker";
+export default {
+  components:{
+    DatePicker
+  }
+}
+</script>
+  

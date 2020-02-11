@@ -6,7 +6,7 @@ export default new Vuex.Store({
   state: {
     LecturerHomePage:{
       infoList: [{
-        name: 'Florida',
+        name: 'Anna',
         ID: '0001',
         character: 'Lecturer'  
       },
