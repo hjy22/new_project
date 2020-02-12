@@ -43,22 +43,26 @@
     </v-card>
     </v-stepper-content>
 
-    <v-stepper-content step="2">
-      
+    <v-stepper-content  step="2">
+      <v-form v-model = "valid">
       <v-text-field
         v-model="subject"
         filled
+        clearable
         color="deep-purple"
         label="Subject"
         style="min-height: 96px"
+        :rules="emailRules"
       ></v-text-field>
       <v-textarea
         v-model="body"
         auto-grow
+        clearable
         filled
         color="deep-purple"
-        label="body"
+        label="Body"
         rows="5"
+        :rules="emailRules"
       ></v-textarea>
       <!-- <div class="mt-12 text-center">
         Value: {{ subject }}
@@ -67,7 +71,8 @@
                 <v-icon dark right >Sending Emailmdi-email</v-icon>
             </v-btn> -->
       <!-- <a href="mailto:youemail@mail.com?subject={subject}&body=body">Sending Email</a> -->
-      <v-btn :href=sendingEmail()>Sending</v-btn>
+      <v-btn :href=sendingEmail() @click="submit" :disabled="!valid">Sending</v-btn>
+      </v-form>
     </v-stepper-content>
 
     <v-stepper-content step="3">
@@ -82,8 +87,12 @@
 import DatePicker from "./DatePicker";
 export default {
   data: () => ({
+    valid : "true",
     subject: '',
     body: '',
+    emailRules: [
+      v => !!v || 'Cannot empty',
+    ],
   }),
   components:{
     DatePicker
@@ -92,7 +101,12 @@ export default {
     sendingEmail(){
       const url = "mailto:youemail@mail.com?subject="+this.subject+"&body="+this.body
       return url
-    }
+    },
+     submit() {
+        if (this.$refs.form.submit()) {
+          this.snackbar = true
+        }
+      },
   }
 }
 </script>
