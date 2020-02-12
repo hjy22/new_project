@@ -71,7 +71,8 @@
                 <v-icon dark right >Sending Emailmdi-email</v-icon>
             </v-btn> -->
       <!-- <a href="mailto:youemail@mail.com?subject={subject}&body=body">Sending Email</a> -->
-      <v-btn :href=sendingEmail() @click="submit" :disabled="!valid">Sending</v-btn>
+      <v-btn :href=sendingEmail() :disabled="!valid">Sending</v-btn>
+      <!-- <v-btn :href=sendingEmail() @click="submit" :disabled="!valid">Sending</v-btn> -->
       </v-form>
     </v-stepper-content>
 
@@ -87,7 +88,7 @@
 import DatePicker from "./DatePicker";
 export default {
   data: () => ({
-    valid : "true",
+    valid : true,
     subject: '',
     body: '',
     emailRules: [
@@ -99,14 +100,17 @@ export default {
   },
   methods:{
     sendingEmail(){
-      const url = "mailto:youemail@mail.com?subject="+this.subject+"&body="+this.body
+      // const url = "static/"+this.code+".json"
+      // fetch(static/COMP107.json)
+      // console.log(item)
+      const url = "mailto:youemail@mail.com;sgjhua13@gmail.com?subject="+this.subject+"&body="+this.body
       return url
     },
-     submit() {
-        if (this.$refs.form.submit()) {
-          this.snackbar = true
-        }
-      },
+    //  submit() {
+    //     if (this.$refs.form.submit()) {
+    //       this.snackbar = true
+    //     }
+    //   },
   }
 }
 </script>
