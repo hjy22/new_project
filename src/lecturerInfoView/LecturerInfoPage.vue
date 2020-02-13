@@ -3,9 +3,9 @@
     <v-content>
     <LecturerMenu/>
     <v-container>
-      <v-container v-for="(course, id) in getLecturerInfoPageCourseList" :key="id">
-        <StudentsCard :code="course.code"/>
-      </v-container>
+      <!-- <v-container v-for="(course, id) in getLecturerInfoPageCourseList" :key="id"> -->
+        <StudentsCard/>
+      <!-- </v-container> -->
     <!-- <StudentsCard/> -->
     </v-container>
     <BackTop/>

@@ -50,6 +50,7 @@
             v-model="focus"
             color="primary"
             :events="events"
+            :event-color="getEventColor"
             :now="today"
             :type="type"
             @click:event="showEvent"
@@ -68,7 +69,7 @@
               flat
             >
               <v-toolbar
-                color="primary"
+                :color="selectedEvent.color"
                 dark
               >
                 <v-toolbar-title v-html="selectedEvent.name"></v-toolbar-title>
@@ -79,7 +80,7 @@
               <v-card-actions>
                 <v-btn
                   text
-                  color="secondary"
+                  :color="selectedEvent.color"
                   @click="selectedOpen = false"
                 >
                   Cancel
@@ -115,19 +116,29 @@ export default {
           name: 'Group2 Presentation',
           start: '2020-02-07 09:00',
           end: '2020-02-07 10:00',
-          details:'Leader'
+          details:'Leader',
+          color:"primary"
         },
         {
           name: 'Group10 Presentation',
           start: '2020-02-10 09:00',
           end: '2020-02-10 10:00',
-          details:'Leader'
+          details:'Leader',
+          color:"primary"
         },
         {
           name: 'Group3 Presentation',
           start: '2020-02-09 12:30',
           end: '2020-02-09 15:30',
-          details:'Leader'
+          details:'Leader',
+          color:"primary"
+        },
+        {
+          name: 'Deadline',
+           start: '2020-02-28 17:00',
+          end: '2020-02-28 17:00',
+          details:'aaa',
+          color:"red"
         },
       ],
     // colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],

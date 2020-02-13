@@ -21,11 +21,6 @@ export default new Vuex.Store({
         name: 'Designing Systems',
         ddl: '2nd April, 12:30 PM'  
       },
-      {
-        code: 'COMP201',
-        name: 'Software Engineering',
-        ddl: '21st April, 16:30 PM'  
-      },
       ],
     },
     LecturerFeedbackPage:{
