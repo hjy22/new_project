@@ -27,7 +27,7 @@ export default {
     LecturerMenu,
     StudentsCard,
     BackTop,
-    Footer
+    Footer,
   },
   computed: {
     ...mapGetters([

@@ -1,72 +1,73 @@
 <template>
-    <div id="app">
-  <v-app id="inspire">
-    <v-card
-      max-width="450"
-      class="mx-auto"
-    >
+<v-row>
+  <v-col>
+    <v-list two-line subheader>
+      <v-subheader>Leader</v-subheader>
 
-      <v-list three-line>
-        <template v-for="(item, index) in items">
-          <v-subheader
-            v-if="item.header"
-            :key="item.header"
-            v-text="item.header"
-          ></v-subheader>
-  
-          <v-divider
-            v-else-if="item.divider"
-            :key="index"
-            :inset="item.inset"
-          ></v-divider>
-  
-          <v-list-item
-            v-else
-            :key="item.title"
-          >
-  
-            <v-list-item-content>
-              <v-list-item-title v-html="item.title"></v-list-item-title>
-              <v-list-item-subtitle v-html="item.subtitle"></v-list-item-subtitle>
-            </v-list-item-content>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title>Profile photo</v-list-item-title>
+          <v-list-item-subtitle>Change your Google+ profile photo</v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
+  </v-col>
+  <v-col>
+  <v-card
+    max-width="250"
+    class="mx-auto"
+  >
+
+    <v-list two-line>
+      <v-subheader>Members</v-subheader>
+        <template v-for="(member, index) in items">
+          <v-list-item :key="member.title">
+            <!-- <template> -->
+              <v-list-item-content>
+                <v-list-item-title v-text="member.name"></v-list-item-title>
+                <v-list-item-subtitle v-text="member.email"></v-list-item-subtitle>
+              </v-list-item-content>
+            <!-- </template> -->
           </v-list-item>
+
+          <v-divider
+            v-if="index + 1 < items.length"
+            :key="index"
+          ></v-divider>
         </template>
-      </v-list>
-    </v-card>
-  </v-app>
-</div>
+    </v-list>
+  </v-card>
+  </v-col>
+  </v-row>
 </template>
 
 <script>
-export default {
+  export default {
     data: () => ({
-    members: [
-      { header: 'Today' },
+      leader:[
+        {
+          name:"Daniel",
+          email:"Daniel@liverpool.ac.uk"
+        }
+      ],
+      items: [
       {
-        title: 'Brunch this weekend?',
-        subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?",
+        name:"Chelsey Dietrich",
+        email:"Chelsey@jasper.info"
       },
-      { divider: true, inset: true },
       {
-        title: 'Summer BBQ <span class="grey--text text--lighten-1"></span>',
-        subtitle: "<span class='text--primary'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend.",
+        name:"Anna",
+        email:"Anna@jasper.info"
       },
-      { divider: true, inset: true },
       {
-        title: 'Oui oui',
-        subtitle: "<span class='text--primary'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?",
+        name:"Ben",
+        email:"Ben@jasper.info"
       },
-      { divider: true, inset: true },
       {
-        title: 'Birthday gift',
-        subtitle: "<span class='text--primary'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?",
-      },
-      { divider: true, inset: true },
-      {
-        title: 'Recipe to try',
-        subtitle: "<span class='text--primary'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos.",
-      },
-    ],
-  }),
-}
+        name:"Carol",
+        email:"Carol@jasper.info"
+      }
+    ]
+    }),
+  }
 </script>

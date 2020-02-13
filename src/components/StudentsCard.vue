@@ -85,7 +85,7 @@
                   </v-col>
                 </v-row>
               </v-col> -->
-              <v-row>
+              <!-- <v-row>
           <v-col
             cols="12"
           >
@@ -96,19 +96,20 @@
 
               <v-list dense>
                 <v-list-item>
+                  Members:    
                   <v-list-item-content 
                     class="align-end" 
                     v-for="item in selected.members" :key="item.name">
-                  {{ item.name }}
+                  {{ item.name }}|
                   </v-list-item-content>
                 </v-list-item>
               </v-list>
             </v-card>
           </v-col>
-        </v-row>
-
+        </v-row> -->
+        <GroupCard/>
         <v-container>
-        <StudentGroup/>
+        <!-- <StudentGroup/> -->
         </v-container>
 
             </v-row>
@@ -121,6 +122,7 @@
 
 <script>
   import StudentGroup from "../components/StudentGroup";
+  import GroupCard from "../components/GroupCard";
   const avatars = [
     '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
     '?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Gray02&clotheType=ShirtScoopNeck&eyeType=EyeRoll&eyebrowType=RaisedExcited&facialHairColor=Red&facialHairType=BeardMagestic&hairColor=Red&hatColor=White&mouthType=Twinkle&skinColor=DarkBrown&topType=LongHairBun',
@@ -140,7 +142,8 @@
       users: [],
     }),
     components:{
-      StudentGroup
+      StudentGroup,
+      GroupCard
     },
 
     computed: {
