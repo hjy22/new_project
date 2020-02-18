@@ -135,7 +135,7 @@ export default {
         },
         {
           name: 'Deadline',
-           start: '2020-02-28 17:00',
+          start: '2020-02-28 17:00',
           end: '2020-02-28 17:00',
           details:'aaa',
           color:"red"
