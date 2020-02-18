@@ -63,53 +63,9 @@
               <div class="blue--text subheading font-weight-bold">{{ selected.groupID }}</div>
             </v-card-text>
             <v-divider></v-divider>
-            <v-row
-              class="text-left"
-              tag="v-card-text"
-            >
-              <!-- <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">GroupID:</v-col>
-              <v-col>{{ selected.groupID }}</v-col> -->
-              <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Email:</v-col>
-              <v-col>
-                <a :href="`//${selected.email}`" target="_blank">{{ selected.email }}</a>
-              </v-col>
-              <!-- <v-col class="text-right mr-4 mb-2" tag="strong" cols="5">Members:</v-col> -->
-              <!-- <v-col>{{ selected.phone }}</v-col> -->
-              <!-- <v-col>
-                <v-row no-gutters>
-                  <v-col>
-                    {{ selected.company.name }}
-                  </v-col>
-                  <v-col>
-                    {{ selected.company.bs }}
-                  </v-col>
-                </v-row>
-              </v-col> -->
-              <!-- <v-row>
-          <v-col
-            cols="12"
-          >
-            <v-card>
-              <v-card-title class="subtitle-1"> Leader: {{ selected.identity }}</v-card-title>
-
-              <v-divider></v-divider>
-
-              <v-list dense>
-                <v-list-item>
-                  Members:    
-                  <v-list-item-content 
-                    class="align-end" 
-                    v-for="item in selected.members" :key="item.name">
-                  {{ item.name }}|
-                  </v-list-item-content>
-                </v-list-item>
-              </v-list>
-            </v-card>
-          </v-col>
-        </v-row> -->
+            <v-row>
         <GroupCard :index="selected.id-1"/>
         <v-container>
-        <!-- <StudentGroup/> -->
         </v-container>
 
             </v-row>
@@ -121,7 +77,6 @@
 </template>
 
 <script>
-  import StudentGroup from "../components/StudentGroup";
   import GroupCard from "../components/GroupCard";
   const avatars = [
     '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
@@ -142,7 +97,6 @@
       users: [],
     }),
     components:{
-      StudentGroup,
       GroupCard
     },
 
