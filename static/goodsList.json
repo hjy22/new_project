@@ -1,0 +1,333 @@
+{
+    "cc":[{
+      "id": 1,
+      "name": "Team 1",
+      "identity": "Leanne Anna",
+      "groupID":"1072020001",
+      "email": "Sincere@april.biz",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "1-770-736-8031 x56442",
+      "website": "hildegard.org",
+      "company": {
+        "name": "Romaguera-Crona",
+        "catchPhrase": "Multi-layered client-server neural-net",
+        "bs": "harness real-time e-markets"
+      },
+      "members":[
+        {
+          "name":"aaaa",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "identity": "Ervin Howell",
+      "name": "Team 2",
+      "groupID":"1072020001",
+      "email": "Shanna@melissa.tv",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "010-692-6593 x09125",
+      "website": "anastasia.net",
+      "company": {
+        "name": "Deckow-Crist",
+        "catchPhrase": "Proactive didactic contingency",
+        "bs": "synergize scalable supply-chains"
+      },
+      "members":[
+        {
+          "name":"bbbb",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "identity": "Clementine Bauch",
+      "name": "Team 3",
+      "groupID":"1072020001",
+      "email": "Nathan@yesenia.net",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "1-463-123-4447",
+      "website": "ramiro.info",
+      "company": {
+        "name": "Romaguera-Jacobson",
+        "catchPhrase": "Face to face bifurcated interface",
+        "bs": "e-enable strategic applications"
+      },
+      "members":[
+        {
+          "name":"cccc",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "identity": "dddd",
+      "name": "Team 4",
+      "groupID":"1072020001",
+      "email": "Julianne.OConner@kory.org",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "493-170-9623 x156",
+      "website": "kale.biz",
+      "company": {
+        "name": "Robel-Corkery",
+        "catchPhrase": "Multi-tiered zero tolerance productivity",
+        "bs": "transition cutting-edge web services"
+      },
+      "members":[
+        {
+          "name":"Chelsey Dietrich",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "identity": "Chelsey Dietrich",
+      "name": "Team 5",
+      "groupID":"1072020001",
+      "email": "Lucio_Hettinger@annie.ca",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "(254)954-1289",
+      "website": "demarco.info",
+      "company": {
+        "name": "Keebler LLC",
+        "catchPhrase": "User-centric fault-tolerant solution",
+        "bs": "revolutionize end-to-end systems"
+      },
+      "members":[
+        {
+          "name":"eeee",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "identity": "Mrs. Dennis Schulist",
+      "name": "Team 6",
+      "groupID":"1072020001",
+      "email": "Karley_Dach@jasper.info",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "1-477-935-8478 x6430",
+      "website": "ola.org",
+      "company": {
+        "name": "Considine-Lockman",
+        "catchPhrase": "Synchronised bottom-line interface",
+        "bs": "e-enable innovative applications"
+      },
+      "members":[
+        {
+          "name":"ffff",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "identity": "Kurtis Weissnat",
+      "name": "Team 7",
+      "groupID":"1072020001",
+      "email": "Telly.Hoeger@billy.biz",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "210.067.6132",
+      "website": "elvis.io",
+      "company": {
+        "name": "Johns Group",
+        "catchPhrase": "Configurable multimedia task-force",
+        "bs": "generate enterprise e-tailers"
+      },
+      "members":[
+        {
+          "name":"gggg",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "identity": "Nicholas Runolfsdottir V",
+      "name": "Team 8",
+      "groupID":"1072020001",
+      "email": "Sherwood@rosamond.me",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "586.493.6943 x140",
+      "website": "jacynthe.com",
+      "company": {
+        "name": "Abernathy Group",
+        "catchPhrase": "Implemented secondary concept",
+        "bs": "e-enable extensible e-tailers"
+      },
+      "members":[
+        {
+          "name":"hhhh",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "identity": "Glenna Reichert",
+      "name": "Team 9",
+      "groupID":"1072020001",
+      "email": "Chaim_McDermott@dana.io",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "(775)976-6794 x41206",
+      "website": "conrad.com",
+      "company": {
+        "name": "Yost and Sons",
+        "catchPhrase": "Switchable contextually-based project",
+        "bs": "aggregate real-time technologies"
+      },
+      "members":[
+        {
+          "name":"iiii",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "identity": "Clementina DuBuque",
+      "name": "Team 10",
+      "groupID":"1072020001",
+      "email": "Rey.Padberg@karina.biz",
+      "img":"https://avataaars.io/?avatarStyle=Circle&topType=ShortHairShortRound&accessoriesType=Prescription02&hairColor=Auburn&facialHairType=Blank&clotheType=Overall&clotheColor=Blue03&eyeType=Dizzy&eyebrowType=RaisedExcitedNatural&mouthType=Twinkle&skinColor=Light",
+      "phone": "024-648-3804",
+      "website": "ambrose.net",
+      "company": {
+        "name": "Hoeger LLC",
+        "catchPhrase": "Centralized empowering task-force",
+        "bs": "target end-to-end models"
+      },
+      "members":[
+        {
+          "name":"jjjj",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Anna",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Ben",
+          "email":"Karley_Dach@jasper.info"
+        },
+        {
+          "name":"Carol",
+          "email":"Karley_Dach@jasper.info"
+        }
+      ]
+    }
+  ]
+}

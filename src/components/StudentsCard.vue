@@ -107,7 +107,7 @@
             </v-card>
           </v-col>
         </v-row> -->
-        <GroupCard/>
+        <GroupCard :index="selected.id-1"/>
         <v-container>
         <!-- <StudentGroup/> -->
         </v-container>

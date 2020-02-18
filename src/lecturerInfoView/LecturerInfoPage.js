@@ -3,6 +3,8 @@ import vuetify from '@/plugins/vuetify'
 import router from '@/router'
 import store from '@/store'
 import LecturerInfoPage from './LecturerInfoPage.vue'
+import axios from 'axios' // 本地JSON
+import VueAxios from 'vue-axios' // 本地JSON
 
 Vue.config.productionTip = false
 
@@ -15,3 +17,5 @@ new Vue({
   template: '<LecturerInfoPage/>',
   render: h => h(LecturerInfoPage)
 })
+
+Vue.use(VueAxios, axios)
