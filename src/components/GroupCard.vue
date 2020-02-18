@@ -10,7 +10,8 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title>{{group[index].leader}} - {{group[index].email}}</v-list-item-title>
+              <v-list-item-title>{{group[index].leader}}</v-list-item-title>
+              <v-list-item-subtitle>{{group[index].email}}</v-list-item-subtitle>
             </v-list-item-content>
 
           </v-list-item>
@@ -22,7 +23,8 @@
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title>{{item.name}} - {{item.email}}</v-list-item-title>
+              <v-list-item-title>{{item.name}} </v-list-item-title>
+              <v-list-item-subtitle>{{item.email}}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
         </v-list>
@@ -39,7 +41,7 @@
     props:['index'],
     data () {
       return {
-        group: [] // 展示部分
+        group: [],
       }
     },
     created () {
@@ -56,9 +58,6 @@
             // console.log("error");
         });
     },
-    print(){
-
-    }
     }
   }
 </script>

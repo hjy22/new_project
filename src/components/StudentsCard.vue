@@ -64,11 +64,14 @@
             </v-card-text>
             <v-divider></v-divider>
             <v-row>
-        <GroupCard :index="selected.id-1"/>
-        <v-container>
-        </v-container>
-
+              <!-- <v-col> -->
+                <GroupCard :index="selected.id-1"/>
+              <!-- </v-col> -->
+              
             </v-row>
+            <v-row>
+                <EmailDialog :index="selected.id-1"/>
+              </v-row>
           </v-card>
         </v-scroll-y-transition>
       </v-col>
@@ -78,6 +81,8 @@
 
 <script>
   import GroupCard from "../components/GroupCard";
+  import EmailDialog from "../components/EmailDialog";
+
   const avatars = [
     '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
     '?accessoriesType=Sunglasses&avatarStyle=Circle&clotheColor=Gray02&clotheType=ShirtScoopNeck&eyeType=EyeRoll&eyebrowType=RaisedExcited&facialHairColor=Red&facialHairType=BeardMagestic&hairColor=Red&hatColor=White&mouthType=Twinkle&skinColor=DarkBrown&topType=LongHairBun',
@@ -97,7 +102,8 @@
       users: [],
     }),
     components:{
-      GroupCard
+      GroupCard,
+      EmailDialog
     },
 
     computed: {
