@@ -65,7 +65,7 @@
             <v-divider></v-divider>
             <v-row>
               <!-- <v-col> -->
-                <GroupCard :index="selected.id-1"/>
+                <!-- <GroupCard :index="selected.id-1"/> -->
               <!-- </v-col> -->
               
             </v-row>

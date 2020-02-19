@@ -24,27 +24,9 @@
           Privacy Policy
         </v-card-title>
 
-        <v-form v-model = "valid">
-        <v-text-field
-          v-model="subject"
-          filled
-          clearable
-          color="deep-purple"
-          label="Subject"
-          style="min-height: 96px"
-          :rules="emailRules"
-        ></v-text-field>
-        <v-textarea
-          v-model="body"
-          auto-grow
-          clearable
-          filled
-          color="deep-purple"
-          label="Body"
-          rows="5"
-          :rules="emailRules"
-        ></v-textarea>
-      </v-form>
+        <v-card-text>
+          You are sending emails to Team {{index}} with 
+        </v-card-text>
 
         <v-divider></v-divider>
 
@@ -57,7 +39,6 @@
             text
             @click="dialog = false"
             :href=sendingEmail()
-            :disabled="!valid"
           >
             Sending
           </v-btn>
@@ -74,13 +55,7 @@ export default {
     data(){
       return{
         dialog: false,
-        valid : true,
-        subject: '',
-        body: '',
         membersInfo: [],
-        emailRules: [
-          v => !!v || 'Cannot empty',
-        ],
       }
     },
     created () {
@@ -89,7 +64,7 @@ export default {
      methods:{
        getMemberInfo() {
         axios.get('../static/COMP107.json').then(response => {
-            this.membersInfo = response.data;
+            this.membersInfo = response.data[this.index].members;
         }, response => {
             // console.log("error");
         });
@@ -99,15 +74,17 @@ export default {
         // const url = "static/"+this.code+".json"
         // fetch(static/COMP107.json)
         // console.log(item)
-        const emails= this.membersInfo[this.index].members
-        var length = this.getJsonLength(emails);
-        var  memberEmail =  emails[0].email+";";
-        for (var i = 1; i < length; i++) { 
-            memberEmail += emails[i].email;
-            memberEmail += ";";
+        // const emails= this.membersInfo[this.index].members
+        if(!this.isEmpty(this.membersInfo)){
+          var length = this.getJsonLength(this.membersInfo);
+          var  memberEmail =  this.membersInfo[0].email+";";
+          for (var i = 1; i < length; i++) { 
+              memberEmail += this.membersInfo[i].email;
+              memberEmail += ";";
+          }
+          const url = "mailto:"+memberEmail+"?subject="+this.subject+"&body="+this.body
+          return url
         }
-        const url = "mailto:"+memberEmail+"?subject="+this.subject+"&body="+this.body
-        return url
       },
       
       getJsonLength(jsonData){
@@ -120,6 +97,13 @@ export default {
       empty(){
         this.subject= '';
         this.body='';
+      },
+      isEmpty(array){
+        if(this.getJsonLength(array)==0){
+          return true
+        }else{
+          return false
+        }
       }
     }
 }
