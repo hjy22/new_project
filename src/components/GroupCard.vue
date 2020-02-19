@@ -1,16 +1,16 @@
 <template>
   <v-row justify="center">
     <v-col >
-      <v-card> 
+      <v-card v-if="!isEmpty(group[index])"> 
 
-        <v-list>
+        <v-list >
           <v-list-item>
             <v-list-item-action>
               <v-icon>mdi-account-tie</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title>{{group[index].leader}}</v-list-item-title>
+              <v-list-item-title >{{group[index].leader}}</v-list-item-title>
               <v-list-item-subtitle>{{group[index].email}}</v-list-item-subtitle>
             </v-list-item-content>
 
@@ -52,12 +52,28 @@
       // 本地json获取商品数据
      getMemberInfo() {
         axios.get('../static/COMP107.json').then(response => {
-            // console.log(response.data.cc);
+            
             this.group = response.data;
+            // console.log(this.group[0].name);
         }, response => {
             // console.log("error");
         });
     },
-    }
+    isEmpty(array){
+        if(this.getJsonLength(array)==0){
+          return true
+        }else{
+          return false
+        }
+      },
+      getJsonLength(jsonData){
+          var jsonLength = 0;
+          for(var item in jsonData){
+            jsonLength++;
+          }
+          return jsonLength;
+      },   
+    },
+    
   }
 </script>

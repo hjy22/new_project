@@ -1,4 +1,5 @@
 <template>
+<v-container>
   <div class="text-center">
     <v-dialog
       v-model="dialog"
@@ -25,14 +26,13 @@
         </v-card-title>
 
         <v-card-text>
-          You are sending emails to Team {{index}} with 
+          You are sending emails to Team {{index+1}} with {{name()}}
         </v-card-text>
 
         <v-divider></v-divider>
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" text @click="empty()">Reset</v-btn>
           <v-btn color="green darken-1" text @click="dialog = false">Cancel</v-btn>
           <v-btn
             color="primary"
@@ -46,6 +46,7 @@
       </v-card>
     </v-dialog>
   </div>
+</v-container>
 </template>
 
 <script>
@@ -93,16 +94,23 @@ export default {
             jsonLength++;
           }
           return jsonLength;
-      },   
-      empty(){
-        this.subject= '';
-        this.body='';
       },
       isEmpty(array){
         if(this.getJsonLength(array)==0){
           return true
         }else{
           return false
+        }
+      },
+      name(){
+        if(!this.isEmpty(this.membersInfo)){
+          var length = this.getJsonLength(this.membersInfo);
+          var  memberName =  this.membersInfo[0].name;
+          for (var i = 1; i < length; i++) { 
+              memberName += ", "; 
+              memberName += this.membersInfo[i].name;
+          }
+          return memberName;
         }
       }
     }

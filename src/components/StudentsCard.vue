@@ -62,16 +62,16 @@
               </h3>
               <div class="blue--text subheading font-weight-bold">{{ selected.groupID }}</div>
             </v-card-text>
-            <v-divider></v-divider>
-            <v-row>
-              <!-- <v-col> -->
-                <!-- <GroupCard :index="selected.id-1"/> -->
-              <!-- </v-col> -->
-              
-            </v-row>
+            <v-divider/>
             <v-row>
                 <EmailDialog :index="selected.id-1"/>
               </v-row>
+              <v-row>
+                <LecturerRoomCard :index="selected.id-1"/>
+              </v-row>
+            <v-row>
+                <GroupCard :index="selected.id-1"/>
+            </v-row>
           </v-card>
         </v-scroll-y-transition>
       </v-col>
@@ -82,6 +82,7 @@
 <script>
   import GroupCard from "../components/GroupCard";
   import EmailDialog from "../components/EmailDialog";
+  import LecturerRoomCard from "../components/LecturerRoomCard";
 
   const avatars = [
     '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
@@ -103,7 +104,8 @@
     }),
     components:{
       GroupCard,
-      EmailDialog
+      EmailDialog,
+      LecturerRoomCard
     },
 
     computed: {
