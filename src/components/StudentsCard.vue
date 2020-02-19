@@ -61,6 +61,7 @@
                 {{ selected.name }}
               </h3>
               <div class="blue--text subheading font-weight-bold">{{ selected.groupID }}</div>
+              <div>Marker: {{ selected.marker }}</div>
             </v-card-text>
             <v-divider/>
             <v-row>
