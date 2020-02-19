@@ -1,5 +1,5 @@
 <template>
-<v-container>
+<!-- <v-container> -->
   <div class="text-center">
     <v-dialog
       v-model="dialog"
@@ -46,7 +46,7 @@
       </v-card>
     </v-dialog>
   </div>
-</v-container>
+<!-- </v-container> -->
 </template>
 
 <script>

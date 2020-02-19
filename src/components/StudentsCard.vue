@@ -65,8 +65,17 @@
             </v-card-text>
             <v-divider/>
             <v-row>
+              <v-col>
                 <EmailDialog :index="selected.id-1"/>
+                </v-col>
+                  <v-col>
+                    <ViewPDF />
+                    </v-col>
               </v-row>
+              <!-- <v-row>
+                <ViewPDF />
+              </v-row> -->
+              
               <v-row>
                 <LecturerRoomCard :index="selected.id-1"/>
               </v-row>
@@ -84,6 +93,7 @@
   import GroupCard from "../components/GroupCard";
   import EmailDialog from "../components/EmailDialog";
   import LecturerRoomCard from "../components/LecturerRoomCard";
+  import ViewPDF from "../components/ViewPDF";
 
   const avatars = [
     '?accessoriesType=Blank&avatarStyle=Circle&clotheColor=PastelGreen&clotheType=ShirtScoopNeck&eyeType=Wink&eyebrowType=UnibrowNatural&facialHairColor=Black&facialHairType=MoustacheMagnum&hairColor=Platinum&mouthType=Concerned&skinColor=Tanned&topType=Turban',
@@ -106,7 +116,8 @@
     components:{
       GroupCard,
       EmailDialog,
-      LecturerRoomCard
+      LecturerRoomCard,
+      ViewPDF
     },
 
     computed: {
