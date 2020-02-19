@@ -96,8 +96,10 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data: () => ({
+    teamEvents:[],
     focus: '',
     type: 'month',
     typeToLabel: {
@@ -106,41 +108,43 @@ export default {
       day: 'Day',
       '4day': '4 Days',
     },
+    today:null,
     start: null,
     end: null,
     selectedEvent: {},
     selectedElement: null,
     selectedOpen: false,
-    events: [
-        {
-          name: 'Group2 Presentation',
-          start: '2020-02-07 09:00',
-          end: '2020-02-07 10:00',
-          details:'Leader',
-          color:"primary"
-        },
-        {
-          name: 'Group10 Presentation',
-          start: '2020-02-10 09:00',
-          end: '2020-02-10 10:00',
-          details:'Leader',
-          color:"primary"
-        },
-        {
-          name: 'Group3 Presentation',
-          start: '2020-02-09 12:30',
-          end: '2020-02-09 15:30',
-          details:'Leader',
-          color:"primary"
-        },
-        {
-          name: 'Deadline',
-          start: '2020-02-28 17:00',
-          end: '2020-02-28 17:00',
-          details:'aaa',
-          color:"red"
-        },
-      ],
+    events:[],
+    // events: [
+    //     {
+    //       name: 'Group2 Presentation',
+    //       start: '2020-02-07 09:00',
+    //       end: '2020-02-07 10:00',
+    //       details:'Leader',
+    //       color:"primary"
+    //     },
+    //     {
+    //       name: 'Group10 Presentation',
+    //       start: '2020-02-10 09:00',
+    //       end: '2020-02-10 10:00',
+    //       details:'Leader',
+    //       color:"primary"
+    //     },
+    //     {
+    //       name: 'Group3 Presentation',
+    //       start: '2020-02-09 12:30',
+    //       end: '2020-02-09 15:30',
+    //       details:'Leader',
+    //       color:"primary"
+    //     },
+    //     {
+    //       name: 'Deadline',
+    //       start: '2020-02-28 17:00',
+    //       end: '2020-02-28 17:00',
+    //       details:'aaa',
+    //       color:"red"
+    //     },
+    //   ],
     // colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
     // names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
   }),
@@ -179,10 +183,64 @@ export default {
       })
     },
   },
+  created () {
+      // if(!this.isEmpty(this.teamEvents)){
+        this.getEventsInfo() // 本地JSON
+        // this.getEvents()
+      // }
+    },
   mounted () {
     this.$refs.calendar.checkChange()
   },
   methods: {
+    getEventsInfo() {
+      axios.get('../static/COMP107.json').then(response => {
+          this.teamEvents = response.data;
+          // console.log(this.teamEvents)
+          this.setDDL()
+          this.getEvents()
+      }, response => {
+          console.log("error");
+      });
+    },
+    isEmpty(array){
+        if(this.getJsonLength(array)==0){
+          return true
+        }else{
+          return false
+        }
+      },
+    getJsonLength(jsonData){
+      var jsonLength = 0;
+      for(var item in jsonData){
+        jsonLength++;
+      }
+      return jsonLength;
+    },
+    getEvents() {
+      var teamLength = this.getJsonLength(this.teamEvents);
+      for (let i = 0; i < teamLength; i++) {
+      var membersLength = this.getJsonLength(this.teamEvents[i].members);
+      var membersDetail = this.teamEvents[i].leader
+        for(let j =0; j < membersLength ; j++){
+          membersDetail += ", "+this.teamEvents[i].members[j].name
+        }
+        console.log(membersDetail)
+        this.events.push({
+          name: this.teamEvents[i].name+" Presentation",
+          start: this.teamEvents[i].time,
+          details: membersDetail,
+          color: "primary",
+        })
+      }
+    },
+    setDDL(){
+      this.events.push({
+          name: "Deadline",
+          start: "2020-02-28 17:00",
+          color: "red",
+        })
+    },
     viewDay ({ date }) {
       this.focus = date
       this.type = 'day'
@@ -215,41 +273,6 @@ export default {
 
       nativeEvent.stopPropagation()
     },
-    // updateRange ({ start, end }) {
-    //   const events = []
-
-    //   const min = new Date(`${start.date}T00:00:00`)
-    //   const max = new Date(`${end.date}T23:59:59`)
-    //   const days = (max.getTime() - min.getTime()) / 86400000
-    //   const eventCount = this.rnd(days, days + 20)
-
-    //   for (let i = 0; i < eventCount; i++) {
-    //     const allDay = this.rnd(0, 3) === 0
-    //     const firstTimestamp = this.rnd(min.getTime(), max.getTime())
-    //     const first = new Date(firstTimestamp - (firstTimestamp % 900000))
-    //     const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
-    //     const second = new Date(first.getTime() + secondTimestamp)
-
-    //     events.push({
-    //       name: this.names[this.rnd(0, this.names.length - 1)],
-    //       start: this.formatDate(first, !allDay),
-    //       end: this.formatDate(second, !allDay),
-    //       color: this.colors[this.rnd(0, this.colors.length - 1)],
-    //     })
-    //   }
-
-    //   this.start = start
-    //   this.end = end
-    //   this.events = events
-    // },
-    // nth (d) {
-    //   return d > 3 && d < 21
-    //     ? 'th'
-    //     : ['th', 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th'][d % 10]
-    // },
-    // rnd (a, b) {
-    //   return Math.floor((b - a + 1) * Math.random()) + a
-    // },
     formatDate (a, withTime) {
       return withTime
         ? `${a.getFullYear()}-${a.getMonth() + 1}-${a.getDate()} ${a.getHours()}:${a.getMinutes()}`
