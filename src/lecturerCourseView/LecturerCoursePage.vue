@@ -3,11 +3,12 @@
     <v-content>
     <LecturerMenu/>
     <v-container>
-    <LecturerTimeline/>
-    <v-divider/>
+    <!-- <LecturerTimeline/> -->
+    <!-- <v-divider/> -->
       <v-flex v-for="(course, id) in getLecturerHomePageCourseList" :key="id">
         <LecturerCourseCard :courseCode="course.code" :courseName="course.name"/>
       </v-flex>
+      
     </v-container>
     <BackTop/>
     <Footer/>

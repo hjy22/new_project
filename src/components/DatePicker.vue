@@ -1,6 +1,6 @@
 <template>
-    <div id="app">
-    <v-app id="inspire">
+    <!-- <div id="app"> -->
+    <!-- <v-app id="inspire"> -->
         <v-row>
         <v-spacer></v-spacer>
         <v-col cols="12" sm="6" md="4">
@@ -34,8 +34,8 @@
         
         <v-spacer></v-spacer>
         </v-row>
-    </v-app>
-    </div>
+    <!-- </v-app> -->
+    <!-- </div> -->
 </template>
 
 <script>
