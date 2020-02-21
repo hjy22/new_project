@@ -1,0 +1,53 @@
+{
+    "checkBox":[
+    {
+        "name":"Organisation",
+        "detail":"Presented information in logical",
+        "modelName": "organisation"
+    },
+    {
+        "name":"Content",
+        "detail":"Understanding of the product",
+        "modelName": "content"
+    },
+    {
+        "name":"Presentation",
+        "detail":"Visuals effectively reinforced",
+        "modelName": "presentation"
+    },
+    {
+        "name":"Engagement with audience",
+        "detail":"Eye contact",
+        "modelName": "engagement"
+    },
+    {
+        "name":"Delivery",
+        "detail":"Clear voice",
+        "modelName": "delivery"
+    },
+    {
+        "name":"Pace",
+        "detail":"Time keeping and turn taking",
+        "modelName": "pace"
+    },
+    {
+        "name":"Q&A",
+        "detail":"Questions answering",
+        "modelName": "question"
+    }
+  ],
+  "textField":[
+    {
+        "label":"Summarise briefly the question you asked",
+        "modelName": "QA"
+    },
+    {
+        "label":"Add any general feedback you want to send the group",
+        "modelName": "feedback"
+    },
+    {
+        "label":"Please add any further comments for the lecturer",
+        "modelName": "comment"
+    }
+  ]
+}
