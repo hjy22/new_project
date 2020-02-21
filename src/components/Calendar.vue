@@ -225,7 +225,7 @@ export default {
         for(let j =0; j < membersLength ; j++){
           membersDetail += ", "+this.teamEvents[i].members[j].name
         }
-        console.log(membersDetail)
+        // console.log(membersDetail)
         this.events.push({
           name: this.teamEvents[i].name+" Presentation",
           start: this.teamEvents[i].time,

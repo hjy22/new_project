@@ -14,7 +14,7 @@
             <template v-slot:activator="{ on }">
                 <v-text-field
                 v-model="date"
-                label="Picker in dialog"
+                label="Pick deadline"
                 readonly
                 v-on="on"
                 ></v-text-field>
@@ -26,10 +26,10 @@
             </v-date-picker>
             
             </v-dialog>
-            <v-file-input accept="PDF/*" label="Upload Assignment Detail File"></v-file-input>
+            <!-- <v-file-input accept="PDF/*" label="Upload Assignment Detail File"></v-file-input>
             <v-btn class="ma-2" color="primary" dark>Upload
                 <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
-            </v-btn>
+            </v-btn> -->
         </v-col>
         
         <v-spacer></v-spacer>

@@ -12,7 +12,12 @@
   "dependencies": {
     "@mdi/font": "^4.8.95",
     "axios": "^0.19.2",
+    "docxtemplater": "^3.16.11",
+    "file-saver": "^2.0.2",
+    "jszip": "^3.2.2",
+    "jszip-utils": "^0.1.0",
     "npm": "^6.13.6",
+    "pizzip": "^3.0.6",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-pdf": "^4.0.7",
