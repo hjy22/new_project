@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import vuetify from '@/plugins/vuetify'
-import router from '../router'
-import store from '../store'
+import router from '../../router'
+import store from '../../store'
 import LecturerFeedbackPage from './LecturerFeedbackPage.vue'
 
 Vue.config.productionTip = false

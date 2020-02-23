@@ -22,12 +22,12 @@
 
 <script>
 import { mapGetters } from "vuex";
-import LecturerMenu from "../components/LecturerMenu";
-import Calendar from "../components/Calendar";
+import LecturerMenu from "@/components/LecturerMenu";
+import Calendar from "@/components/Calendar";
 // import FeedbackList from "../components/FeedbackList";
-import Footer from "../components/Footer";
+import Footer from "@/components/Footer";
 // import FeedbackChips from "../components/FeedbackChips";
-import BackTop from "../components/BackTop";
+import BackTop from "@/components/BackTop";
 
 export default {
   name: 'LecturerFeedbackPage',

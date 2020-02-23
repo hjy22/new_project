@@ -59,25 +59,25 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     }),
     new HtmlWebpackPlugin({
       filename: 'LecturerFeedbackPage.html',
-      template: 'src/lecturerFeedbackView/LecturerFeedbackPage.html',
+      template: 'src/view/lecturerFeedbackView/LecturerFeedbackPage.html',
       inject: true,
       chunks: ['LecturerFeedbackPage']
     }),
     new HtmlWebpackPlugin({
       filename: 'LecturerCoursePage.html',
-      template: 'src/lecturerCourseView/LecturerCoursePage.html',
+      template: 'src/view/lecturerCourseView/LecturerCoursePage.html',
       inject: true,
       chunks: ['LecturerCoursePage']
     }),
     new HtmlWebpackPlugin({
       filename: 'LecturerInfoPage.html',
-      template: 'src/LecturerInfoView/LecturerInfoPage.html',
+      template: 'src/view/LecturerInfoView/LecturerInfoPage.html',
       inject: true,
       chunks: ['LecturerInfoPage']
     }),
     new HtmlWebpackPlugin({
       filename: 'StudentHomePage.html',
-      template: 'src/studentHomeView/StudentHomePage.html',
+      template: 'src/view/studentHomeView/StudentHomePage.html',
       inject: true,
       chunks: ['StudentHomePage']
     }),

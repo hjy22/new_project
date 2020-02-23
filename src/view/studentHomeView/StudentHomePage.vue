@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import StudentMenu from "../components/StudentMenu";
-import Footer from "../components/Footer";
+import StudentMenu from "@/components/StudentMenu";
+import Footer from "@/components/Footer";
 
 export default {
   name: 'StudentHomePage',

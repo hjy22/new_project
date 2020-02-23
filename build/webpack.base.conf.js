@@ -14,10 +14,10 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js',
-    LecturerFeedbackPage: './src/lecturerFeedbackView/LecturerFeedbackPage.js',
-    LecturerCoursePage: './src/lecturerCourseView/LecturerCoursePage.js',
-    LecturerInfoPage: './src/LecturerInfoView/LecturerInfoPage.js',
-    StudentHomePage: './src/studentHomeView/StudentHomePage.js',
+    LecturerFeedbackPage: './src/view/lecturerFeedbackView/LecturerFeedbackPage.js',
+    LecturerCoursePage: './src/view/lecturerCourseView/LecturerCoursePage.js',
+    LecturerInfoPage: './src/view/LecturerInfoView/LecturerInfoPage.js',
+    StudentHomePage: './src/view/studentHomeView/StudentHomePage.js',
   },
   output: {
     path: config.build.assetsRoot,

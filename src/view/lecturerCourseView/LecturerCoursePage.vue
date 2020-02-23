@@ -18,11 +18,11 @@
 
 <script>
 import { mapGetters } from "vuex";
-import LecturerMenu from "../components/LecturerMenu";
-import LecturerTimeline from "../components/LecturerTimeline";
-import LecturerCourseCard from "../components/LecturerCourseCard";
-import BackTop from "../components/BackTop";
-import Footer from "../components/Footer";
+import LecturerMenu from "@/components/LecturerMenu";
+import LecturerTimeline from "@/components/LecturerTimeline";
+import LecturerCourseCard from "@/components/LecturerCourseCard";
+import BackTop from "@/components/BackTop";
+import Footer from "@/components/Footer";
 
 export default {
   name: 'LecturerCoursePage',
