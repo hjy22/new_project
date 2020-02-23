@@ -32,8 +32,8 @@
         Lecturer
       </v-chip>
 
-        <v-btn a href="StudentHomePage.html" icon>
-          <v-icon>mdi-account-convert</v-icon>
+        <v-btn a href="index.html" icon>
+          <v-icon>mdi-account-switch</v-icon>
         </v-btn>
       </v-toolbar>
     </v-card>
