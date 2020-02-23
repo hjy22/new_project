@@ -1,8 +1,8 @@
 <template>
 <v-app>
   <!-- <div id="app"> -->
-    <!-- <Menu/> -->
-    <router-view/>
+    <LecturerMenu/>
+    <!-- <router-view/> -->
     <!-- <Footer/> -->
   <!-- </div> -->
   </v-app>
@@ -10,13 +10,13 @@
 </template>
 
 <script>
-// import LecturerMenu from "./components/LecturerMenu";
+import LecturerMenu from "./components/LecturerMenu";
 import Footer from "./components/Footer";
 export default {
   name: 'App',
   components:{
     Footer,
-    // Menu
+    LecturerMenu
   }
 }
 </script>

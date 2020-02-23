@@ -14,6 +14,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js',
+    LecturerHomePage: './src/view/lecturerHomeView/LecturerHomePage.js',
     LecturerFeedbackPage: './src/view/lecturerFeedbackView/LecturerFeedbackPage.js',
     LecturerCoursePage: './src/view/lecturerCourseView/LecturerCoursePage.js',
     LecturerInfoPage: './src/view/LecturerInfoView/LecturerInfoPage.js',

@@ -6,8 +6,8 @@ import vuetify from '@/plugins/vuetify'
 import App from './App'
 import router from './router'
 import store from './store'
-import axios from 'axios' // 本地JSON
-import VueAxios from 'vue-axios' // 本地JSON
+import axios from 'axios' 
+import VueAxios from 'vue-axios'
 
 Vue.config.productionTip = false
 

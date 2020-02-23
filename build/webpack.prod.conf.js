@@ -76,6 +76,18 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunks: ['manifest', 'vendor', 'index']
     }),
     new HtmlWebpackPlugin({
+      filename: config.build.LecturerHomePage,
+      template: 'LecturerHomePage.html',
+      inject: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true
+      },
+      chunksSortMode: 'dependency',
+      chunks: ['manifest', 'vendor', 'LecturerHomePage']
+    }),
+    new HtmlWebpackPlugin({
       filename: config.build.LecturerFeedbackPage,
       template: 'LecturerFeedbackPage.html',
       inject: true,
