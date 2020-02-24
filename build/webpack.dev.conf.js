@@ -64,10 +64,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       chunks: ['LecturerHomePage']
     }),
     new HtmlWebpackPlugin({
-      filename: 'LecturerFeedbackPage.html',
-      template: 'src/view/lecturerFeedbackView/LecturerFeedbackPage.html',
+      filename: 'LecturerCalendarPage.html',
+      template: 'src/view/lecturerCalendarView/LecturerCalendarPage.html',
       inject: true,
-      chunks: ['LecturerFeedbackPage']
+      chunks: ['LecturerCalendarPage']
     }),
     new HtmlWebpackPlugin({
       filename: 'LecturerCoursePage.html',

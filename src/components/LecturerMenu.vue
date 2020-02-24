@@ -13,7 +13,7 @@
         <v-spacer/>
         <v-btn a href="LecturerHomePage.html" text>HOME</v-btn>
         <v-spacer/>
-        <v-btn a href="LecturerFeedbackPage.html" text>Calendar</v-btn>
+        <v-btn a href="LecturerCalendarPage.html" text>Calendar</v-btn>
         <v-spacer/>
         <v-btn a href="LecturerCoursePage.html" text>COURSE</v-btn>
          <v-spacer/>

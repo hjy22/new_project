@@ -88,8 +88,8 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunks: ['manifest', 'vendor', 'LecturerHomePage']
     }),
     new HtmlWebpackPlugin({
-      filename: config.build.LecturerFeedbackPage,
-      template: 'LecturerFeedbackPage.html',
+      filename: config.build.LecturerCalendarPage,
+      template: 'LecturerCalendarPage.html',
       inject: true,
       minify: {
         removeComments: true,
@@ -97,7 +97,7 @@ const webpackConfig = merge(baseWebpackConfig, {
         removeAttributeQuotes: true
       },
       chunksSortMode: 'dependency',
-      chunks: ['manifest', 'vendor', 'LecturerFeedbackPage']
+      chunks: ['manifest', 'vendor', 'LecturerCalendarPage']
     }),
     new HtmlWebpackPlugin({
       filename: config.build.LecturerCoursePage,

@@ -12,9 +12,9 @@ export default new Router({
     //   component: LecturerHomePage
     // },
     {
-      path: '/LecturerFeedbackPage',
-      name: 'LecturerFeedbackPage',
-      component: () => import('@/view/lecturerFeedbackView/LecturerFeedbackPage.vue'),
+      path: '/LecturerCalendarPage',
+      name: 'LecturerCalendarPage',
+      component: () => import('@/view/lecturerCalendarView/LecturerCalendarPage.vue'),
     },
   ]
 })
