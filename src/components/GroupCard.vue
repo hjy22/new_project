@@ -1,16 +1,17 @@
 <template>
+<v-container>
   <v-row justify="center">
     <v-col >
-      <v-card v-if="!isEmpty(group[index])"> 
+      <v-card max-width="344" v-if="!isEmpty(group[index])"> 
 
-        <v-list >
+        <v-list>
           <v-list-item>
             <v-list-item-action>
               <v-icon>mdi-account-tie</v-icon>
             </v-list-item-action>
 
             <v-list-item-content>
-              <v-list-item-title >{{group[index].leader}}</v-list-item-title>
+              <v-list-item-title>{{group[index].leader}}</v-list-item-title>
               <v-list-item-subtitle>{{group[index].email}}</v-list-item-subtitle>
             </v-list-item-content>
 
@@ -31,6 +32,7 @@
       </v-card>
     </v-col>
   </v-row>
+</v-container>
 </template>
 
 
