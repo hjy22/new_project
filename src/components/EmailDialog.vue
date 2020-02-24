@@ -52,11 +52,12 @@
 <script>
 import axios from 'axios'
 export default {
-  props:['index'],
+  props:['index','containsLeader'],
     data(){
       return{
         dialog: false,
         membersInfo: [],
+        leaderInfo:[],
       }
     },
     created () {
@@ -66,6 +67,7 @@ export default {
        getMemberInfo() {
         axios.get('../static/COMP107.json').then(response => {
             this.membersInfo = response.data[this.index].members;
+            this.leaderInfo = response.data[this.index];
         }, response => {
             // console.log("error");
         });
@@ -82,6 +84,9 @@ export default {
           for (var i = 1; i < length; i++) { 
               memberEmail += this.membersInfo[i].email;
               memberEmail += ";";
+          }
+          if(this.containsLeader){
+            memberEmail += this.leaderInfo.email
           }
           const url = "mailto:"+memberEmail+"?subject="+this.subject+"&body="+this.body
           return url
@@ -109,6 +114,9 @@ export default {
           for (var i = 1; i < length; i++) { 
               memberName += ", "; 
               memberName += this.membersInfo[i].name;
+          }
+          if(this.containsLeader){
+            memberName += ", "+this.leaderInfo.leader+"(leader)"
           }
           return memberName;
         }

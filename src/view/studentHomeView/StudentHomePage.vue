@@ -9,9 +9,10 @@
     <v-row
       justify='center'
     >
-    <v-flex md4>
+    <v-flex md3>
     
       <GroupCard index="0"/>
+      <EmailDialog index="0" :containsLeader="false"/>
       </v-flex>
     </v-row>
     <!-- </v-flex> -->
@@ -27,6 +28,7 @@
 import axios from 'axios'
 import StudentMenu from "@/components/StudentMenu";
 import GroupCard from "@/components/GroupCard";
+import EmailDialog from "@/components/EmailDialog";
 import InfoCard from "@/components/InfoCard";
 import Footer from "@/components/Footer";
 
@@ -37,6 +39,7 @@ export default {
     Footer,
     InfoCard,
     GroupCard,
+    EmailDialog,
   },
   data () {
       return {

@@ -66,7 +66,7 @@
             <v-divider/>
             <v-row>
               <v-col>
-                <EmailDialog :index="selected.id-1"/>
+                <EmailDialog :index="selected.id-1" :containsLeader="true"/>
                 </v-col>
                   <v-col>
                     <ViewPDF />
