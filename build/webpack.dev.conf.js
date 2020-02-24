@@ -57,36 +57,6 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true,
     }),
-    new HtmlWebpackPlugin({
-      filename: 'LecturerHomePage.html',
-      template: 'src/view/lecturerHomeView/LecturerHomePage.html',
-      inject: true,
-      chunks: ['LecturerHomePage']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'LecturerCalendarPage.html',
-      template: 'src/view/lecturerCalendarView/LecturerCalendarPage.html',
-      inject: true,
-      chunks: ['LecturerCalendarPage']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'LecturerCoursePage.html',
-      template: 'src/view/lecturerCourseView/LecturerCoursePage.html',
-      inject: true,
-      chunks: ['LecturerCoursePage']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'LecturerInfoPage.html',
-      template: 'src/view/LecturerInfoView/LecturerInfoPage.html',
-      inject: true,
-      chunks: ['LecturerInfoPage']
-    }),
-    new HtmlWebpackPlugin({
-      filename: 'StudentHomePage.html',
-      template: 'src/view/studentHomeView/StudentHomePage.html',
-      inject: true,
-      chunks: ['StudentHomePage']
-    }),
     // copy custom static assets
     new CopyWebpackPlugin([
       {

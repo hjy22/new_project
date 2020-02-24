@@ -16,7 +16,8 @@
         <AssignCard :code="course.code" :name="course.name" :ddl="course.ddl" offset-sm5/>
       </v-col>
     </v-row>
-    <Footer/>
+    <!-- <p>aaa</p> -->
+    <!-- <Footer/> -->
   </v-content>
  </v-app>
 </template>
@@ -29,7 +30,6 @@ import AssignCard from "@/components/AssignCard";
 import Footer from "@/components/Footer";
 
 export default {
-  name: 'HomePage',
   data () {
     return {
     }

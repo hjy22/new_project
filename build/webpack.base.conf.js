@@ -14,11 +14,6 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js',
-    LecturerHomePage: './src/view/lecturerHomeView/LecturerHomePage.js',
-    LecturerCalendarPage: './src/view/lecturerCalendarView/LecturerCalendarPage.js',
-    LecturerCoursePage: './src/view/lecturerCourseView/LecturerCoursePage.js',
-    LecturerInfoPage: './src/view/LecturerInfoView/LecturerInfoPage.js',
-    StudentHomePage: './src/view/studentHomeView/StudentHomePage.js',
   },
   output: {
     path: config.build.assetsRoot,

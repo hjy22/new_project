@@ -88,7 +88,7 @@ export default {
           if(this.containsLeader){
             memberEmail += this.leaderInfo.email
           }
-          const url = "mailto:"+memberEmail+"?subject="+this.subject+"&body="+this.body
+          const url = "mailto:"+memberEmail
           return url
         }
       },

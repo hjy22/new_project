@@ -8,8 +8,8 @@
       <!-- </v-container> -->
     <!-- <StudentsCard/> -->
     </v-container>
-    <BackTop/>
-    <Footer/>
+    <!-- <BackTop/>
+    <Footer/> -->
     </v-content>
   </v-app>
 </template>
@@ -22,7 +22,6 @@ import BackTop from "@/components/BackTop";
 import Footer from "@/components/Footer";
 
 export default {
-  name: 'LecturerInfoPage',
   components: {
     LecturerMenu,
     StudentsCard,

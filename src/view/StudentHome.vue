@@ -19,7 +19,7 @@
     </v-container>
   <!-- </v-container> -->
 <!-- <h1>aaaaaaaa</h1> -->
-<Footer/>
+<!-- <Footer/> -->
 </v-content>
 </v-app>
 </template>
@@ -33,7 +33,6 @@ import InfoCard from "@/components/InfoCard";
 import Footer from "@/components/Footer";
 
 export default {
-  name: 'StudentHomePage',
   components: {
     StudentMenu,
     Footer,

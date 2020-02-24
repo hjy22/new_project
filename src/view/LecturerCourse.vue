@@ -10,7 +10,7 @@
       </v-flex>
       
     </v-container>
-    <BackTop/>
+    <!-- <BackTop/> -->
     <!-- <Footer/> -->
     </v-content>
   </v-app>
@@ -25,7 +25,6 @@ import BackTop from "@/components/BackTop";
 import Footer from "@/components/Footer";
 
 export default {
-  name: 'LecturerCoursePage',
   components: {
     LecturerMenu,
     LecturerTimeline,

@@ -56,7 +56,7 @@
             <v-chip
                 class="mr-2"
             >
-            <v-btn a href="LecturerHomePage.html" text><v-icon left >mdi-check</v-icon>
+            <v-btn @click="jump('LecturerHome')" text><v-icon left >mdi-check</v-icon>
                 Submit</v-btn>
                 
             </v-chip>
@@ -95,7 +95,7 @@
             <v-chip
                 class="mr-2"
             >
-                <v-btn a href="StudentHomePage.html" text><v-icon left >mdi-check</v-icon>
+                <v-btn @click="jump('StudentHome')" text><v-icon left >mdi-check</v-icon>
                 Submit</v-btn>
             </v-chip>
             </v-card-text>
@@ -114,6 +114,14 @@
       return {
         tabs: null,
       }
+    },
+    methods: {
+      jump(name) {
+      // this.$store.dispatch("toggleUserView",{status: name});
+      this.$router.push(name);
+      // update state in Vuex
+      
+    },
     },
   }
 </script>

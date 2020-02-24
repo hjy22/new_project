@@ -75,66 +75,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       chunksSortMode: 'dependency',
       chunks: ['manifest', 'vendor', 'index']
     }),
-    new HtmlWebpackPlugin({
-      filename: config.build.LecturerHomePage,
-      template: 'LecturerHomePage.html',
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-      },
-      chunksSortMode: 'dependency',
-      chunks: ['manifest', 'vendor', 'LecturerHomePage']
-    }),
-    new HtmlWebpackPlugin({
-      filename: config.build.LecturerCalendarPage,
-      template: 'LecturerCalendarPage.html',
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-      },
-      chunksSortMode: 'dependency',
-      chunks: ['manifest', 'vendor', 'LecturerCalendarPage']
-    }),
-    new HtmlWebpackPlugin({
-      filename: config.build.LecturerCoursePage,
-      template: 'LecturerCoursePage.html',
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-      },
-      chunksSortMode: 'dependency',
-      chunks: ['manifest', 'vendor', 'LecturerCoursePage']
-    }),
-    new HtmlWebpackPlugin({
-      filename: config.build.LecturerInfoPage,
-      template: 'LecturerInfoPage.html',
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-      },
-      chunksSortMode: 'dependency',
-      chunks: ['manifest', 'vendor', 'LecturerInfoPage']
-    }),
-    new HtmlWebpackPlugin({
-      filename: config.build.StudentHomePage,
-      template: 'StudentHomePage.html',
-      inject: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true,
-        removeAttributeQuotes: true
-      },
-      chunksSortMode: 'dependency',
-      chunks: ['manifest', 'vendor', 'StudentHomePage']
-    }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting

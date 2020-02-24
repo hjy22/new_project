@@ -12,8 +12,8 @@
     <Calendar/>
     <!-- <c/> -->
     </v-container>
-    <BackTop/>
-  <Footer />
+    <!-- <BackTop/> -->
+  <!-- <Footer /> -->
 </v-content>
 
 </v-app>
@@ -30,7 +30,6 @@ import Footer from "@/components/Footer";
 import BackTop from "@/components/BackTop";
 
 export default {
-  name: 'LecturerCalendarPage',
   components: {
     LecturerMenu,
     Calendar,
