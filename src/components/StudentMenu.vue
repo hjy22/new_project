@@ -11,11 +11,11 @@
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome','Student')" text>HOME</v-btn>
+        <v-btn @click="jump('LecturerHome','Student','HOME')" text>HOME</v-btn>
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome','Student')" text>FEEDBACK</v-btn>
+        <v-btn @click="jump('LecturerHome','Student','FEEDBACK')" text>FEEDBACK</v-btn>
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome','Student')" text>COURSE</v-btn>
+        <v-btn @click="jump('LecturerHome','Student','COURSE')" text>COURSE</v-btn>
          <v-spacer/>
         <v-btn text>Button</v-btn>
   
@@ -32,7 +32,7 @@
     </v-chip>
   
 
-        <v-btn @click="jump('chooseUser','Chosen')" icon>
+        <v-btn @click="jump('chooseUser','Chosen','CHOSEN')" icon>
           <v-icon>mdi-account-switch</v-icon>
         </v-btn>
       </v-toolbar>
@@ -44,10 +44,10 @@
 <script>
 export default {
   methods: {
-    jump(name,indentity) {
-      this.$store.dispatch("toggleUserIdentity",{status: indentity});
-      this.$router.push(name);
-      // update state in Vuex
+    jump(page,identity,name) {
+      this.$store.dispatch("toggleUserIdentity", { status: identity });
+      this.$store.dispatch("toggleUserView",{status: name});
+      this.$router.push(page);
     },
     },
 }

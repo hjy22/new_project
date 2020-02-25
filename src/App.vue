@@ -1,6 +1,7 @@
 <template>
 <v-app>
   <!-- <div id="app"> -->
+    <PhoneHeader class="hidden-md-and-up"/>
     <Menu class="hidden-sm-and-down"/>
     <!-- <LecturerMenu/> -->
     <!-- <IdentityChosen/> -->
@@ -20,6 +21,7 @@
 import Menu from "./components/Menu";
 import LecturerMenu from "./components/LecturerMenu";
 import PhoneMenu from "./components/PhoneMenu";
+import PhoneHeader from "./components/PhoneHeader";
 import IdentityChosen from "./components/IdentityChosen";
 import Footer from "./components/Footer";
 import BackTop from "./components/BackTop";
@@ -28,6 +30,7 @@ export default {
   components:{
     Menu,
     Footer,
+    PhoneHeader,
     BackTop,
     LecturerMenu,
     PhoneMenu,

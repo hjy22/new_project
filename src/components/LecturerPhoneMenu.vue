@@ -5,22 +5,22 @@
     fixed
     color="teal"
   >
-    <v-btn @click="jump('LecturerHome','Lecturer')">
+    <v-btn @click="jump('LecturerHome','Lecturer','HOME')">
       <span>Home</span>
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn @click="jump('LecturerCalendar','Lecturer')">
+    <v-btn @click="jump('LecturerCalendar','Lecturer','CALENDAR')">
       <span>Calendar</span>
       <v-icon>mdi-calendar-text</v-icon>
     </v-btn>
 
-    <v-btn @click="jump('LecturerCourse','Lecturer')">
+    <v-btn @click="jump('LecturerCourse','Lecturer','COURSE')">
       <span>Course</span>
       <v-icon>mdi-book-open</v-icon>
     </v-btn>
 
-    <v-btn @click="jump('LecturerInfo','Lecturer')">
+    <v-btn @click="jump('LecturerInfo','Lecturer','INFO')">
       <span>Info</span>
       <v-icon>mdi-account-box-multiple</v-icon>
     </v-btn>
@@ -29,19 +29,23 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
   export default {
     data () {
       return {
-        activeBtn: 1,
+        activeBtn: 0,
       }
     },
     methods: {
-    jump(name,indentity) {
-      this.$store.dispatch("toggleUserView",{status: indentity});
-      this.$router.push(name);
-      // update state in Vuex
+    jump(page,identity,name) {
+      this.$store.dispatch("toggleUserIdentity", { status: identity });
+      this.$store.dispatch("toggleUserView",{status: name});
+      this.$router.push(page);
     },
     },
+    computed: {
+    ...mapGetters(["getCurrentIdentity"])
+  }
 
   }
 </script>

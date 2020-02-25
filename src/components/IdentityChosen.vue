@@ -56,7 +56,7 @@
             <v-chip
                 class="mr-2"
             >
-            <v-btn @click="jump('LecturerHome','Lecturer')" text><v-icon >mdi-check</v-icon>
+            <v-btn @click="jump('LecturerHome','Lecturer','HOME')" text><v-icon >mdi-check</v-icon>
                 Submit</v-btn>
                 
             </v-chip>
@@ -95,7 +95,7 @@
             <v-chip
                 class="mr-2"
             >
-                <v-btn @click="jump('StudentHome','Student')" text><v-icon >mdi-check</v-icon>
+                <v-btn @click="jump('StudentHome','Student','HOME')" text><v-icon >mdi-check</v-icon>
                 Submit</v-btn>
             </v-chip>
             </v-card-text>
@@ -118,9 +118,10 @@ import Vue from 'vue'
       }
     },
     methods: {
-      jump(name,Identity) {
-      this.$store.dispatch("toggleUserIdentity", { status: Identity });
-      this.$router.push(name);
+      jump(page,identity,name) {
+      this.$store.dispatch("toggleUserIdentity", { status: identity });
+      this.$store.dispatch("toggleUserView",{status: name});
+      this.$router.push(page);
     },
     },
     computed: {
