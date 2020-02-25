@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content>
-    <LecturerMenu/>
+    <!-- <LecturerMenu/> -->
     <v-container>
       <!-- <v-container v-for="(course, id) in getLecturerInfoPageCourseList" :key="id"> -->
         <StudentsCard/>

@@ -7,17 +7,19 @@
       height="auto"
       tile
     >
-      <v-toolbar >
+    <!-- <p>{{userCurrentView}}</p> -->
+      <v-toolbar v-if="this.$store.getters.getCurrentView === 'Lecturer'">
+        <!-- <v-toolbar> -->
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome')" text>HOME</v-btn>
+        <v-btn @click="jump('LecturerHome','Lecturer')" text>HOME</v-btn>
         <v-spacer/>
-        <v-btn @click="jump('LecturerCalendar')" text>Calendar</v-btn>
+        <v-btn @click="jump('LecturerCalendar','Lecturer')" text>Calendar</v-btn>
         <v-spacer/>
-        <v-btn @click="jump('LecturerCourse')" text>COURSE</v-btn>
+        <v-btn @click="jump('LecturerCourse','Lecturer')" text>COURSE</v-btn>
          <v-spacer/>
-        <v-btn @click="jump('LecturerInfo')" text>INFO</v-btn>
+        <v-btn @click="jump('LecturerInfo','Lecturer')" text>INFO</v-btn>
   
         <v-spacer/>
 
@@ -32,7 +34,7 @@
         Lecturer
       </v-chip>
 
-        <v-btn @click="jump('chooseUser')" icon>
+        <v-btn @click="jump('chooseUser','choose')" icon>
           <v-icon>mdi-account-switch</v-icon>
         </v-btn>
       </v-toolbar>
@@ -42,15 +44,22 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
+  data() {
+    return {
+    };
+  },
   methods: {
-      jump(name) {
-      // this.$store.dispatch("toggleUserView",{status: name});
+    jump(name,indentity) {
+      this.$store.dispatch("toggleUserView",{status: indentity});
       this.$router.push(name);
       // update state in Vuex
-      
     },
     },
+    computed: {
+    ...mapGetters(["getCurrentView"])
+  }
 }
 </script>
 

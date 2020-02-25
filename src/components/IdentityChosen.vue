@@ -56,7 +56,7 @@
             <v-chip
                 class="mr-2"
             >
-            <v-btn @click="jump('LecturerHome')" text><v-icon left >mdi-check</v-icon>
+            <v-btn @click="jump('LecturerHome','Lecturer')" text><v-icon left >mdi-check</v-icon>
                 Submit</v-btn>
                 
             </v-chip>
@@ -95,7 +95,7 @@
             <v-chip
                 class="mr-2"
             >
-                <v-btn @click="jump('StudentHome')" text><v-icon >mdi-check</v-icon>
+                <v-btn @click="jump('StudentHome','Student')" text><v-icon >mdi-check</v-icon>
                 Submit</v-btn>
             </v-chip>
             </v-card-text>
@@ -118,14 +118,10 @@ import Vue from 'vue'
       }
     },
     methods: {
-      jump(name) {
-      // this.$store.dispatch("toggleUserView",{status: name});
+      jump(name,Identity) {
+      this.$store.dispatch("toggleUserView", { status: Identity });
       this.$router.push(name);
-      // update state in Vuex
     },
-    change(){
-      
-    }
     },
     computed: {
     ...mapGetters(["getCurrentView"]),

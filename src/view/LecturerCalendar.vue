@@ -3,7 +3,7 @@
 <v-app>
   
 <v-content>
-  <LecturerMenu/>
+  <!-- <LecturerMenu/> -->
   <v-container>
     <!-- <v-layout row>
     <FeedbackChips/>

@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-content>
-    <LecturerMenu/>
+    <!-- <LecturerMenu/> -->
     
     <v-container>
     <!-- <LecturerTimeline/> -->
@@ -9,7 +9,7 @@
       <v-flex v-for="(course, id) in getLecturerHomePageCourseList" :key="id">
         <LecturerCourseCard :courseCode="course.code" :courseName="course.name"/>
       </v-flex>
-      
+      <v-btn @click="aa">cc</v-btn>
     </v-container>
     <!-- <PhoneMenu fixed class="hidden-md-and-up white--text"/> -->
     <!-- <BackTop/> -->
@@ -28,6 +28,11 @@ import BackTop from "@/components/BackTop";
 import Footer from "@/components/Footer";
 
 export default {
+  data () {
+    return {
+      userCurrentView: this.$store.getters.getCurrentView,
+    }
+  },
   components: {
     LecturerMenu,
     PhoneMenu,
@@ -36,9 +41,15 @@ export default {
     BackTop,
     Footer
   },
+  methods:{
+    aa(){
+      console.log(this.$store.getters.getCurrentView)
+    }
+  },
   computed: {
     ...mapGetters([
-      "getLecturerHomePageCourseList"
+      "getLecturerHomePageCourseList",
+      "getCurrentView"
     ])
   }
 }

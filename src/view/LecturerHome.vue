@@ -16,7 +16,6 @@
         <AssignCard :code="course.code" :name="course.name" :ddl="course.ddl" offset-sm5/>
       </v-col>
     </v-row>
-    <!-- <p>aaa</p> -->
     <!-- <Footer/> -->
   </v-content>
  <!-- </v-app> -->
@@ -43,7 +42,7 @@ export default {
   computed: {
     ...mapGetters([
       "getLecturerHomePageInfoList",
-      "getLecturerHomePageCourseList"
+      "getLecturerHomePageCourseList",
     ])
   }
 }
