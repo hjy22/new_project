@@ -8,8 +8,8 @@
       tile
     >
     <!-- <p>{{userCurrentView}}</p> -->
-      <v-toolbar v-if="this.$store.getters.getCurrentView === 'Lecturer'">
-        <!-- <v-toolbar> -->
+      <!-- <v-toolbar v-if="this.$store.getters.getCurrentView === 'Lecturer'"> -->
+        <v-toolbar>
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
@@ -20,9 +20,7 @@
         <v-btn @click="jump('LecturerCourse','Lecturer')" text>COURSE</v-btn>
          <v-spacer/>
         <v-btn @click="jump('LecturerInfo','Lecturer')" text>INFO</v-btn>
-  
         <v-spacer/>
-
         <v-chip
         class="ma-2"
         color="indigo"

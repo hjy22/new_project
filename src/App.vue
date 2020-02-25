@@ -1,7 +1,8 @@
 <template>
 <v-app>
   <!-- <div id="app"> -->
-    <LecturerMenu/>
+    <Menu/>
+    <!-- <LecturerMenu/> -->
     <!-- <IdentityChosen/> -->
     
     <router-view/>
@@ -16,6 +17,7 @@
 </template>
 
 <script>
+import Menu from "./components/Menu";
 import LecturerMenu from "./components/LecturerMenu";
 import PhoneMenu from "./components/PhoneMenu";
 import IdentityChosen from "./components/IdentityChosen";
@@ -24,6 +26,7 @@ import BackTop from "./components/BackTop";
 export default {
   name: 'App',
   components:{
+    Menu,
     Footer,
     BackTop,
     LecturerMenu,
