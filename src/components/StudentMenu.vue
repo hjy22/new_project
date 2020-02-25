@@ -11,11 +11,11 @@
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome')" text>HOME</v-btn>
+        <v-btn @click="jump('LecturerHome','Student')" text>HOME</v-btn>
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome')" text>FEEDBACK</v-btn>
+        <v-btn @click="jump('LecturerHome','Student')" text>FEEDBACK</v-btn>
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome')" text>COURSE</v-btn>
+        <v-btn @click="jump('LecturerHome','Student')" text>COURSE</v-btn>
          <v-spacer/>
         <v-btn text>Button</v-btn>
   
@@ -32,7 +32,7 @@
     </v-chip>
   
 
-        <v-btn @click="jump('chooseUser')" icon>
+        <v-btn @click="jump('chooseUser','Chosen')" icon>
           <v-icon>mdi-account-switch</v-icon>
         </v-btn>
       </v-toolbar>
@@ -44,11 +44,10 @@
 <script>
 export default {
   methods: {
-      jump(name) {
-      // this.$store.dispatch("toggleUserView",{status: name});
+    jump(name,indentity) {
+      this.$store.dispatch("toggleUserView",{status: indentity});
       this.$router.push(name);
       // update state in Vuex
-      
     },
     },
 }

@@ -1,7 +1,7 @@
 <template>
 <v-app>
   <!-- <div id="app"> -->
-    <Menu/>
+    <Menu class="hidden-sm-and-down"/>
     <!-- <LecturerMenu/> -->
     <!-- <IdentityChosen/> -->
     
@@ -10,7 +10,7 @@
     <PhoneMenu fixed class="hidden-md-and-up white--text"/>
     <BackTop/>
 
-    <Footer/>
+    <Footer class="hidden-sm-and-down"/>
   <!-- </div> -->
   </v-app>
   

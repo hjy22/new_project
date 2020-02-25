@@ -32,7 +32,7 @@
         Lecturer
       </v-chip>
 
-        <v-btn @click="jump('chooseUser','choose')" icon>
+        <v-btn @click="jump('chooseUser','Chosen')" icon>
           <v-icon>mdi-account-switch</v-icon>
         </v-btn>
       </v-toolbar>
