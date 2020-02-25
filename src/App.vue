@@ -1,10 +1,14 @@
 <template>
 <v-app>
   <!-- <div id="app"> -->
-    <!-- <LecturerMenu/> -->
+    <LecturerMenu/>
     <!-- <IdentityChosen/> -->
+    
     <router-view/>
+    
+    <PhoneMenu fixed class="hidden-md-and-up white--text"/>
     <BackTop/>
+
     <Footer/>
   <!-- </div> -->
   </v-app>
@@ -13,6 +17,7 @@
 
 <script>
 import LecturerMenu from "./components/LecturerMenu";
+import PhoneMenu from "./components/PhoneMenu";
 import IdentityChosen from "./components/IdentityChosen";
 import Footer from "./components/Footer";
 import BackTop from "./components/BackTop";
@@ -22,18 +27,19 @@ export default {
     Footer,
     BackTop,
     LecturerMenu,
+    PhoneMenu,
     IdentityChosen
   }
 }
 </script>
 
 <style>
-/* #app {
+#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 0px;
-} */
+}
 </style>

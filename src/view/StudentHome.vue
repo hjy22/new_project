@@ -1,7 +1,7 @@
 <template>
 <v-app>
 <v-content>
-  <StudentMenu/>
+  <!-- <StudentMenu/> -->
   <InfoCard name="aaaa" ID="1111" character="student"/>
   <!-- <v-container> -->
     <v-container>

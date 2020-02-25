@@ -4,6 +4,9 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
+    userStatus: {
+      userCurrentView: 'lecturer',
+    },
     LecturerHomePage:{
       infoList: [{
         name: 'Anna',
@@ -194,6 +197,7 @@ export default new Vuex.Store({
     },
   },
   getters: {
+    getCurrentView: state => state.userStatus.userCurrentView,
     getLecturerHomePageInfoList: state => state.LecturerHomePage.infoList,
     getLecturerHomePageCourseList: state => state.LecturerHomePage.courseList,
     getLecturerFeedbackPageCourseList: state => state.LecturerFeedbackPage.courses,

@@ -95,7 +95,7 @@
             <v-chip
                 class="mr-2"
             >
-                <v-btn @click="jump('StudentHome')" text><v-icon left >mdi-check</v-icon>
+                <v-btn @click="jump('StudentHome')" text><v-icon >mdi-check</v-icon>
                 Submit</v-btn>
             </v-chip>
             </v-card-text>
@@ -109,6 +109,8 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+import Vue from 'vue'
   export default {
     data () {
       return {
@@ -120,8 +122,13 @@
       // this.$store.dispatch("toggleUserView",{status: name});
       this.$router.push(name);
       // update state in Vuex
+    },
+    change(){
       
+    }
     },
-    },
+    computed: {
+    ...mapGetters(["getCurrentView"]),
+  }
   }
 </script>

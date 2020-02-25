@@ -2,6 +2,7 @@
   <v-app>
     <v-content>
     <LecturerMenu/>
+    
     <v-container>
     <!-- <LecturerTimeline/> -->
     <!-- <v-divider/> -->
@@ -10,6 +11,7 @@
       </v-flex>
       
     </v-container>
+    <!-- <PhoneMenu fixed class="hidden-md-and-up white--text"/> -->
     <!-- <BackTop/> -->
     <!-- <Footer/> -->
     </v-content>
@@ -19,6 +21,7 @@
 <script>
 import { mapGetters } from "vuex";
 import LecturerMenu from "@/components/LecturerMenu";
+import PhoneMenu from "@/components/PhoneMenu";
 import LecturerTimeline from "@/components/LecturerTimeline";
 import LecturerCourseCard from "@/components/LecturerCourseCard";
 import BackTop from "@/components/BackTop";
@@ -27,6 +30,7 @@ import Footer from "@/components/Footer";
 export default {
   components: {
     LecturerMenu,
+    PhoneMenu,
     LecturerTimeline,
     LecturerCourseCard,
     BackTop,

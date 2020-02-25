@@ -1,7 +1,7 @@
 <template>
-<v-app>
+<!-- <v-app> -->
   <v-content>
-    <LecturerMenu/>
+    <!-- <LecturerMenu/> -->
     <v-container>
     <v-layout>
       <v-flex v-for="(Info, id) in getLecturerHomePageInfoList" :key="id" xs12 sm8 md4 offset-md4>
@@ -19,7 +19,7 @@
     <!-- <p>aaa</p> -->
     <!-- <Footer/> -->
   </v-content>
- </v-app>
+ <!-- </v-app> -->
 </template>
 
 <script>
