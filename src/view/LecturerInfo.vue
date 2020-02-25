@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <!-- <v-app> -->
     <v-content>
     <!-- <LecturerMenu/> -->
     <v-container>
@@ -11,7 +11,7 @@
     <!-- <BackTop/>
     <Footer/> -->
     </v-content>
-  </v-app>
+  <!-- </v-app> -->
 </template>
 
 <script>

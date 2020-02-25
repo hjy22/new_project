@@ -1,32 +1,20 @@
 <template>
-  <v-bottom-navigation
-    :value="activeBtn"
-    grow
-    color="teal"
-  >
-    <v-btn>
-      <span>Recents</span>
-      <v-icon>mdi-history</v-icon>
-    </v-btn>
+<v-content>
+        <LecturerPhoneMenu/>
 
-    <v-btn>
-      <span>Favorites</span>
-      <v-icon>mdi-heart</v-icon>
-    </v-btn>
-
-    <v-btn>
-      <span>Nearby</span>
-      <v-icon>mdi-map-marker</v-icon>
-    </v-btn>
-  </v-bottom-navigation>
+        <!-- <StudentPhoneMenu/> -->
+    </v-content>
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        activeBtn: 1,
-      }
+
+import LecturerPhoneMenu from "@/components/LecturerPhoneMenu";
+import StudentPhoneMenu from "@/components/StudentPhoneMenu";
+
+export default {
+    components:{
+        LecturerPhoneMenu,
+        StudentPhoneMenu
     },
-  }
+}
 </script>

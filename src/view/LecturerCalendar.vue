@@ -1,6 +1,6 @@
 <template>
 <div>
-<v-app>
+<!-- <v-app> -->
   
 <v-content>
   <!-- <LecturerMenu/> -->
@@ -16,7 +16,7 @@
   <!-- <Footer /> -->
 </v-content>
 
-</v-app>
+<!-- </v-app> -->
 </div>
 </template>
 

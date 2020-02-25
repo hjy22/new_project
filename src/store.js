@@ -5,7 +5,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     userStatus: {
-      userCurrentView: 'Chosen',
+      userCurrentIdentity: 'Chosen',
     },
     LecturerHomePage:{
       infoList: [{
@@ -62,17 +62,17 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    switchUserCurrentView(state,payload){
-      state.userStatus.userCurrentView = payload.status
+    switchUserCurrentIndentity(state,payload){
+      state.userStatus.userCurrentIdentity = payload.status
     },
   },
   actions: {
-    toggleUserView({commit}, payload) {
-      commit('switchUserCurrentView', payload)
+    toggleUserIdentity({commit}, payload) {
+      commit('switchUserCurrentIndentity', payload)
     },
   },
   getters: {
-    getCurrentView: state => state.userStatus.userCurrentView,
+    getCurrentIdentity: state => state.userStatus.userCurrentIdentity,
     getLecturerHomePageInfoList: state => state.LecturerHomePage.infoList,
     getLecturerHomePageCourseList: state => state.LecturerHomePage.courseList,
     getLecturerFeedbackPageCourseList: state => state.LecturerFeedbackPage.courses,

@@ -1,5 +1,5 @@
 <template>
-<v-app>
+<!-- <v-app> -->
 <v-content>
   <!-- <StudentMenu/> -->
   <InfoCard name="aaaa" ID="1111" character="student"/>
@@ -21,7 +21,7 @@
 <!-- <h1>aaaaaaaa</h1> -->
 <!-- <Footer/> -->
 </v-content>
-</v-app>
+<!-- </v-app> -->
 </template>
 
 <script>

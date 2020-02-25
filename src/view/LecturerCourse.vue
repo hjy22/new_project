@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <!-- <v-app> -->
     <v-content>
     <!-- <LecturerMenu/> -->
     
@@ -9,13 +9,11 @@
       <v-flex v-for="(course, id) in getLecturerHomePageCourseList" :key="id">
         <LecturerCourseCard :courseCode="course.code" :courseName="course.name"/>
       </v-flex>
-      <v-btn @click="aa">cc</v-btn>
     </v-container>
-    <!-- <PhoneMenu fixed class="hidden-md-and-up white--text"/> -->
     <!-- <BackTop/> -->
     <!-- <Footer/> -->
     </v-content>
-  </v-app>
+  <!-- </v-app> -->
 </template>
 
 <script>
@@ -40,11 +38,6 @@ export default {
     LecturerCourseCard,
     BackTop,
     Footer
-  },
-  methods:{
-    aa(){
-      console.log(this.$store.getters.getCurrentView)
-    }
   },
   computed: {
     ...mapGetters([

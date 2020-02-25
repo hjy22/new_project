@@ -50,14 +50,14 @@ export default {
   },
   methods: {
     jump(name,indentity) {
-      this.$store.dispatch("toggleUserView",{status: indentity});
+      this.$store.dispatch("toggleUserIdentity",{status: indentity});
       this.$router.push(name);
       // update state in Vuex
     },
     },
-    computed: {
-    ...mapGetters(["getCurrentView"])
-  }
+  //   computed: {
+  //   ...mapGetters(["getCurrentIdentity"])
+  // }
 }
 </script>
 

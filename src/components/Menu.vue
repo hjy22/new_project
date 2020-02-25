@@ -1,10 +1,10 @@
 <template>
 <v-content>
-    <v-flex v-if="this.$store.getters.getCurrentView === 'Lecturer'">
+    <v-flex v-if="this.$store.getters.getCurrentIdentity === 'Lecturer'">
         <LecturerMenu/>
     </v-flex>
 
-    <v-flex  v-else-if="this.$store.getters.getCurrentView === 'Student'">
+    <v-flex  v-else-if="this.$store.getters.getCurrentIdentity === 'Student'">
         <StudentMenu/>
     </v-flex>
     </v-content>
@@ -22,7 +22,7 @@ export default {
         StudentMenu
     },
     computed: {
-    ...mapGetters(["getCurrentView"])
+    ...mapGetters(["getCurrentIdentity"])
   }
 }
 </script>

@@ -45,7 +45,7 @@
 export default {
   methods: {
     jump(name,indentity) {
-      this.$store.dispatch("toggleUserView",{status: indentity});
+      this.$store.dispatch("toggleUserIdentity",{status: indentity});
       this.$router.push(name);
       // update state in Vuex
     },
