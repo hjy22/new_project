@@ -9,10 +9,17 @@
     <v-row
       justify='center'
     >
-    <v-flex md3>
-    
-      <GroupCard index="0"/>
-      <EmailDialog index="0" :containsLeader="false"/>
+    <v-flex md8>
+      <v-row>
+        <v-col>
+      <GroupCard index="0" title="My Members"/>
+      <EmailDialog index="0" team="1" containsLeader="false"/>
+        </v-col>
+        <v-col>
+      <GroupCard index="1" title="My Makers"/>
+      <EmailDialog index="1" team="2" containsLeader="true"/>
+        </v-col>
+        </v-row>
       </v-flex>
     </v-row>
     <!-- </v-flex> -->

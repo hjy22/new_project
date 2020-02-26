@@ -26,7 +26,7 @@
         </v-card-title>
 
         <v-card-text>
-          You are sending emails to Team {{index+1}} with {{name()}}
+          You are sending emails to Team {{team}} with {{name()}}
         </v-card-text>
 
         <v-divider></v-divider>
@@ -52,7 +52,7 @@
 <script>
 import axios from 'axios'
 export default {
-  props:['index','containsLeader'],
+  props:['index','team','containsLeader'],
     data(){
       return{
         dialog: false,

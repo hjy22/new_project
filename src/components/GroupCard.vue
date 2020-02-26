@@ -2,6 +2,7 @@
 <v-container>
   <v-row justify="center">
     <v-col >
+      <div>{{title}}</div>
       <v-card max-width="344" v-if="!isEmpty(group[index])"> 
 
         <v-list>
@@ -40,7 +41,7 @@
   import axios from 'axios'
 
   export default {
-    props:['index'],
+    props:['index','title'],
     data () {
       return {
         group: [],
