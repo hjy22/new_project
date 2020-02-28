@@ -47,10 +47,10 @@ export default new Router({
       name: 'StudentPre',
       component: () => import('@/view/StudentPre.vue'),
     },
-    // {
-    //   path: '/home',
-    //   name: 'home',
-    //   component: () => import('@/view/abc.vue'),
-    // },
+    {
+      path: '/StudentMark',
+      name: 'StudentMark',
+      component: () => import('@/view/StudentMark.vue'),
+    },
   ]
 })
