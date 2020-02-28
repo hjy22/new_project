@@ -55,11 +55,9 @@
       // 本地json获取商品数据
      getMemberInfo() {
         axios.get('../static/COMP107.json').then(response => {
-            
             this.group = response.data;
-            // console.log(this.group[0].name);
         }, response => {
-            // console.log("error");
+            console.log("error");
         });
     },
     isEmpty(array){

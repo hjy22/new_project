@@ -10,14 +10,18 @@
       justify='center'
     >
     <v-flex md8>
-      <v-row>
+      <v-row class="text-center">
         <v-col>
+          <v-card>
       <GroupCard index="0" title="My Members"/>
       <EmailDialog index="0" team="1" containsLeader="false"/>
+          </v-card>
         </v-col>
         <v-col>
+          <v-card>
       <GroupCard index="1" title="My Makers"/>
       <EmailDialog index="1" team="2" containsLeader="true"/>
+      </v-card>
         </v-col>
         </v-row>
       </v-flex>

@@ -1,22 +1,14 @@
 <template>
-  <!-- <v-app> -->
     <v-content>
-    <!-- <LecturerMenu/> -->
-    
     <v-container>
-    <!-- <LecturerTimeline/> -->
-    <!-- <v-divider/> -->
-      <v-flex v-for="(course, id) in getLecturerHomePageCourseList" :key="id">
-        <LecturerCourseCard :courseCode="course.code" :courseName="course.name"/>
-      </v-flex>
+
+      <LecturerCourseCard/>
     </v-container>
-    <!-- <BackTop/> -->
-    <!-- <Footer/> -->
     </v-content>
-  <!-- </v-app> -->
 </template>
 
 <script>
+import axios from 'axios'
 import { mapGetters } from "vuex";
 import LecturerMenu from "@/components/LecturerMenu";
 import PhoneMenu from "@/components/PhoneMenu";
@@ -27,6 +19,7 @@ import Footer from "@/components/Footer";
 export default {
   data () {
     return {
+      courseInfo: [],
       userCurrentView: this.$store.getters.getCurrentView,
     }
   },
@@ -42,7 +35,23 @@ export default {
       "getLecturerHomePageCourseList",
       "getCurrentView"
     ])
-  }
+  },
+  created () {
+      this.getCourseInfo() // 本地JSON
+    },
+    
+    methods: {
+      // 本地json获取商品数据
+     getCourseInfo() {
+        axios.get('../static/CourseInfo.json').then(response => {
+            
+            this.courseInfo = response.data[0];
+            // console.log(this.courseInfo[0].name)
+        }, response => {
+            console.log("error");
+        });
+    },
+    }
 }
 </script>
 

@@ -11,9 +11,9 @@
   
         <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome','Student','HOME')" text>HOME</v-btn>
+        <v-btn @click="jump('StudentHome','Student','HOME')" text>HOME</v-btn>
         <v-spacer/>
-        <v-btn @click="jump('LecturerHome','Student','FEEDBACK')" text>FEEDBACK</v-btn>
+        <v-btn @click="jump('StudentPre','Student','PRESENTATION')" text>PRESENTATION</v-btn>
         <v-spacer/>
         <v-btn @click="jump('LecturerHome','Student','COURSE')" text>COURSE</v-btn>
          <v-spacer/>

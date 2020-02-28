@@ -1,5 +1,5 @@
 <template>
-<!-- <v-container> -->
+<v-container>
   <div class="text-center">
     <v-dialog
       v-model="dialog"
@@ -33,7 +33,6 @@
 
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" text @click="dialog = false">Cancel</v-btn>
           <v-btn
             color="primary"
             text
@@ -42,11 +41,12 @@
           >
             Sending
           </v-btn>
+          <v-btn color="green darken-1" text @click="dialog = false">Cancel</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
   </div>
-<!-- </v-container> -->
+</v-container>
 </template>
 
 <script>

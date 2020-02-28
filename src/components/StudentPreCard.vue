@@ -9,10 +9,18 @@
           <v-list-item-title class="headline mb-1">{{courseInfo.code}} {{courseInfo.name}}</v-list-item-title>
           <v-container>
           <DatePicker/>
+            <v-row justify="center">
+                <v-col sm="6" md="6">
+                <v-text-field
+                    label="Place"
+                ></v-text-field>
+                </v-col>
+            </v-row>
+            <v-row justify="center">
+                <v-btn color="primary">SUBMIT</v-btn>
+            </v-row>
           </v-container>
-          <v-container>
-          <FeedbackSheet/>
-          </v-container>
+          
         </v-list-item-content>
         <!-- </v-list-item> -->
       </v-card-text>
@@ -24,9 +32,7 @@
 
 <script>
 import axios from 'axios'
-// import LecturerCourseStepper from "./LecturerCourseStepper";
 import DatePicker from "./DatePicker";
-import FeedbackSheet from "./FeedbackSheet";
 
 export default {
   data () {
@@ -37,7 +43,6 @@ export default {
   components: {
       // LecturerCourseStepper,
       DatePicker,
-      FeedbackSheet
     },
     created () {
       this.getCourseInfo() // 本地JSON

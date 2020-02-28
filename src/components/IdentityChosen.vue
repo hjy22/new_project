@@ -50,9 +50,9 @@
                 </v-form>
             </v-col>
             </v-row>
-            <v-divider class="mt-6 mx-4"></v-divider>
 
-            <v-card-text>
+            <v-row justify="center">
+            <!-- <v-card-text> -->
             <v-chip
                 class="mr-2"
             >
@@ -60,7 +60,8 @@
                 Submit</v-btn>
                 
             </v-chip>
-            </v-card-text>
+            <!-- </v-card-text> -->
+            </v-row>
         <!-- </v-card> -->
             </v-container>
         </v-card>
@@ -89,16 +90,18 @@
                 </v-form>
             </v-col>
             </v-row>
-            <v-divider class="mt-6 mx-4"></v-divider>
+            <!-- <v-divider class="mt-6 mx-4"></v-divider> -->
 
-            <v-card-text>
+            <!-- <v-card-text> -->
+              <v-row justify="center">
             <v-chip
                 class="mr-2"
             >
                 <v-btn @click="jump('StudentHome','Student','HOME')" text><v-icon >mdi-check</v-icon>
                 Submit</v-btn>
             </v-chip>
-            </v-card-text>
+            </v-row>
+            <!-- </v-card-text> -->
         <!-- </v-card> -->
             </v-container>
         </v-card>
