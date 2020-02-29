@@ -47,11 +47,10 @@
       </v-stepper-content>
 
       <v-stepper-content step="3">
-        <v-card
-          class="mb-12"
-          color="grey lighten-1"
-          height="200px"
-        ></v-card>
+          <v-row justify="center">
+              <ViewFeedback :index="0"/>
+        
+          </v-row>
 
         <v-btn
           color="primary"
@@ -60,7 +59,6 @@
           Continue
         </v-btn>
 
-        <v-btn text>Cancel</v-btn>
       </v-stepper-content>
     </v-stepper-items>
   </v-stepper>
@@ -68,6 +66,7 @@
 
 <script>
 import StudentPreCard from "@/components/StudentPreCard";
+import ViewFeedback from "@/components/ViewFeedback";
   export default {
     data () {
       return {
@@ -75,7 +74,8 @@ import StudentPreCard from "@/components/StudentPreCard";
       }
     },
     components:{
-        StudentPreCard
+        StudentPreCard,
+        ViewFeedback
     }
   }
 </script>

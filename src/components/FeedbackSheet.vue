@@ -28,7 +28,7 @@
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>{{checkBox.name}}</v-list-item-title>
-              <v-list-item-subtitle>{{checkBox.detail}}</v-list-item-subtitle>
+              <v-list-item-subtitle>{{checkBox.intro}}</v-list-item-subtitle>
             </v-list-item-content>
           </v-list-item>
           </v-flex>
@@ -36,6 +36,7 @@
         </v-container>
             </v-col>
             <v-col>
+              <v-container>
             <v-list three-line subheader>
             <v-subheader>TextField</v-subheader>
             <v-flex v-for="(text, id) in textFieldInfo" :key="id">
@@ -56,23 +57,8 @@
                 </v-list-item-content>
             </v-list-item>
             </v-flex>
-              <!-- <v-list-item>
-                <v-list-item-action>
-                    <v-checkbox v-model="organisation"></v-checkbox>
-                </v-list-item-action>
-                <v-list-item-content>
-                        <v-list-item-subtitle>
-                            <v-textarea
-                            outlined
-                            disabled="true"
-                            label="Summarise briefly the question you asked"
-                            rows="2"
-                            row-height="20"
-                            ></v-textarea>
-                        </v-list-item-subtitle>
-                </v-list-item-content>
-            </v-list-item> -->
         </v-list>
+        </v-container>
         </v-col>
         </v-row>
       </v-card>
@@ -105,7 +91,6 @@ import axios from 'axios'
         axios.get('../static/FeedbackSheet.json').then(response => {
             this.checkBoxInfo = response.data.checkBox;
             this.textFieldInfo = response.data.textField;
-            // console.log(this.checkBoxInfo);
         }, response => {
             console.log("error");
         });

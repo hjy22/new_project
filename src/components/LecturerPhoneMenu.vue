@@ -22,7 +22,7 @@
 
     <v-btn @click="jump('LecturerInfo','Lecturer','INFO')">
       <span>Info</span>
-      <v-icon>mdi-account-box-multiple</v-icon>
+      <v-icon>mdi-clipboard-account-outline</v-icon>
     </v-btn>
 
   </v-bottom-navigation>

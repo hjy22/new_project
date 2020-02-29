@@ -2,38 +2,192 @@
     "checkBox":[
     {
         "name":"Organisation",
-        "detail":"Presented information in logical",
-        "modelName": "organisation"
+        "intro":"Presented information in logical",
+        "modelName": "organisation",
+        "details":[
+            {
+              "name":"Outstanding",
+              "scores":4,
+              "intro":"Presented information in logical, interesting sequence, which the audience followed and engaged into"
+            },
+            {
+                "name":"Good",
+                "scores":3,
+                "intro":"Presented information in logical sequence, which the audience followed"
+              },
+              {
+                "name":"Fair",
+                "scores":2,
+                "intro":"Audience had at times difficulty in following the information because of interruptions to the logic flow"
+              },
+              {
+                "name":"To be improved",
+                "scores":1,
+                "intro":"Sequence of information was hard to follow, could not be understood logically"
+              }
+          ]
     },
     {
         "name":"Content",
-        "detail":"Understanding of the product",
-        "modelName": "content"
+        "intro":"Understanding of the product",
+        "modelName": "content",
+        "details":[
+            {
+              "name":"Outstanding",
+              "scores":4,
+              "intro":"Showed full understanding of the product and used elaboration and backing research to promote its relevance"
+            },
+            {
+                "name":"Good",
+                "scores":3,
+                "intro":"Showed adequate understanding of the product and provided good amount of details on its relevance"
+              },
+              {
+                "name":"Fair",
+                "scores":2,
+                "intro":"Showed basic understanding of the product, provided some information on its relevance or novelty"
+              },
+              {
+                "name":"To be improved",
+                "scores":1,
+                "intro":"Showed only partial understanding of the product and its relevance"
+              }
+          ]
     },
     {
         "name":"Presentation",
-        "detail":"Visuals effectively reinforced",
-        "modelName": "presentation"
+        "intro":"Visuals effectively reinforced",
+        "modelName": "presentation",
+        "details":[
+            {
+              "name":"Outstanding",
+              "scores":4,
+              "intro":"Visuals effectively reinforced and gave more context to the presentation, slides were visually appealing"
+            },
+            {
+                "name":"Good",
+                "scores":3,
+                "intro":"Use of visuals related to the presentation, clear and visually pleasant slides"
+              },
+              {
+                "name":"Fair",
+                "scores":2,
+                "intro":"Slides replicated the presentation, which was simply read aloud, could be more visually appealing"
+              },
+              {
+                "name":"To be improved",
+                "scores":1,
+                "intro":"Slides were unrelated to the presentation and/or cluttered, spelling/grammar mistakes."
+              }
+          ]
     },
     {
-        "name":"Engagement with audience",
-        "detail":"Eye contact",
-        "modelName": "engagement"
+        "name":"Engagement with Audience",
+        "intro":"Eye contact",
+        "modelName": "engagement",
+        "details":[
+            {
+              "name":"Outstanding",
+              "scores":4,
+              "intro":"All speakers exhibited superior eye contact during presentation and rarely referred to a script"
+            },
+            {
+                "name":"Good",
+                "scores":3,
+                "intro":"Most speakers exhibited good eye contact throughout the presentation, and occasionally referred to a script"
+              },
+              {
+                "name":"Fair",
+                "scores":2,
+                "intro":"Most speakers exhibited limited eye contact throughout the presentation, and often referred to a script"
+              },
+              {
+                "name":"To be improved",
+                "scores":1,
+                "intro":"All speakers didn’t maintain eye contact with the audience and remained tied to a written script"
+              }
+          ]
     },
     {
         "name":"Delivery",
-        "detail":"Clear voice",
-        "modelName": "delivery"
+        "intro":"Clear voice",
+        "modelName": "delivery",
+        "details":[
+            {
+              "name":"Outstanding",
+              "scores":4,
+              "intro":"All speakers used a clear voice and effectively conveyed their ideas"
+            },
+            {
+                "name":"Good",
+                "scores":3,
+                "intro":"Most speakers’ voices were clear, and clearly communicated ideas"
+              },
+              {
+                "name":"Fair",
+                "scores":2,
+                "intro":"Audience had difficulty understanding some speakers"
+              },
+              {
+                "name":"To be improved",
+                "scores":1,
+                "intro":"Most speakers mumbled, and spoke too quietly for audience to hear "
+              }
+          ]
     },
     {
         "name":"Pace",
-        "detail":"Time keeping and turn taking",
-        "modelName": "pace"
+        "intro":"Time keeping and turn taking",
+        "modelName": "pace",
+        "details":[
+            {
+              "name":"Outstanding",
+              "scores":4,
+              "intro":"Time keeping was spot on with no prompting, without appearing rushed or stretched. Turn taking was seamless"
+            },
+            {
+                "name":"Good",
+                "scores":3,
+                "intro":"Time keeping was good, with some reminders. Speakers took turns well"
+              },
+              {
+                "name":"Fair",
+                "scores":2,
+                "intro":"Speakers needed to skip parts to end on time, turn taking at times disorganised and time consuming"
+              },
+              {
+                "name":"To be improved",
+                "scores":1,
+                "intro":"Presentation needed to be cut short/ended up too early. Speakers seemed unsure about their turn"
+              }
+          ]
     },
     {
         "name":"Q&A",
-        "detail":"Questions answering",
-        "modelName": "question"
+        "intro":"Questions answering",
+        "modelName": "question",
+        "details":[
+            {
+              "name":"Outstanding",
+              "scores":4,
+              "intro":"All questions were answered satisfactorily and competently"
+            },
+            {
+                "name":"Good",
+                "scores":3,
+                "intro":"Most questions were addressed to a good extent."
+              },
+              {
+                "name":"Fair",
+                "scores":2,
+                "intro":"Some questions were left partially unanswered."
+              },
+              {
+                "name":"To be improved",
+                "scores":1,
+                "intro":"Questions were not addressed, answers were too vague"
+              }
+          ]
     }
   ],
   "textField":[

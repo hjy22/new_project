@@ -5,25 +5,25 @@
     fixed
     color="teal"
   >
-    <v-btn @click="jump('LecturerHome','Lecturer','HOME')">
+    <v-btn @click="jump('StudentHome','Student','HOME')">
       <span>Home</span>
       <v-icon>mdi-home</v-icon>
     </v-btn>
 
-    <v-btn @click="jump('LecturerCalendar','Lecturer','CALENDAR')">
-      <span>Calendar</span>
-      <v-icon>mdi-calendar-text</v-icon>
+    <v-btn @click="jump('StudentPre','Student','PRESENTATION')">
+      <span>Presentation</span>
+      <v-icon>mdi-account-tie-voice</v-icon>
     </v-btn>
 
-    <v-btn @click="jump('LecturerCourse','Lecturer','COURSE')">
-      <span>Course</span>
-      <v-icon>mdi-book-open</v-icon>
+    <v-btn @click="jump('StudentMark','Student','MARKING')">
+      <span>Marking</span>
+      <v-icon>mdi-fountain-pen-tip</v-icon>
     </v-btn>
 
-    <v-btn @click="jump('LecturerInfo','Lecturer','INFO')">
+    <!-- <v-btn @click="jump('LecturerInfo','Student','INFO')">
       <span>Info</span>
       <v-icon>mdi-account-box-multiple</v-icon>
-    </v-btn>
+    </v-btn> -->
 
   </v-bottom-navigation>
 </template>
