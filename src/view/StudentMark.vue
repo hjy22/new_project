@@ -64,11 +64,12 @@
 
 <script>
 import axios from 'axios'
+import { mapGetters } from "vuex";
   export default {
     // props:["index"],
     data () {
       return {
-        index:0,
+        teamIndex:0,
         feedbackInfo:[],
         feedbackSheet:[],
         model:null,
@@ -79,12 +80,14 @@ import axios from 'axios'
       }
     },
     created () {
+      this.getTeamIndex()
       this.getInfo() // 本地JSON
+      
     },
      methods:{
        getInfo() {
         axios.get('../static/FeedbackInfo.json').then(response => {
-            this.feedbackInfo = response.data[this.index];
+            this.feedbackInfo = response.data[this.teamIndex];
         }, response => {
             console.log("error");
         });
@@ -94,6 +97,10 @@ import axios from 'axios'
             console.log("error");
         });
         
+      },
+      getTeamIndex(){
+        var teamID = this.$store.getters.getStudentGroup
+        this.teamIndex = Number(teamID)-1
       },
       getComment(name, scores){
         for(var i = 0; i<this.getJsonLength(this.feedbackSheet);i++){
@@ -119,6 +126,9 @@ import axios from 'axios'
       getMarkerTeam(){
         return this.feedbackInfo.marker
       }
-     }
+     },
+     computed: {
+      ...mapGetters(["getStudentGroup"])
+    }
   }
 </script>

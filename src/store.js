@@ -7,6 +7,7 @@ export default new Vuex.Store({
     userStatus: {
       userCurrentIdentity: 'Chosen',
       userCurrentView: 'Chosen',
+      studentGroup:null,
     },
     LecturerHomePage:{
       infoList: [{
@@ -69,6 +70,9 @@ export default new Vuex.Store({
     switchUserCurrentView(state,payload){
       state.userStatus.userCurrentView = payload.status
     },
+    switchStudentGroup(state,payload){
+      state.userStatus.studentGroup = payload.status
+    },
   },
   actions: {
     toggleUserIdentity({commit}, payload) {
@@ -77,10 +81,14 @@ export default new Vuex.Store({
     toggleUserView({commit}, payload) {
       commit('switchUserCurrentView', payload)
     },
+    toggleStudentGroup({commit}, payload) {
+      commit('switchStudentGroup', payload)
+    },
   },
   getters: {
     getCurrentIdentity: state => state.userStatus.userCurrentIdentity,
     getUserCurrentView: state => state.userStatus.userCurrentView,
+    getStudentGroup: state => state.userStatus.studentGroup,
     getLecturerHomePageInfoList: state => state.LecturerHomePage.infoList,
     getLecturerHomePageCourseList: state => state.LecturerHomePage.courseList,
     getLecturerFeedbackPageCourseList: state => state.LecturerFeedbackPage.courses,

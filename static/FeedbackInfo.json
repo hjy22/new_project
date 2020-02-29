@@ -181,11 +181,11 @@
         "rating":[
           {
             "name":"Organisation",
-            "scores":3
+            "scores":4
           },
           {
               "name":"Content",
-              "scores":4
+              "scores":1
             },
             {
               "name":"Engagement with Audience",
@@ -193,7 +193,7 @@
             },
             {
               "name":"Delivery",
-              "scores":2
+              "scores":3
             },
             {
               "name":"Pace",

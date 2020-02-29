@@ -13,14 +13,14 @@
       <v-row class="text-center">
         <v-col>
           <v-card>
-      <GroupCard index="0" title="My Members"/>
-      <EmailDialog index="0" team="1" containsLeader="false"/>
+      <GroupCard :index="presenter" title="My Members"/>
+      <EmailDialog :index="presenter" containsLeader="false"/>
           </v-card>
         </v-col>
         <v-col>
           <v-card>
-      <GroupCard index="1" title="My Makers"/>
-      <EmailDialog index="1" team="2" containsLeader="true"/>
+      <GroupCard :index="marker" title="My Makers"/>
+      <EmailDialog  :index="marker" containsLeader="true"/>
       </v-card>
         </v-col>
         </v-row>
@@ -37,6 +37,7 @@
 
 <script>
 import axios from 'axios'
+import { mapGetters } from "vuex";
 import StudentMenu from "@/components/StudentMenu";
 import GroupCard from "@/components/GroupCard";
 import EmailDialog from "@/components/EmailDialog";
@@ -44,6 +45,7 @@ import InfoCard from "@/components/InfoCard";
 import Footer from "@/components/Footer";
 
 export default {
+  name:"StudentHome",
   components: {
     StudentMenu,
     Footer,
@@ -54,21 +56,32 @@ export default {
   data () {
       return {
         Info: [],
+        marker:null,
+        presenter:null,
       }
     },
   created () {
       this.getMemberInfo() // 本地JSON
+      this.getTeamNum()
+      //  this.getParams();
+      //  this.getQuerys();
     },
-    
+    // activated(){
+    //    if (this.$route.params.flush === 'on') {
+    //   this.getParams();
+    //    }
+    // },
+    // watch:{
+    //     // '$route':'getParams'
+    //     '$route':'getQuerys',
+    // },
     methods: {
       // 本地json获取商品数据
      getMemberInfo() {
         axios.get('../static/COMP107.json').then(response => {
             
             this.Info = response.data;
-            // console.log(this.group[0].name);
         }, response => {
-            // console.log("error");
         });
     },
       getJsonLength(jsonData){
@@ -78,7 +91,25 @@ export default {
           }
           return jsonLength;
       },   
+      getTeamNum(){
+        this.marker = this.$store.getters.getStudentGroup
+        this.presenter = Number(this.marker)-1
+        // console.log(this.$store.getters.getStudentGroup)
+      }
+      // getParams() {
+        
+      //       this.index = this.$route.params.index
+      //       console.log(this.index)
+      //   },
+      // getQuerys() {
+      //       this.marker = this.$route.query.index
+      //       this.presenter = (Number(this.marker)-1)
+      //       // console.log(Number(this.index)+1)
+      //   },
     },
+    computed: {
+    ...mapGetters(["getStudentGroup"])
+  }
 }
 </script>
 

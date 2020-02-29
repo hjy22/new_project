@@ -22,11 +22,11 @@
           class="headline grey lighten-2"
           primary-title
         >
-          Privacy Policy
+          HINT
         </v-card-title>
 
         <v-card-text>
-          You are sending emails to Team {{team}} with {{name()}}
+          You are sending emails to Team {{Number(index)+1}} with {{name()}}
         </v-card-text>
 
         <v-divider></v-divider>
@@ -52,7 +52,7 @@
 <script>
 import axios from 'axios'
 export default {
-  props:['index','team','containsLeader'],
+  props:['index','containsLeader'],
     data(){
       return{
         dialog: false,
@@ -66,6 +66,7 @@ export default {
      methods:{
        getMemberInfo() {
         axios.get('../static/COMP107.json').then(response => {
+          // console.log(this.index)
             this.membersInfo = response.data[this.index].members;
             this.leaderInfo = response.data[this.index];
         }, response => {
@@ -115,8 +116,8 @@ export default {
               memberName += ", "; 
               memberName += this.membersInfo[i].name;
           }
-          if(this.containsLeader){
-            memberName += ", "+this.leaderInfo.leader+"(leader)"
+          if(this.containsLeader=="true"){
+            memberName += ", "+this.leaderInfo.leader+" (leader)"
           }
           return memberName;
         }

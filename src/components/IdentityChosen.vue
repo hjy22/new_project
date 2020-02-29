@@ -40,7 +40,7 @@
                 cols="12"
                 md="4"
             >
-                <v-form ref="form">
+                <v-form ref="form1">
                 <v-text-field
                     label="Name"
                 ></v-text-field>
@@ -77,15 +77,17 @@
                 cols="12"
                 md="4"
             >
-                <v-form ref="form">
+                <v-form ref="form2">
                 <v-text-field
                     label="Name"
                 ></v-text-field>
                 <v-text-field
                     label="Email"
                 ></v-text-field>
-                <v-text-field
+                <v-text-field 
+                    v-model="teamNum"
                     label="ID"
+                    :rules="teamNumRules"
                 ></v-text-field>
                 </v-form>
             </v-col>
@@ -97,7 +99,13 @@
             <v-chip
                 class="mr-2"
             >
-                <v-btn @click="jump('StudentHome','Student','HOME')" text><v-icon >mdi-check</v-icon>
+                <!-- <v-btn 
+                @click="validate;jump('StudentHome','Student','HOME',teamNum)" 
+                text> -->
+                <v-btn 
+                @click="validate()" 
+                text>
+                <v-icon >mdi-check</v-icon>
                 Submit</v-btn>
             </v-chip>
             </v-row>
@@ -117,18 +125,36 @@ import Vue from 'vue'
   export default {
     data () {
       return {
+        teamNum:null,
         tabs: null,
+        teamNumRules: [
+        v => !!v || 'Team number is required',
+        v => (v && v <= 9 && v > 0) || 'Team number does not valid',
+        //要把team10输入时，marker的组改成1
+      ],
       }
     },
     methods: {
-      jump(page,identity,name) {
+      jump(page,identity,name,teamID) {
+        // console.log(this.$store.getters.getCurrentIdentity)
+        // console.log(this.$store.getters.getStudentGroup)
       this.$store.dispatch("toggleUserIdentity", { status: identity });
       this.$store.dispatch("toggleUserView",{status: name});
+      this.$store.dispatch("toggleStudentGroup",{status: teamID});
+      // console.log(this.$store.getters.getCurrentIdentity)
       this.$router.push(page);
     },
+    validate () {
+      if (this.$refs.form2.validate()) {
+        this.jump('StudentHome','Student','HOME',this.teamNum)
+      }
+    }
+    // pass(){
+    //   this.$router.replace({name:'StudentHome',query:{
+    //     index: this.teamNum
+    //   }
+    //   })
+    // }
     },
-    computed: {
-    ...mapGetters(["getCurrentIdentity"]),
-  }
   }
 </script>

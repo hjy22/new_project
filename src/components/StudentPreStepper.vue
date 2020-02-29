@@ -48,7 +48,7 @@
 
       <v-stepper-content step="3">
           <v-row justify="center">
-              <ViewFeedback :index="0"/>
+              <ViewFeedback :index="teamIndex"/>
         
           </v-row>
 
@@ -65,17 +65,31 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import StudentPreCard from "@/components/StudentPreCard";
 import ViewFeedback from "@/components/ViewFeedback";
   export default {
     data () {
       return {
+        teamIndex:0,
         e1: 1,
       }
     },
     components:{
         StudentPreCard,
         ViewFeedback
+    },
+    created () {
+      this.getTeamIndex()
+    },
+    methods:{
+      getTeamIndex(){
+        var teamID = this.$store.getters.getStudentGroup
+        this.teamIndex = Number(teamID)-1
+      }
+    },
+    computed: {
+      ...mapGetters(["getStudentGroup"])
     }
   }
 </script>
