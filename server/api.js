@@ -32,5 +32,16 @@ module.exports = {
           connection.release();
       })
     })
+  },
+  addValue(req, res, next) {
+    console.log(req.body);
+    var id = req.body.id, name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.addValue;
+      connection.query(sql, [id,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
   }
 }

@@ -10,4 +10,8 @@ router.post('/setValue', (req, res, next) => {
   api.setValue(req, res, next);
 });
 
+router.post('/addValue', (req, res, next) => {
+  api.addValue(req, res, next);
+});
+
 module.exports = router;

@@ -3,6 +3,8 @@
   <!-- <div id="app"> -->
     <!-- <LecturerMenu/> -->
     <v-btn @click="getValue">aaa</v-btn>
+    <v-btn @click="setValue">bbb</v-btn>
+    <v-btn @click="addValue">ccc</v-btn>
     <IdentityChosen/>
     <!-- <Footer/> -->
   <!-- </div> -->
@@ -36,7 +38,15 @@ export default {
     setValue() {
       // axios.post('/', {})
       this.$http.post('/api/setValue', {
-        id: 1, name: this.inpContent
+        id: 1, name: "cc"
+      }).then( (res) => {
+        console.log('res', res);
+      })
+    },
+    addValue() {
+      // axios.post('/', {})
+      this.$http.post('/api/addValue', {
+        id: 4, name: "ad"
       }).then( (res) => {
         console.log('res', res);
       })
