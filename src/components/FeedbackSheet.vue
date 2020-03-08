@@ -88,9 +88,9 @@ import axios from 'axios'
     },
      methods:{
        getInfo() {
-        axios.get('../static/FeedbackSheet.json').then(response => {
-            this.checkBoxInfo = response.data.checkBox;
-            this.textFieldInfo = response.data.textField;
+        axios.get('../static/CourseInfo.json').then(response => {
+            this.checkBoxInfo = response.data.feedbackCheckBox;
+            this.textFieldInfo = response.data.feedbackTextField;
         }, response => {
             console.log("error");
         });

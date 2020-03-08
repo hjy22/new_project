@@ -8,7 +8,7 @@
                   
             <v-list three-line subheader>
           <v-subheader>Rating</v-subheader>
-          <v-flex  v-for="(rating, id) in feedbackInfo.rating" :key="id">
+          <v-flex  v-for="(rating, id) in feedbackSheet" :key="id">
             <v-list-item>
 
               <v-list-item-content>
@@ -21,13 +21,12 @@
           
         >
           <v-rating
-                      :value="2"
-                      length="4"
-                      size="32"
-                      color="amber"
-                      dense
-                      half-increments
-                    ></v-rating>
+            :value="2"
+            length="4"
+            size="32"
+            color="amber"
+            dense
+          ></v-rating>
                     <!-- <v-icon size="16">mdi-alert-circle-outline</v-icon> -->
         </v-row>
                 </v-list-item>
@@ -39,13 +38,13 @@
               <v-container>
             <v-list three-line subheader>
             <v-subheader>TextField</v-subheader>
-            <v-flex v-for="(text, id) in feedbackInfo.textField" :key="id">
+            <v-flex v-for="(text, id) in feedbackTextField" :key="id">
                 <v-list-item>
                 <v-list-item-content>
                         <v-list-item-subtitle>
                             <v-textarea
                             outlined
-                            :label="text.name"
+                            :label="text.modelName"
                             rows="2"
                             row-height="20"
                             ></v-textarea>
@@ -64,14 +63,12 @@
 
 <script>
 import axios from 'axios'
-import { mapGetters } from "vuex";
   export default {
-    // props:["index"],
     data () {
       return {
         teamIndex:0,
-        feedbackInfo:[],
         feedbackSheet:[],
+        feedbackTextField:[],
         model:null,
         dialog: false,
         notifications: false,
@@ -80,55 +77,19 @@ import { mapGetters } from "vuex";
       }
     },
     created () {
-      this.getTeamIndex()
       this.getInfo() // 本地JSON
       
     },
      methods:{
        getInfo() {
-        axios.get('../static/FeedbackInfo.json').then(response => {
-            this.feedbackInfo = response.data[this.teamIndex];
-        }, response => {
-            console.log("error");
-        });
-        axios.get('../static/FeedbackSheet.json').then(response => {
-            this.feedbackSheet = response.data.checkBox;
+        axios.get('../static/CourseInfo.json').then(response => {
+            this.feedbackSheet = response.data[0].feedbackCheckBox;
+            this.feedbackTextField = response.data[0].feedbackTextField;
         }, response => {
             console.log("error");
         });
         
       },
-      getTeamIndex(){
-        var teamID = this.$store.getters.getStudentGroup
-        this.teamIndex = Number(teamID)-1
-      },
-      getComment(name, scores){
-        for(var i = 0; i<this.getJsonLength(this.feedbackSheet);i++){
-          if(this.feedbackSheet[i].name == name){
-            for(var j = 0; j<this.getJsonLength(this.feedbackSheet[i].details);j++){
-              if(this.feedbackSheet[i].details[j].scores==scores){
-                return this.feedbackSheet[i].details[j].name+". "+this.feedbackSheet[i].details[j].intro
-              }
-          }
-        }
-      } 
-      },
-      getJsonLength(jsonData){
-          var jsonLength = 0;
-          for(var item in jsonData){
-            jsonLength++;
-          }
-          return jsonLength;
-      }, 
-      getFeedbackTeam(){
-        return this.feedbackInfo.id
-      },
-      getMarkerTeam(){
-        return this.feedbackInfo.marker
-      }
      },
-     computed: {
-      ...mapGetters(["getStudentGroup"])
-    }
   }
 </script>
