@@ -47,11 +47,11 @@ export default {
     }
   }
   },
-  computed: {
-    ...mapGetters([
-      "getLecturerFeedbackPageCourseList",
-    ])
-  },
+  // computed: {
+  //   ...mapGetters([
+  //     "getLecturerFeedbackPageCourseList",
+  //   ])
+  // },
 }
 </script>
 

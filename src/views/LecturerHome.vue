@@ -4,16 +4,16 @@
     <!-- <LecturerMenu/> -->
     <v-container>
     <v-layout>
-      <v-flex v-for="(Info, id) in getLecturerHomePageInfoList" :key="id" xs12 sm8 md4 offset-md4>
-        <InfoCard :name="Info.name" :ID="Info.ID" :character="Info.character"/>
-      </v-flex>
+      <!-- <v-flex v-for="(Info, id) in getLecturerHomePageInfoList" :key="id" xs12 sm8 md4 offset-md4> -->
+        <InfoCard :name="'Anna'" :ID="'0001'" :character="'Lecturer'"/>
+      <!-- </v-flex> -->
       </v-layout>
     </v-container>
     <v-row
       justify='space-around'
     >
-      <v-col v-for="(course) in getLecturerHomePageCourseList" :key="course.index" >
-        <AssignCard :code="course.code" :name="course.name" :ddl="course.ddl" offset-sm5/>
+      <v-col >
+        <AssignCard :code="courseInfo.code" :name="courseInfo.name" :ddl="courseInfo.ddl" offset-sm5/>
       </v-col>
     </v-row>
     <!-- <Footer/> -->
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import axios from 'axios'
 import LecturerMenu from "@/components/LecturerMenu";
 import InfoCard from "@/components/InfoCard";
 import AssignCard from "@/components/AssignCard";
@@ -31,6 +31,7 @@ import Footer from "@/components/Footer";
 export default {
   data () {
     return {
+      courseInfo:[],
     }
   },
   components: {
@@ -39,12 +40,21 @@ export default {
     AssignCard,
     Footer,
   },
-  computed: {
-    ...mapGetters([
-      "getLecturerHomePageInfoList",
-      "getLecturerHomePageCourseList",
-    ])
-  }
+  created () {
+      this.getCourseInfo() // 本地JSON
+    },
+    
+    methods: {
+      // 本地json获取商品数据
+     getCourseInfo() {
+        axios.get('../static/CourseInfo.json').then(response => {
+            
+            this.courseInfo = response.data[0];
+        }, response => {
+            console.log("error");
+        });
+    },
+    }
 }
 </script>
 

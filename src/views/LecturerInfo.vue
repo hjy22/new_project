@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
 import LecturerMenu from "@/components/LecturerMenu";
 import StudentsCard from "@/components/StudentsCard";
 import BackTop from "@/components/BackTop";
@@ -28,11 +27,6 @@ export default {
     BackTop,
     Footer,
   },
-  computed: {
-    ...mapGetters([
-      "getLecturerInfoPageCourseList",
-    ])
-  }
 }
 </script>
 

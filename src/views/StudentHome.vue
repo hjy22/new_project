@@ -63,18 +63,7 @@ export default {
   created () {
       this.getMemberInfo() // 本地JSON
       this.getTeamNum()
-      //  this.getParams();
-      //  this.getQuerys();
     },
-    // activated(){
-    //    if (this.$route.params.flush === 'on') {
-    //   this.getParams();
-    //    }
-    // },
-    // watch:{
-    //     // '$route':'getParams'
-    //     '$route':'getQuerys',
-    // },
     methods: {
       // 本地json获取商品数据
      getMemberInfo() {
@@ -94,18 +83,7 @@ export default {
       getTeamNum(){
         this.marker = this.$store.getters.getStudentGroup
         this.presenter = Number(this.marker)-1
-        // console.log(this.$store.getters.getStudentGroup)
       }
-      // getParams() {
-        
-      //       this.index = this.$route.params.index
-      //       console.log(this.index)
-      //   },
-      // getQuerys() {
-      //       this.marker = this.$route.query.index
-      //       this.presenter = (Number(this.marker)-1)
-      //       // console.log(Number(this.index)+1)
-      //   },
     },
     computed: {
     ...mapGetters(["getStudentGroup"])
