@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/view/chooseUser.vue'
+import Home from '@/views/chooseUser.vue'
 // import LecturerHomePage from '@/view/lecturerHomeView/LecturerHomePage'
 
 Vue.use(Router)
@@ -15,42 +15,42 @@ export default new Router({
     {
       path: '/chooseUser',
       name: 'chooseUser',
-      component: () => import('@/view/chooseUser.vue'),
+      component: () => import('@/views/chooseUser.vue'),
     },
     {
       path: '/LecturerHome',
       name: 'LecturerHome',
-      component: () => import('@/view/LecturerHome.vue'),
+      component: () => import('@/views/LecturerHome.vue'),
     },
     {
       path: '/LecturerCalendar',
       name: 'LecturerCalendar',
-      component: () => import('@/view/LecturerCalendar.vue'),
+      component: () => import('@/views/LecturerCalendar.vue'),
     },
     {
       path: '/LecturerCourse',
       name: 'LecturerCourse',
-      component: () => import('@/view/LecturerCourse.vue'),
+      component: () => import('@/views/LecturerCourse.vue'),
     },
     {
       path: '/LecturerInfo',
       name: 'LecturerInfo',
-      component: () => import('@/view/LecturerInfo.vue'),
+      component: () => import('@/views/LecturerInfo.vue'),
     },
     {
       path: '/StudentHome',
       name: 'StudentHome',
-      component: () => import('@/view/StudentHome.vue'),
+      component: () => import('@/views/StudentHome.vue'),
     },
     {
       path: '/StudentPre',
       name: 'StudentPre',
-      component: () => import('@/view/StudentPre.vue'),
+      component: () => import('@/views/StudentPre.vue'),
     },
     {
       path: '/StudentMark',
       name: 'StudentMark',
-      component: () => import('@/view/StudentMark.vue'),
+      component: () => import('@/views/StudentMark.vue'),
     },
   ]
 })

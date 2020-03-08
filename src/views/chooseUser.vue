@@ -2,9 +2,9 @@
 <v-content>
   <!-- <div id="app"> -->
     <!-- <LecturerMenu/> -->
-    <v-btn @click="getValue">aaa</v-btn>
+    <!-- <v-btn @click="getValue">aaa</v-btn>
     <v-btn @click="setValue">bbb</v-btn>
-    <v-btn @click="addValue">ccc</v-btn>
+    <v-btn @click="addValue">ccc</v-btn> -->
     <IdentityChosen/>
     <!-- <Footer/> -->
   <!-- </div> -->
