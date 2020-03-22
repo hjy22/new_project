@@ -1,19 +1,20 @@
 <template>
 <v-content>
   <v-card>
-
+    <p class="title text-center">Marking for {{teamInfo.marker}}</p>
         <v-row justify="center">
             <v-col>
-                <v-container>
+                <!-- <v-container> -->
+                  
                   
             <v-list three-line subheader>
           <v-subheader>Rating</v-subheader>
           <v-flex  v-for="(rating, id) in feedbackSheet" :key="id">
             <v-list-item>
 
-              <v-list-item-content>
+              <!-- <v-list-item-content> -->
           <v-list-item-title class="title">{{rating.name}}</v-list-item-title>
-        </v-list-item-content>
+        <!-- </v-list-item-content> -->
 
         <v-row
           align="center"
@@ -32,7 +33,7 @@
                 </v-list-item>
           </v-flex>
         </v-list>
-        </v-container>
+        <!-- </v-container> -->
             </v-col>
             <v-col>
               <v-container>
@@ -41,14 +42,14 @@
             <v-flex v-for="(text, id) in feedbackTextField" :key="id">
                 <v-list-item>
                 <v-list-item-content>
-                        <v-list-item-subtitle>
+                        <!-- <v-list-item-subtitle> -->
                             <v-textarea
                             outlined
-                            :label="text.modelName"
+                            :label="text.name"
                             rows="2"
                             row-height="20"
                             ></v-textarea>
-                        </v-list-item-subtitle>
+                        <!-- </v-list-item-subtitle> -->
                 </v-list-item-content>
             </v-list-item>
             </v-flex>
@@ -56,6 +57,12 @@
         </v-container>
         </v-col>
         </v-row>
+        <v-container text-right>
+          <v-btn
+          color="primary"
+          dark
+        >submit</v-btn>
+        </v-container>
       </v-card>
 </v-content>
 </template>
@@ -63,10 +70,12 @@
 
 <script>
 import axios from 'axios'
+import { mapGetters } from "vuex";
   export default {
     data () {
       return {
         teamIndex:0,
+        teamInfo:[],
         feedbackSheet:[],
         feedbackTextField:[],
         model:null,
@@ -77,10 +86,15 @@ import axios from 'axios'
       }
     },
     created () {
+      this.getTeamIndex()
       this.getInfo() // 本地JSON
       
     },
      methods:{
+       getTeamIndex(){
+        var teamID = this.$store.getters.getStudentGroup
+        this.teamIndex = Number(teamID)-1
+      },
        getInfo() {
         axios.get('../static/CourseInfo.json').then(response => {
             this.feedbackSheet = response.data[0].feedbackCheckBox;
@@ -88,8 +102,17 @@ import axios from 'axios'
         }, response => {
             console.log("error");
         });
+
+        axios.get('../static/COMP107.json').then(response => {
+            this.teamInfo = response.data[this.teamIndex];
+        }, response => {
+            console.log("error");
+        });
         
       },
      },
+     computed: {
+      ...mapGetters(["getStudentGroup"])
+    }
   }
 </script>

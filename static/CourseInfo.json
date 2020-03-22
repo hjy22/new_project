@@ -196,14 +196,17 @@
       ],
       "feedbackTextField":[
         {
+            "name":"Q&A",
             "label":"Summarise briefly the question you asked",
             "modelName": "QA"
         },
         {
+            "name":"Feedback",
             "label":"Add any general feedback you want to send the group",
             "modelName": "feedback"
         },
         {
+            "name":"Comment",
             "label":"Please add any further comments for the lecturer",
             "modelName": "comment"
         }

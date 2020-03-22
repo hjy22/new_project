@@ -76,11 +76,13 @@
                 <ViewPDF />
               </v-row> -->
               
-              <v-row>
+              <v-row justify='center'>
                 <LecturerRoomCard :index="selected.id-1"/>
               </v-row>
-            <v-row>
+            <v-row justify='center'>
+              <v-col>
                 <GroupCard :index="selected.id-1" title="Members"/>
+              </v-col>
             </v-row>
           </v-card>
         </v-scroll-y-transition>

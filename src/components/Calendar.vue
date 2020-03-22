@@ -84,7 +84,7 @@
                   :color="selectedEvent.color"
                   @click="selectedOpen = false"
                 >
-                  Cancel
+                  OK
                 </v-btn>
               </v-card-actions>
             </v-card>

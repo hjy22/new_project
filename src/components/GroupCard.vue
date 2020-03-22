@@ -3,7 +3,7 @@
   <v-row justify="center">
     <v-col >
       <div>{{title}}</div>
-      <v-card max-width="344" v-if="!isEmpty(group[index])"> 
+      <v-card  center max-width="344" v-if="!isEmpty(group[index])"> 
 
         <v-list>
           <v-list-item>

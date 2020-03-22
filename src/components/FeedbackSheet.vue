@@ -2,7 +2,7 @@
   <v-row justify="center">
     <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <template v-slot:activator="{ on }">
-        <v-btn color="primary" dark v-on="on">Open Dialog</v-btn>
+        <v-btn color="primary" dark v-on="on">Set Feedback Sheet</v-btn>
       </template>
       <v-card>
         <v-toolbar dark color="primary">
@@ -89,8 +89,9 @@ import axios from 'axios'
      methods:{
        getInfo() {
         axios.get('../static/CourseInfo.json').then(response => {
-            this.checkBoxInfo = response.data.feedbackCheckBox;
-            this.textFieldInfo = response.data.feedbackTextField;
+            this.checkBoxInfo = response.data[0].feedbackCheckBox;
+            this.textFieldInfo = response.data[0].feedbackTextField;
+            console.log(this.checkBoxInfo)
         }, response => {
             console.log("error");
         });

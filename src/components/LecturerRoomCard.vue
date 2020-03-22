@@ -1,6 +1,6 @@
 <template>
     <v-container>
-        <v-card> 
+        <v-card v-if="checkSubmit()"> 
         <v-list v-if="!isEmpty(teamInfo[index])">
           <v-list-item>
             <v-list-item-action>
@@ -26,6 +26,16 @@
           
         </v-list>
       </v-card>
+
+      <v-card max-width="450px">
+      <v-alert v-if="!checkSubmit()"
+       dense
+      outlined
+      type="error"
+    >
+    Not submit the presentation time and place.
+    </v-alert>
+    </v-card>
     </v-container>
 </template>
 
@@ -65,6 +75,15 @@ export default {
           }
           return jsonLength;
       },   
+      checkSubmit(){
+        if(!this.isEmpty(this.teamInfo[this.index])){
+          if(this.teamInfo[this.index].room==null){
+            return false
+          }else{
+            return true
+          }
+      }
+      },
 }
 }
 </script>

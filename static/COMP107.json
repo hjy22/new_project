@@ -33,8 +33,8 @@
     "groupID":"1072020002",
     "leader": "Ervin Howell",
     "email": "Howell@liverpool.ac.uk",
-    "room": "Harold Cohen Library 3e",
-    "time": "2020-03-02 10:00",
+    "room": null,
+    "time": "9999-99-99 99:99",
     "marker":"Team 3",
     "members":[
       {
@@ -255,7 +255,7 @@
     "id": 10,
     "name": "Team 10",
     "groupID":"1072020010",
-    "leader": "Clementina DuBuque",
+    "leader": "Jack",
     "email": "DuBuque@liverpool.ac.uk",
     "room": "Harold Cohen Library 9e",
     "time": "2020-03-10 10:00",
