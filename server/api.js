@@ -38,10 +38,10 @@ module.exports = {
     var id = req.body.id, name = req.body.name;
     pool.getConnection((err, connection) => {
       var sql = sqlMap.addValue;
-      connection.query(sql, [id,name], (err, result) => {
+      connection.query(sql, [name, id], (err, result) => {
           res.json(result);
           connection.release();
       })
     })
-  }
+  },
 }

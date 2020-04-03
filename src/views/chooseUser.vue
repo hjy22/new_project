@@ -18,6 +18,7 @@
     <v-btn size="small" type="primary" @click="test">导入</v-btn>
     <v-btn size="small" type="primary" @click="setValue">set</v-btn>
     <v-btn size="small" type="primary" @click="getValue">get</v-btn>
+    <v-btn size="small" type="primary" @click="addValue">add</v-btn>
 
     <IdentityChosen/>
     <!-- <Footer/> -->
@@ -41,6 +42,7 @@ export default {
   name: 'choose',
   data(){
     return{
+      inpContent: '',
       outputs: [], // 保存读取出来的数据
       fileData:'', // 保存选择的文件
     }
@@ -158,26 +160,26 @@ export default {
         params: {id: 1}
       }).then( (res) => {
         console.log('res', res);
-        this.inpContent = res.data[0].name;
+        // this.inpContent = res.data[0].name;
         // console.log(this.inpContent);
       })
     },
     setValue() {
       // axios.post('/', {})
       this.$http.post('/api/setValue', {
-        id: 1, name: "cc"
+        name: "sad",id: "3"
       }).then( (res) => {
         console.log('res', res);
       })
     },
-    addValue(group,id) {
+    addValue() {
       // axios.post('/', {})
       this.$http.post('/api/addValue', {
-        group: group, id: id
+        name: "sad",id: "3"
       }).then( (res) => {
         console.log('res', res);
       })
-    }
+    },
   }
 }
 </script>
