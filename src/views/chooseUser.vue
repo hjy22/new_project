@@ -12,7 +12,12 @@
         accept=".xls, .xlsx"
         :auto-upload="false">
     <el-button size="small" type="primary">点击上传</el-button>
+    
     </el-upload>
+
+    <v-btn size="small" type="primary" @click="test">导入</v-btn>
+    <v-btn size="small" type="primary" @click="setValue">set</v-btn>
+    <v-btn size="small" type="primary" @click="getValue">get</v-btn>
 
     <IdentityChosen/>
     <!-- <Footer/> -->
@@ -79,7 +84,7 @@ export default {
         handleRemove(file,fileList){
             this.fileTemp = null
         },
-                 importfxx(obj) {
+              importfxx(obj) {
             let _this = this;
             let inputDOM = this.$refs.inputer;
             // 通过DOM取文件数据
@@ -128,16 +133,24 @@ export default {
                     });
                     _this.da=arr;
                     _this.dalen=arr.length;
-                    // console.log(arr)
+                    
+                    _this.outputs = arr;
                     return arr;
                 };
                 reader.readAsArrayBuffer(f);
             };
+            
             if (rABS) {
                 reader.readAsArrayBuffer(f);
             } else {
                 reader.readAsBinaryString(f);
             }
+        },
+        test(){
+            for(var i=0;i<this.outputs.length;i++){
+              // console.log(this.outputs[i].Group)
+                      this.addValue(this.outputs[i].Group,this.outputs[i].ID)
+                    }
         },
     getValue() {
       // axios.get('/', {params: ''})
@@ -157,10 +170,10 @@ export default {
         console.log('res', res);
       })
     },
-    addValue() {
+    addValue(group,id) {
       // axios.post('/', {})
       this.$http.post('/api/addValue', {
-        id: 4, name: "ad"
+        group: group, id: id
       }).then( (res) => {
         console.log('res', res);
       })
