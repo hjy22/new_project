@@ -1,8 +1,8 @@
 <template>
     <v-content>
     <v-container>
-
-      <LecturerCourseCard/>
+      <LecturerCourseStepper/>
+      <!-- <LecturerCourseCard/> -->
     </v-container>
     </v-content>
 </template>
@@ -10,11 +10,12 @@
 <script>
 import axios from 'axios'
 import { mapGetters } from "vuex";
-import LecturerMenu from "@/components/LecturerMenu";
-import PhoneMenu from "@/components/PhoneMenu";
+// import LecturerMenu from "@/components/LecturerMenu";
+// import PhoneMenu from "@/components/PhoneMenu";
+import LecturerCourseStepper from "@/components/LecturerCourseStepper";
 import LecturerCourseCard from "@/components/LecturerCourseCard";
-import BackTop from "@/components/BackTop";
-import Footer from "@/components/Footer";
+// import BackTop from "@/components/BackTop";
+// import Footer from "@/components/Footer";
 
 export default {
   data () {
@@ -24,11 +25,12 @@ export default {
     }
   },
   components: {
-    LecturerMenu,
-    PhoneMenu,
+    // LecturerMenu,
+    // PhoneMenu,
     LecturerCourseCard,
-    BackTop,
-    Footer
+    // BackTop,
+    // Footer,
+    LecturerCourseStepper
   },
   computed: {
     ...mapGetters([

@@ -2,7 +2,7 @@
 <v-content>
  
   <v-container>
-    <v-card max-height="344">
+    <!-- <v-card max-height="344"> -->
       <v-card-text>
         <!-- <v-list-item> -->
         <v-list-item-content>
@@ -16,7 +16,7 @@
         </v-list-item-content>
         <!-- </v-list-item> -->
       </v-card-text>
-    </v-card>
+    <!-- </v-card> -->
   </v-container>
 
 </v-content>

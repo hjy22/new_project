@@ -10,8 +10,17 @@ router.post('/setValue', (req, res, next) => {
   api.setValue(req, res, next);
 });
 
-router.post('/addValue', (req, res, next) => {
-  api.addValue(req, res, next);
+router.post('/addInfo', (req, res, next) => {
+  api.addInfo(req, res, next);
 });
+
+router.get('/getStepperStatus', (req, res, next) => {
+  api.getStepperStatus(req, res, next);
+});
+
+router.post('/setStepperStatus', (req, res, next) => {
+  api.setStepperStatus(req, res, next);
+});
+
 
 module.exports = router;
