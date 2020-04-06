@@ -26,4 +26,9 @@ router.post('/addGroup', (req, res, next) => {
   api.addGroup(req, res, next);
 });
 
+router.get('/getGroupInfo', (req, res, next) => {
+  api.getGroupInfo(req, res, next);
+});
+
+
 module.exports = router;

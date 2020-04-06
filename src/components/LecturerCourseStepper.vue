@@ -1,6 +1,6 @@
 <template>
 <v-content>
-  <!-- <v-btn size="small" type="primary" @click="addGroup">导入</v-btn> -->
+  <!-- <v-btn size="small" type="primary" @click="tt">导入</v-btn> -->
   <v-stepper v-model="stepper">
     <v-stepper-header>
       <v-stepper-step :complete="stepper > 1" step="1">Upload File</v-stepper-step>
@@ -93,6 +93,7 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
       this.getStepper()
     },
     methods: {
+      
             //上传文件时处理方法  
         handleChange(file, fileList){
             this.fileTemp = file.raw;
@@ -203,9 +204,10 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
               }
               previousGroup = currentGroup
             }
-              this.stepper=2
-              this.setStepper()
+              // this.stepper=2
+              // this.setStepper()
         },
+        
         getStepper(){
           this.$http.get('/api/getStepperStatus', {
         params: {name: "LCourse"}

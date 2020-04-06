@@ -5,6 +5,7 @@ var sqlMap = {
     getStepperStatus: 'SELECT * FROM stepperStatus WHERE name = ?',
     setStepperStatus: 'UPDATE stepperStatus SET stepper = ? WHERE name = ?',
     addGroup:'INSERT INTO Schedule(name,AssessingGroup) VALUES (?,?)',
+    getGroupInfo:'SELECT * FROM Schedule',
   }
   
   module.exports = sqlMap;

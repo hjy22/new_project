@@ -72,4 +72,14 @@ module.exports = {
       })
     })
   },
+  getGroupInfo(req, res, next) {
+    // var name = req.query.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.getGroupInfo;
+      connection.query(sql, (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }
