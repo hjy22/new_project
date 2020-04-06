@@ -1,5 +1,6 @@
 <template>
 <v-content>
+  <!-- <v-btn size="small" type="primary" @click="addGroup">导入</v-btn> -->
   <v-stepper v-model="stepper">
     <v-stepper-header>
       <v-stepper-step :complete="stepper > 1" step="1">Upload File</v-stepper-step>
@@ -187,12 +188,23 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
             }
         },
         save(){
+          var previousGroup = -1
+          var lastGroup = this.outputs[this.outputs.length-1].Group
             for(var i=0;i<this.outputs.length;i++){
-              // console.log(this.outputs[i].Group)
-                      this.addValue(this.outputs[i].Group,this.outputs[i].ID)
-                      this.stepper=2
-                      this.setStepper()
-                    }
+              var currentGroup = this.outputs[i].Group
+              this.addValue(currentGroup,this.outputs[i].ID)
+              if(previousGroup!=currentGroup){
+                if(i==0){
+                  this.addGroup(currentGroup,lastGroup)
+                }else{
+                  this.addGroup(currentGroup,previousGroup)
+                }
+                
+              }
+              previousGroup = currentGroup
+            }
+              this.stepper=2
+              this.setStepper()
         },
         getStepper(){
           this.$http.get('/api/getStepperStatus', {
@@ -233,6 +245,14 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
       // axios.post('/', {})
       this.$http.post('/api/addInfo', {
         name: name,id: id
+      }).then( (res) => {
+        console.log('res', res);
+      })
+    },
+    addGroup(groupName,markingGroup) {
+      // axios.post('/', {})
+      this.$http.post('/api/addGroup', {
+        name: groupName, AssessingGroup:markingGroup
       }).then( (res) => {
         console.log('res', res);
       })

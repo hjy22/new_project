@@ -21,6 +21,8 @@
          <v-spacer/>
         <v-btn @click="jump('LecturerInfo','Lecturer', 'INFO')" text>INFO</v-btn>
         <v-spacer/>
+        <v-btn @click="jump('LecturerTable','Lecturer', 'INFO')" text>TABLE</v-btn>
+        <v-spacer/>
         <v-chip
         class="ma-2"
         color="indigo"

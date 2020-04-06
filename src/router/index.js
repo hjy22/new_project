@@ -38,6 +38,11 @@ export default new Router({
       component: () => import('@/views/LecturerInfo.vue'),
     },
     {
+      path: '/LecturerTable',
+      name: 'LecturerTable',
+      component: () => import('@/views/LecturerTable.vue'),
+    },
+    {
       path: '/StudentHome',
       name: 'StudentHome',
       component: () => import('@/views/StudentHome.vue'),

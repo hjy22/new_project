@@ -23,7 +23,6 @@ module.exports = {
     })
   },
   setValue(req, res, next) {
-    // console.log(req.body);
     var id = req.body.id, name = req.body.name;
     pool.getConnection((err, connection) => {
       var sql = sqlMap.setValue;
@@ -58,6 +57,16 @@ module.exports = {
     pool.getConnection((err, connection) => {
       var sql = sqlMap.setStepperStatus;
       connection.query(sql, [stepper,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  addGroup(req, res, next) {
+    var name = req.body.name, AssessingGroup = req.body.AssessingGroup;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.addGroup;
+      connection.query(sql, [name,AssessingGroup], (err, result) => {
           res.json(result);
           connection.release();
       })

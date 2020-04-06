@@ -22,5 +22,8 @@ router.post('/setStepperStatus', (req, res, next) => {
   api.setStepperStatus(req, res, next);
 });
 
+router.post('/addGroup', (req, res, next) => {
+  api.addGroup(req, res, next);
+});
 
 module.exports = router;
