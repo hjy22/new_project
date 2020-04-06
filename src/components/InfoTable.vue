@@ -1,6 +1,6 @@
 <template>
 <v-content>
-  <v-simple-table fixed-header height="600px">
+  <!-- <v-simple-table fixed-header sortable height="600px">
     <template v-slot:default>
       <thead>
         <tr>
@@ -23,7 +23,16 @@
         </tr>
       </tbody>
     </template>
-  </v-simple-table>
+  </v-simple-table> -->
+   <v-data-table
+    :headers="headers"
+    :items="groupInfo"
+    disable-pagination
+    hide-default-footer
+    item-key="name"
+    class="elevation-1"
+  >
+  </v-data-table>
 </v-content>
 </template>
 
@@ -32,11 +41,17 @@
     data () {
       return {
         groupInfo:[],
-        desserts: [
+        headers: [
           {
-            name: 'Frozen Yogurt',
-            calories: 159,
+            text: 'Name',
+            align: 'start',
+            value: 'Name',
           },
+          { text: 'PreTime', value: 'PreTime' },
+          { text: 'PreLocation', value: 'PreLocation' },
+          { text: 'AssessingGroup', value: 'AssessingGroup' },
+          { text: 'MarkingTime', value: 'MarkingTime' },
+          { text: 'MarkingLocation', value: 'MarkingLocation' },
         ],
       }
     },
