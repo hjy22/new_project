@@ -1,31 +1,39 @@
 <template>
-  <!-- <v-app> -->
     <v-content>
-    <!-- <LecturerMenu/> -->
-    <v-container>
-      <!-- <v-container v-for="(course, id) in getLecturerInfoPageCourseList" :key="id"> -->
-        <StudentsCard/>
-      <!-- </v-container> -->
-    <!-- <StudentsCard/> -->
-    </v-container>
-    <!-- <BackTop/>
-    <Footer/> -->
+        <div v-if="upload==true">
+              <InfoTable/>
+      </div>
+      <div v-else>
+        <div class="headline">Please Upload the File at the Home Page</div>
+      </div>
     </v-content>
-  <!-- </v-app> -->
 </template>
 
 <script>
-import LecturerMenu from "@/components/LecturerMenu";
-import StudentsCard from "@/components/StudentsCard";
-import BackTop from "@/components/BackTop";
-import Footer from "@/components/Footer";
-
+import InfoTable from "@/components/InfoTable";
 export default {
+    data () {
+    return {
+      upload:"false",
+    }
+  },
+  created(){
+    // this.getCourseInfo()
+    this.getEventsInfo()
+  },
   components: {
-    LecturerMenu,
-    StudentsCard,
-    BackTop,
-    Footer,
+      InfoTable
+  },
+  methods:{
+  getEventsInfo(){
+           this.$http.get('/api/getGroupInfo', {
+          }).then( (res) => {
+            console.log('res', res);
+            if(res.data.length!=0){
+              this.upload = true
+            }
+          })
+        },
   },
 }
 </script>

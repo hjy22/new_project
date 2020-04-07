@@ -4,8 +4,8 @@ var sqlMap = {
     addInfo: 'INSERT INTO ttt(name,id) VALUES (?,?)',
     getStepperStatus: 'SELECT * FROM stepperStatus WHERE name = ?',
     setStepperStatus: 'UPDATE stepperStatus SET stepper = ? WHERE name = ?',
-    addGroup:'INSERT INTO Schedule(name,AssessingGroup) VALUES (?,?)',
-    getGroupInfo:'SELECT * FROM Schedule',
+    addGroup:'INSERT INTO test(name,AssessingGroup) VALUES (?,?)',
+    getGroupInfo:'SELECT * FROM test',
   }
   
   module.exports = sqlMap;

@@ -11,7 +11,7 @@
       <!-- <v-toolbar v-if="this.$store.getters.getCurrentView === 'Lecturer'"> -->
         <v-toolbar>
   
-        <!-- <v-toolbar-title>Title</v-toolbar-title> -->
+         <v-toolbar-title>{{this.$store.getters.getUserCurrentView}}</v-toolbar-title>
         <v-spacer/>
         <v-btn @click="jump('LecturerHome','Lecturer', 'HOME')" text>HOME</v-btn>
         <v-spacer/>
@@ -20,8 +20,6 @@
         <v-btn @click="jump('LecturerCourse','Lecturer', 'COURSE')" text>COURSE</v-btn>
          <v-spacer/>
         <v-btn @click="jump('LecturerInfo','Lecturer', 'INFO')" text>INFO</v-btn>
-        <v-spacer/>
-        <v-btn @click="jump('LecturerTable','Lecturer', 'INFO')" text>TABLE</v-btn>
         <v-spacer/>
         <v-chip
         class="ma-2"
@@ -57,9 +55,9 @@ export default {
       this.$router.push(page);
     },
     },
-  //   computed: {
-  //   ...mapGetters(["getCurrentIdentity"])
-  // }
+    computed: {
+    ...mapGetters(["getUserCurrentView"])
+  }
 }
 </script>
 

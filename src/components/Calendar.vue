@@ -116,38 +116,6 @@ export default {
     selectedElement: null,
     selectedOpen: false,
     events:[],
-    // events: [
-    //     {
-    //       name: 'Group2 Presentation',
-    //       start: '2020-02-07 09:00',
-    //       end: '2020-02-07 10:00',
-    //       details:'Leader',
-    //       color:"primary"
-    //     },
-    //     {
-    //       name: 'Group10 Presentation',
-    //       start: '2020-02-10 09:00',
-    //       end: '2020-02-10 10:00',
-    //       details:'Leader',
-    //       color:"primary"
-    //     },
-    //     {
-    //       name: 'Group3 Presentation',
-    //       start: '2020-02-09 12:30',
-    //       end: '2020-02-09 15:30',
-    //       details:'Leader',
-    //       color:"primary"
-    //     },
-    //     {
-    //       name: 'Deadline',
-    //       start: '2020-02-28 17:00',
-    //       end: '2020-02-28 17:00',
-    //       details:'aaa',
-    //       color:"red"
-    //     },
-    //   ],
-    // colors: ['blue', 'indigo', 'deep-purple', 'cyan', 'green', 'orange', 'grey darken-1'],
-    // names: ['Meeting', 'Holiday', 'PTO', 'Travel', 'Event', 'Birthday', 'Conference', 'Party'],
   }),
   computed: {
     title () {
@@ -188,81 +156,37 @@ export default {
     },
   },
   created () {
-      // if(!this.isEmpty(this.teamEvents)){
-        this.getEventsInfo() // 本地JSON
-        // this.getEvents()
-      // }
+        this.getEventsInfo()
     },
   mounted () {
     this.$refs.calendar.checkChange()
   },
   methods: {
     updateRange ({ start, end }) {
-        // const events = []
-
         const min = new Date(`${start.date}T00:00:00`)
         const max = new Date(`${end.date}T23:59:59`)
         const days = (max.getTime() - min.getTime()) / 86400000
-        // const eventCount = this.rnd(days, days + 20)
-        // this.getEventsInfo()
-        // for (let i = 0; i < eventCount; i++) {
-        //   const allDay = this.rnd(0, 3) === 0
-        //   const firstTimestamp = this.rnd(min.getTime(), max.getTime())
-        //   const first = new Date(firstTimestamp - (firstTimestamp % 900000))
-        //   const secondTimestamp = this.rnd(2, allDay ? 288 : 8) * 900000
-        //   const second = new Date(first.getTime() + secondTimestamp)
-
-        //   events.push({
-        //     name: this.names[this.rnd(0, this.names.length - 1)],
-        //     start: this.formatDate(first, !allDay),
-        //     end: this.formatDate(second, !allDay),
-        //     color: this.colors[this.rnd(0, this.colors.length - 1)],
-        //   })
-        // }
-
         this.start = start
         this.end = end
-        // this.events = events
       },
-    getEventsInfo() {
-      axios.get('../static/COMP107.json').then(response => {
-          this.teamEvents = response.data;
-          // console.log(this.teamEvents)
-          this.setDDL()
-          this.getEvents()
-      }, response => {
-          console.log("error");
-      });
-    },
-    isEmpty(array){
-        if(this.getJsonLength(array)==0){
-          return true
-        }else{
-          return false
-        }
-      },
-    getJsonLength(jsonData){
-      var jsonLength = 0;
-      for(var item in jsonData){
-        jsonLength++;
-      }
-      return jsonLength;
-    },
+    getEventsInfo(){
+           this.$http.get('/api/getGroupInfo', {
+          }).then( (res) => {
+            console.log('res', res);
+            this.teamEvents = res.data
+            this.setDDL()
+            this.getEvents()
+          })
+        },
     getEvents() {
-      var teamLength = this.getJsonLength(this.teamEvents);
-      for (let i = 0; i < teamLength; i++) {
-      var membersLength = this.getJsonLength(this.teamEvents[i].members);
-      var membersDetail = this.teamEvents[i].leader
-        for(let j =0; j < membersLength ; j++){
-          membersDetail += ", "+this.teamEvents[i].members[j].name
-        }
-        // console.log(membersDetail)
+      for (let i = 0; i < this.teamEvents.length; i++) {
+        if(this.teamEvents[i].PreTime!=null){
         this.events.push({
-          name: this.teamEvents[i].name+" Presentation",
-          start: this.teamEvents[i].time,
-          details: membersDetail,
+          name: "Group"+this.teamEvents[i].Name+" Presentation",
+          start: this.teamEvents[i].PreTime,
+          details: this.teamEvents[i].PreLocation,
           color: "primary",
-        })
+        })}
       }
     },
     setDDL(){

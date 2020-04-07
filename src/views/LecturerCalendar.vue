@@ -1,57 +1,48 @@
 <template>
-<div>
-<!-- <v-app> -->
-  
-<v-content>
-  <!-- <LecturerMenu/> -->
   <v-container>
-    <!-- <v-layout row>
-    <FeedbackChips/>
-    </v-layout>
-    <FeedbackList/> -->
-    <Calendar/>
-    <!-- <test/> -->
-    <!-- <c/> -->
+    <div v-if="upload==true">
+      <Calendar/>
+      </div>
+      <div v-else>
+        <div class="headline">Please Upload the File at the Home Page</div>
+      </div>
     </v-container>
-    <!-- <BackTop/> -->
-  <!-- <Footer /> -->
-</v-content>
-
-<!-- </v-app> -->
-</div>
 </template>
 
 <script>
 import { mapGetters } from "vuex";
-import LecturerMenu from "@/components/LecturerMenu";
 import Calendar from "@/components/Calendar";
-// import FeedbackList from "../components/FeedbackList";
-import Footer from "@/components/Footer";
-// import FeedbackChips from "../components/FeedbackChips";
-import BackTop from "@/components/BackTop";
 
 export default {
+  data () {
+    return {
+      upload:"false",
+    }
+  },
   components: {
-    LecturerMenu,
     Calendar,
-    // FeedbackList,
-    Footer,
-    // FeedbackChips,
-    BackTop,
+  },
+  created(){
+    // this.getCourseInfo()
+    this.getEventsInfo()
   },
   methods:{
-  returnCom(id) {
-    const returnEle = document.querySelector("#"+id);
-    if (!!returnEle) {
-      returnEle.scrollIntoView(true);
-    }
-  }
+  // returnCom(id) {
+  //   const returnEle = document.querySelector("#"+id);
+  //   if (!!returnEle) {
+  //     returnEle.scrollIntoView(true);
+  //   }
+  // }
+  getEventsInfo(){
+           this.$http.get('/api/getGroupInfo', {
+          }).then( (res) => {
+            console.log('res', res);
+            if(res.data.length!=0){
+              this.upload = true
+            }
+          })
+        },
   },
-  // computed: {
-  //   ...mapGetters([
-  //     "getLecturerFeedbackPageCourseList",
-  //   ])
-  // },
 }
 </script>
 
