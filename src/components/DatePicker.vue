@@ -1,6 +1,5 @@
 <template>
-    <!-- <div id="app"> -->
-    <!-- <v-app id="inspire"> -->
+<v-content>
         <v-row>
         <v-spacer></v-spacer>
         <v-col cols="12" sm="6" md="4">
@@ -24,6 +23,8 @@
                 <v-btn text color="primary" @click="modal = false">Cancel</v-btn>
                 <v-btn text color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
             </v-date-picker>
+
+            
             
             </v-dialog>
             <!-- <v-file-input accept="PDF/*" label="Upload Assignment Detail File"></v-file-input>
@@ -34,8 +35,10 @@
         
         <v-spacer></v-spacer>
         </v-row>
-    <!-- </v-app> -->
-    <!-- </div> -->
+         <v-row justify="center">
+         <v-btn color="primary" @click="uploadDDL">UPLOAD deadline</v-btn>
+         </v-row>
+</v-content>
 </template>
 
 <script>
@@ -46,5 +49,15 @@ export default {
     modal: false,
     menu2: false,
   }),
+  methods:{
+      uploadDDL() {
+      // axios.post('/', {})
+      this.$http.post('/api/uploadDDL', {
+        date: this.date+" 17:00", code: "COMP107"
+      }).then( (res) => {
+        console.log('res', res);
+      })
+    },
+  }
 }
 </script>

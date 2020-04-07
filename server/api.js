@@ -73,10 +73,29 @@ module.exports = {
     })
   },
   getGroupInfo(req, res, next) {
-    // var name = req.query.name;
     pool.getConnection((err, connection) => {
       var sql = sqlMap.getGroupInfo;
       connection.query(sql, (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  uploadDDL(req, res, next) {
+    var date = req.body.date, code = req.body.code;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.uploadDDL;
+      connection.query(sql, [date,code], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  getDDL(req, res, next) {
+    var code = req.query.code;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.getDDL;
+      connection.query(sql, [code],(err, result) => {
           res.json(result);
           connection.release();
       })

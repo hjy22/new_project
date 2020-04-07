@@ -190,11 +190,17 @@ export default {
       }
     },
     setDDL(){
-      this.events.push({
+       this.$http.get('/api/getDDL', {
+        params: {code: "COMP107"}
+      }).then( (res) => {
+        console.log('res', res);
+        this.events.push({
           name: "Deadline",
-          start: "2020-03-28 17:00",
+          start:  res.data[0].ddl,
           color: "red",
         })
+      })
+      
     },
     viewDay ({ date }) {
       this.focus = date

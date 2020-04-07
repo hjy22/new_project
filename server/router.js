@@ -30,5 +30,13 @@ router.get('/getGroupInfo', (req, res, next) => {
   api.getGroupInfo(req, res, next);
 });
 
+router.post('/uploadDDL', (req, res, next) => {
+  api.uploadDDL(req, res, next);
+});
+
+router.get('/getDDL', (req, res, next) => {
+  api.getDDL(req, res, next);
+});
+
 
 module.exports = router;

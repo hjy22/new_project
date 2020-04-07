@@ -6,6 +6,8 @@ var sqlMap = {
     setStepperStatus: 'UPDATE stepperStatus SET stepper = ? WHERE name = ?',
     addGroup:'INSERT INTO test(name,AssessingGroup) VALUES (?,?)',
     getGroupInfo:'SELECT * FROM test',
+    uploadDDL:'UPDATE courseInfo SET ddl = ? WHERE code = ?',
+    getDDL:'SELECT * FROM courseInfo WHERE code = ?',
   }
   
   module.exports = sqlMap;
