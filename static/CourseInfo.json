@@ -169,7 +169,7 @@
         {
             "name":"Q&A",
             "intro":"Questions answering",
-            "modelName": "question",
+            "modelName": "Q&A",
             "details":[
                 {
                   "name":"Outstanding",

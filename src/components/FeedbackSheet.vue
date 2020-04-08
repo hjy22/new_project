@@ -12,7 +12,7 @@
           <v-toolbar-title>Settings</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
-            <v-btn dark text @click="dialog = false">Save</v-btn>
+            <v-btn dark text @click="saveFeedbackSheet">Submit</v-btn>
           </v-toolbar-items>
         </v-toolbar>
         <v-divider></v-divider>
@@ -21,10 +21,12 @@
                 <v-container>
             <v-list three-line subheader>
           <v-subheader>Rating</v-subheader>
+          <p>{{ selectedCheck }}</p>
+          <p>{{ selectedText }}</p>
           <v-flex  v-for="(checkBox, id) in checkBoxInfo" :key="id">
               <v-list-item>
             <v-list-item-action>
-              <v-checkbox v-model="checkBox.model"></v-checkbox>
+              <v-checkbox v-model="selectedCheck" :value="checkBox.name"></v-checkbox>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>{{checkBox.name}}</v-list-item-title>
@@ -42,7 +44,7 @@
             <v-flex v-for="(text, id) in textFieldInfo" :key="id">
                 <v-list-item>
                 <v-list-item-action>
-                    <v-checkbox></v-checkbox>
+                    <v-checkbox  v-model="selectedText" :value="text.name"></v-checkbox>
                 </v-list-item-action>
                 <v-list-item-content>
                         <v-list-item-subtitle>
@@ -74,13 +76,8 @@ import axios from 'axios'
         checkBoxInfo:[],
         textFieldInfo:[],
         dialog: false,
-        organisation: false,
-        content: false,
-        presentation: false,
-        engagement:false,
-        delivery:false,
-        pace:false,
-        question:false,
+        selectedCheck:[],
+        selectedText:[],
       }
     },
     created () {
@@ -91,11 +88,36 @@ import axios from 'axios'
         axios.get('../static/CourseInfo.json').then(response => {
             this.checkBoxInfo = response.data[0].feedbackCheckBox;
             this.textFieldInfo = response.data[0].feedbackTextField;
+            // this.organisation = this.checkBoxInfo[0].modelName
             console.log(this.checkBoxInfo)
         }, response => {
             console.log("error");
         });
       },
+      saveFeedbackCheck(name) {
+        this.$http.post('/api/saveFeedbackCheck', {
+          selected: "true",name: name
+        }).then( (res) => {
+          console.log('res', res);
+        })
+      },
+      saveFeedbackText(name) {
+        this.$http.post('/api/saveFeedbackText', {
+          selected: "true",name: name
+        }).then( (res) => {
+          console.log('res', res);
+        })
+      },
+      saveFeedbackSheet(){
+        this.dialog=false
+        for(var i =0;i<this.selectedCheck.length;i++){
+          console.log(this.selectedCheck[i])
+          this.saveFeedbackCheck(this.selectedCheck[i])
+        }
+        for(var i =0;i<this.selectedText.length;i++){
+          this.saveFeedbackText(this.selectedText[i])
+        }
+      }
      }
   }
 </script>

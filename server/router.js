@@ -38,5 +38,13 @@ router.get('/getDDL', (req, res, next) => {
   api.getDDL(req, res, next);
 });
 
+router.post('/saveFeedbackCheck', (req, res, next) => {
+  api.saveFeedbackCheck(req, res, next);
+});
+
+router.post('/saveFeedbackText', (req, res, next) => {
+  api.saveFeedbackText(req, res, next);
+});
+
 
 module.exports = router;

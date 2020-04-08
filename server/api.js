@@ -101,4 +101,24 @@ module.exports = {
       })
     })
   },
+  saveFeedbackCheck(req, res, next) {
+    var selected = req.body.selected, name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.saveFeedbackCheck;
+      connection.query(sql, [selected,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  saveFeedbackText(req, res, next) {
+    var selected = req.body.selected, name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.saveFeedbackText;
+      connection.query(sql, [selected,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }

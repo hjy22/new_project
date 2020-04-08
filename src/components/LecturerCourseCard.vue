@@ -2,7 +2,7 @@
 <v-content>
  
   <v-container>
-    <v-card max-height="344">
+    <v-card max-height="400">
       <v-card-text>
         <!-- <v-list-item> -->
         <v-list-item-content>

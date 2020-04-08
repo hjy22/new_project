@@ -3,9 +3,7 @@
 <v-content>
   <!-- <StudentMenu/> -->
   <InfoCard name="aaaa" ID="1111" character="student"/>
-  <!-- <v-container> -->
-    <v-container>
-    <!-- <v-flex md6 justify-content-center> -->
+    <!-- <v-container>
     <v-row
       justify='center'
     >
@@ -26,8 +24,7 @@
         </v-row>
       </v-flex>
     </v-row>
-    <!-- </v-flex> -->
-    </v-container>
+    </v-container> -->
   <!-- </v-container> -->
 <!-- <h1>aaaaaaaa</h1> -->
 <!-- <Footer/> -->

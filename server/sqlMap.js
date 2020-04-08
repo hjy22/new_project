@@ -8,6 +8,8 @@ var sqlMap = {
     getGroupInfo:'SELECT * FROM test',
     uploadDDL:'UPDATE courseInfo SET ddl = ? WHERE code = ?',
     getDDL:'SELECT * FROM courseInfo WHERE code = ?',
+    saveFeedbackCheck:'UPDATE feedbackRating SET selected = ? WHERE name = ?',
+    saveFeedbackText:'UPDATE feedbackText SET selected = ? WHERE name = ?',
   }
   
   module.exports = sqlMap;
