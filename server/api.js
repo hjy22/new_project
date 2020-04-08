@@ -121,4 +121,22 @@ module.exports = {
       })
     })
   },
+  getFeedbackCheck(req, res, next) {
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.getFeedbackCheck;
+      connection.query(sql,(err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  getFeedbackText(req, res, next) {
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.getFeedbackText;
+      connection.query(sql,(err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }

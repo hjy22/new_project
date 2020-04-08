@@ -46,5 +46,15 @@ router.post('/saveFeedbackText', (req, res, next) => {
   api.saveFeedbackText(req, res, next);
 });
 
+router.get('/getFeedbackCheck', (req, res, next) => {
+  api.getFeedbackCheck(req, res, next);
+});
+
+router.get('/getFeedbackText', (req, res, next) => {
+  api.getFeedbackText(req, res, next);
+});
+
+
+
 
 module.exports = router;

@@ -1,25 +1,17 @@
 <template>
 <v-content>
   <v-card>
-    <p class="title text-center">Marking for {{teamInfo.marker}}</p>
+    <p class="title text-center headline">Marking for {{teamInfo.marker}}</p>
         <v-row justify="center">
             <v-col>
-                <!-- <v-container> -->
-                  
-                  
             <v-list three-line subheader>
           <v-subheader>Rating</v-subheader>
           <v-flex  v-for="(rating, id) in feedbackSheet" :key="id">
             <v-list-item>
-
-              <!-- <v-list-item-content> -->
           <v-list-item-title class="title">{{rating.name}}</v-list-item-title>
-        <!-- </v-list-item-content> -->
-
         <v-row
           align="center"
           justify="end"
-          
         >
           <v-rating
             :value="2"
@@ -28,12 +20,10 @@
             color="amber"
             dense
           ></v-rating>
-                    <!-- <v-icon size="16">mdi-alert-circle-outline</v-icon> -->
         </v-row>
                 </v-list-item>
           </v-flex>
         </v-list>
-        <!-- </v-container> -->
             </v-col>
             <v-col>
               <v-container>
@@ -42,14 +32,12 @@
             <v-flex v-for="(text, id) in feedbackTextField" :key="id">
                 <v-list-item>
                 <v-list-item-content>
-                        <!-- <v-list-item-subtitle> -->
                             <v-textarea
                             outlined
                             :label="text.name"
                             rows="2"
                             row-height="20"
                             ></v-textarea>
-                        <!-- </v-list-item-subtitle> -->
                 </v-list-item-content>
             </v-list-item>
             </v-flex>
@@ -86,11 +74,27 @@ import { mapGetters } from "vuex";
       }
     },
     created () {
-      this.getTeamIndex()
-      this.getInfo() // 本地JSON
-      
+      // this.getTeamIndex()
+      // this.getInfo() // 本地JSON
+      this.getFeedbackCheck()
+      this.getFeedbackText()
     },
      methods:{
+       getFeedbackCheck(){
+        this.$http.get('/api/getFeedbackCheck', {
+        }).then( (res) => {
+          console.log('res', res);
+          this.feedbackSheet = res.data
+          console.log(this.feedbackSheet);
+        })
+       },
+       getFeedbackText(){
+         this.$http.get('/api/getFeedbackText', {
+        }).then( (res) => {
+          console.log('res', res);
+          this.feedbackTextField = res.data
+        })
+       },
        getTeamIndex(){
         var teamID = this.$store.getters.getStudentGroup
         this.teamIndex = Number(teamID)-1

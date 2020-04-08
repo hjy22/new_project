@@ -10,6 +10,8 @@ var sqlMap = {
     getDDL:'SELECT * FROM courseInfo WHERE code = ?',
     saveFeedbackCheck:'UPDATE feedbackRating SET selected = ? WHERE name = ?',
     saveFeedbackText:'UPDATE feedbackText SET selected = ? WHERE name = ?',
+    getFeedbackCheck:"SELECT * FROM feedbackRating WHERE selected = 'true'",
+    getFeedbackText:"SELECT * FROM feedbackText WHERE selected = 'true'",
   }
   
   module.exports = sqlMap;
