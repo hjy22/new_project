@@ -54,6 +54,10 @@ router.get('/getFeedbackText', (req, res, next) => {
   api.getFeedbackText(req, res, next);
 });
 
+router.get('/getMarking', (req, res, next) => {
+  api.getMarking(req, res, next);
+});
+
 
 
 

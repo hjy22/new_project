@@ -1,7 +1,9 @@
 <template>
 <v-content>
+  <!-- <v-btn @click="getMarkingInfo">a</v-btn> -->
+  <!-- <v-btn @click="getStepper('1')">a</v-btn> -->
   <v-card>
-    <p class="title text-center headline">Marking for {{teamInfo.marker}}</p>
+    <p class="title text-center headline">Marking for Group{{markingGroup}}</p>
         <v-row justify="center">
             <v-col>
             <v-list three-line subheader>
@@ -14,11 +16,11 @@
           justify="end"
         >
           <v-rating
-            :value="2"
             length="4"
             size="32"
             color="amber"
             dense
+            v-model="ratingArray[id]"
           ></v-rating>
         </v-row>
                 </v-list-item>
@@ -64,9 +66,12 @@ import { mapGetters } from "vuex";
       return {
         teamIndex:0,
         teamInfo:[],
+        teamID:"",
         feedbackSheet:[],
         feedbackTextField:[],
         model:null,
+        markingGroup:"",
+        ratingArray:[],
         dialog: false,
         notifications: false,
         sound: true,
@@ -74,30 +79,39 @@ import { mapGetters } from "vuex";
       }
     },
     created () {
-      // this.getTeamIndex()
+      this.getTeamInfo()
+      // this.getMarkingInfo()
+      this.getMarking(this.teamID)
       // this.getInfo() // 本地JSON
       this.getFeedbackCheck()
       this.getFeedbackText()
     },
      methods:{
+        getMarking(groupName){
+          this.$http.get('/api/getMarking', {
+        params: {name: groupName}
+      }).then( (res) => {
+          console.log('res', res);
+          this.markingGroup = res.data[0].AssessingGroup
+      })
+        },
        getFeedbackCheck(){
         this.$http.get('/api/getFeedbackCheck', {
         }).then( (res) => {
-          console.log('res', res);
+          // console.log('res', res);
           this.feedbackSheet = res.data
-          console.log(this.feedbackSheet);
+          // console.log(this.feedbackSheet);
         })
        },
        getFeedbackText(){
          this.$http.get('/api/getFeedbackText', {
         }).then( (res) => {
-          console.log('res', res);
+          // console.log('res', res);
           this.feedbackTextField = res.data
         })
        },
-       getTeamIndex(){
-        var teamID = this.$store.getters.getStudentGroup
-        this.teamIndex = Number(teamID)-1
+       getTeamInfo(){
+        this.teamID = this.$store.getters.getStudentGroup
       },
        getInfo() {
         axios.get('../static/CourseInfo.json').then(response => {

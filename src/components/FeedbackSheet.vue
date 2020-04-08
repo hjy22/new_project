@@ -21,8 +21,8 @@
                 <v-container>
             <v-list three-line subheader>
           <v-subheader>Rating</v-subheader>
-          <p>{{ selectedCheck }}</p>
-          <p>{{ selectedText }}</p>
+          <!-- <p>{{ selectedCheck }}</p>
+          <p>{{ selectedText }}</p> -->
           <v-flex  v-for="(checkBox, id) in checkBoxInfo" :key="id">
               <v-list-item>
             <v-list-item-action>
