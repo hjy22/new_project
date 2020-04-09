@@ -149,4 +149,14 @@ module.exports = {
       })
     })
   },
+  saveMarking(req, res, next) {
+    var id = req.body.id, name = req.body.name,content = req.body.content;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.saveMarking;
+      connection.query(sql, [id,name,content], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }

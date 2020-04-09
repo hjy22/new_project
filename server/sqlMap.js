@@ -13,7 +13,7 @@ var sqlMap = {
     getMarking:'SELECT * FROM test WHERE name = ?',
     getFeedbackCheck:"SELECT * FROM feedbackRating WHERE selected = 'true'",
     getFeedbackText:"SELECT * FROM feedbackText WHERE selected = 'true'",
-    
+    saveMarking:'INSERT INTO feedbackInfo(id,name,content) VALUES (?,?,?)',
   }
   
   module.exports = sqlMap;

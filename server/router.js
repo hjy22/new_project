@@ -58,6 +58,9 @@ router.get('/getMarking', (req, res, next) => {
   api.getMarking(req, res, next);
 });
 
+router.post('/saveMarking', (req, res, next) => {
+  api.saveMarking(req, res, next);
+});
 
 
 

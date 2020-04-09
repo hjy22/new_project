@@ -1,7 +1,6 @@
 <template>
 <v-content>
-  <!-- <v-btn @click="getMarkingInfo">a</v-btn> -->
-  <!-- <v-btn @click="getStepper('1')">a</v-btn> -->
+  <!-- <v-btn @click="saveMarking">a</v-btn> -->
   <v-card>
     <p class="title text-center headline">Marking for Group{{markingGroup}}</p>
         <v-row justify="center">
@@ -35,6 +34,7 @@
                 <v-list-item>
                 <v-list-item-content>
                             <v-textarea
+                            v-model="textArray[id]"
                             outlined
                             :label="text.name"
                             rows="2"
@@ -51,6 +51,7 @@
           <v-btn
           color="primary"
           dark
+          @click="saveMarking"
         >submit</v-btn>
         </v-container>
       </v-card>
@@ -72,6 +73,7 @@ import { mapGetters } from "vuex";
         model:null,
         markingGroup:"",
         ratingArray:[],
+        textArray:[],
         dialog: false,
         notifications: false,
         sound: true,
@@ -113,6 +115,24 @@ import { mapGetters } from "vuex";
        getTeamInfo(){
         this.teamID = this.$store.getters.getStudentGroup
       },
+
+      saveMarking(){
+        // console.log(this.feedbackSheet[0].name)
+        for(var i = 0;i<this.ratingArray.length;i++){
+          this.saveMarkingToDB(this.markingGroup,this.feedbackSheet[i].name,this.ratingArray[i])
+        }
+        for(var i = 0;i<this.textArray.length;i++){
+          this.saveMarkingToDB(this.markingGroup,this.feedbackTextField[i].name,this.textArray[i])
+        }
+      },
+      saveMarkingToDB(id,name,content){
+        this.$http.post('/api/saveMarking', {
+          id: id, name: name, content:content
+        }).then( (res) => {
+          console.log('res', res);
+        })
+      },
+
        getInfo() {
         axios.get('../static/CourseInfo.json').then(response => {
             this.feedbackSheet = response.data[0].feedbackCheckBox;
