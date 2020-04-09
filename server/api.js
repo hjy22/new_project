@@ -159,4 +159,44 @@ module.exports = {
       })
     })
   },
+  setPreTime(req, res, next) {
+    var PreTime = req.body.PreTime, name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.setPreTime;
+      connection.query(sql, [PreTime,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  setMarkingTime(req, res, next) {
+    var markingTime = req.body.markingTime, name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.setMarkingTime;
+      connection.query(sql, [markingTime,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  setLocation(req, res, next) {
+    var location = req.body.location, name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.setLocation;
+      connection.query(sql, [location,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  setMarkingLocation(req, res, next) {
+    var location = req.body.location, name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.setMarkingLocation;
+      connection.query(sql, [location,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }

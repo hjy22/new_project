@@ -12,9 +12,9 @@
             width="290px"
             >
             <template v-slot:activator="{ on }">
+              <p>Pick {{header}}</p>
                 <v-text-field
                 v-model="date"
-                label="Pick deadline"
                 readonly
                 v-on="on"
                 ></v-text-field>
@@ -35,7 +35,7 @@
 
         <v-row justify="center">
         <v-col cols="12" sm="6" md="3">
-            Deadline: {{date}}
+            {{header}}: {{date}}
           <v-text-field
           v-model="time"
             label="Time"
@@ -56,7 +56,7 @@
           dark
           v-on="on"
         >
-          Click Me
+          Submit
         </v-btn>
       </template>
 
@@ -65,11 +65,11 @@
           class="headline grey lighten-2"
           primary-title
         >
-          Privacy Policy
+          Comfirmation
         </v-card-title>
 
         <v-card-text>
-            COMP107 Deadline is {{date}} {{time}}.
+            {{name}} {{header}} is {{date}} {{time}}.
         </v-card-text>
 
         <v-divider></v-divider>
@@ -79,14 +79,14 @@
           <v-btn
             color="primary"
             text
-            @click="uploadDDL"
+            @click="uploadTime"
           >
             Yes
           </v-btn>
           <v-btn
             color="primary"
             text
-            @click="dialog == false"
+            @click="dialog=false"
           >
             No
           </v-btn>
@@ -96,7 +96,7 @@
     </v-row>
       </div>
       <div v-else>
-        <div class="headline text-center">You have uploaded the Deadline already</div>
+        <div class="headline text-center">You have uploaded the {{header}} already</div>
       </div>
         
 </v-content>
@@ -104,6 +104,7 @@
 
 <script>
 export default {
+  props: ['identity','header','groupID','name'],
     data: () => ({
     date: new Date().toISOString().substr(0, 10),
     menu: false,
@@ -114,9 +115,20 @@ export default {
     upload:false,
   }),
   created(){
-      this.getDDL()
+    if(this.identity=='lecturer'){
+      this.getDDL(this.identity)
+    }else if(this.identity=='student'){
+      this.getPreTime(this.groupID)
+    }
   },
   methods:{
+    uploadTime(){
+      if(this.identity=='lecturer'){
+        this.uploadDDL()
+      }else if(this.identity=='student'){
+        this.setPreTime()
+      }
+    },
       uploadDDL() {
           this.dialog = false
       // axios.post('/', {})
@@ -124,17 +136,44 @@ export default {
         date: this.date+" "+this.time, code: "COMP107"
       }).then( (res) => {
         console.log('res', res);
+        this.upload=true
       })
     },
-    getDDL(){
-        this.$http.get('/api/getDDL', {
-            params: {code: "COMP107"}
-          }).then( (res) => {
-            console.log('res', res);
-            if(res.data[0].ddl!=null){
-              this.upload = true
-            }
-          })
+    getDDL(identity){
+      this.$http.get('/api/getDDL', {
+          params: {code: "COMP107"}
+        }).then( (res) => {
+          console.log('res', res);
+          if(res.data[0].ddl!=""){
+            this.upload = true
+          }
+        })
+    },
+    getPreTime(groupID){
+      this.$http.get('/api/getMarking', {
+          params: {name: groupID}
+        }).then( (res) => {
+          console.log('res', res);
+          if(res.data[0].PreTime!=null){
+            this.upload = true
+          }
+        })
+    },
+    setPreTime() {
+      this.$http.post('/api/setPreTime', {
+        PreTime: this.date+" "+this.time, name: this.groupID
+      }).then( (res) => {
+        console.log('res', res);
+        this.setMarkingTime()
+        this.upload=true
+      })
+    },
+    setMarkingTime(){
+      this.$http.post('/api/setMarkingTime', {
+        markingTime: this.date+" "+this.time, name: this.groupID
+      }).then( (res) => {
+        console.log('res', res);
+      })
     }
   }
 }

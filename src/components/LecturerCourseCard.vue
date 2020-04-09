@@ -2,13 +2,13 @@
 <v-content>
  
   <v-container>
-    <v-card max-height="400">
+    <v-card max-height="500">
       <v-card-text>
         <!-- <v-list-item> -->
         <v-list-item-content>
           <v-list-item-title class="headline mb-1">{{courseInfo.code}} {{courseInfo.name}}</v-list-item-title>
           <v-container>
-          <DatePicker/>
+          <DatePicker :identity="'lecturer'" :header="'Deadline'" :name="'COMP107'"/>
           </v-container>
           <v-container>
           <FeedbackSheet/>

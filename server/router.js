@@ -62,6 +62,22 @@ router.post('/saveMarking', (req, res, next) => {
   api.saveMarking(req, res, next);
 });
 
+router.post('/setPreTime', (req, res, next) => {
+  api.setPreTime(req, res, next);
+});
+
+router.post('/setMarkingTime', (req, res, next) => {
+  api.setMarkingTime(req, res, next);
+});
+
+router.post('/setLocation', (req, res, next) => {
+  api.setLocation(req, res, next);
+});
+
+router.post('/setMarkingLocation', (req, res, next) => {
+  api.setMarkingLocation(req, res, next);
+});
+
 
 
 module.exports = router;
