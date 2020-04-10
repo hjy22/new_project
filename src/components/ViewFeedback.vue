@@ -59,19 +59,26 @@
             <v-list three-line subheader>
             <v-subheader>TextField</v-subheader>
             <v-flex v-for="(text, id) in feedbackText" :key="id">
+              <v-card
+                class="mx-auto"
+                max-width="400"
+              >
                 <v-list-item>
                 <v-list-item-content>
+                  <v-list-item-title class="title">{{text.name}}</v-list-item-title>
                         <v-list-item-subtitle>
-                            <v-textarea
+                            <!-- <v-textarea
                             outlined
                             disabled
                             :label="text.content"
                             rows="2"
                             row-height="20"
-                            ></v-textarea>
+                            ></v-textarea> -->
+                            {{text.content}}
                         </v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
+              </v-card>
             </v-flex>
         </v-list>
         </v-container>

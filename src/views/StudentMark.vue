@@ -78,6 +78,7 @@ import { mapGetters } from "vuex";
         ratingArray:[],
         textArray:[],
         upload:false,
+        stepper:"",
       }
     },
     created () {
@@ -114,8 +115,37 @@ import { mapGetters } from "vuex";
        getTeamID(){
         this.teamID = this.$store.getters.getStudentGroup
       },
+      getStepper(){
+          this.$http.get('/api/getStepperStatus', {
+        params: {name: this.markingGroup}
+        }).then( (res) => {
+          // console.log('res', res);
+          var stepper = res.data[0].stepper;
+          if(stepper=="1"){
+            this.completeSubmission()
+          }else if(stepper=="2"){
+            this.completeSubmission()
+            this.setStepper()
+          }
+        })
+        },
+        completeSubmission(){
+          this.$http.post('/api/completeSubmission', {
+        completeSubmission: "true", name: this.markingGroup
+      }).then( (res) => {
+        console.log('res', res);
+      })
+        },
+      setStepper(){
+      this.$http.post('/api/setStepperStatus', {
+        stepper: "3", name: this.markingGroup
+      }).then( (res) => {
+        console.log('res', res);
+      })
+    },
 
       saveMarking(){
+        this.getStepper()
         // console.log(this.feedbackSheet[0].name)
         for(var i = 0;i<this.ratingArray.length;i++){
           this.saveRatingToDB(this.markingGroup,this.feedbackSheet[i].name,this.ratingArray[i])

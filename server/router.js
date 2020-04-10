@@ -90,5 +90,8 @@ router.get('/getTextInfo', (req, res, next) => {
   api.getTextInfo(req, res, next);
 });
 
+router.post('/completeSubmission', (req, res, next) => {
+  api.completeSubmission(req, res, next);
+});
 
 module.exports = router;

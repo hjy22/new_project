@@ -21,6 +21,7 @@ var sqlMap = {
     setMarkingLocation:'UPDATE schedule SET MarkingLocation = ? WHERE AssessingGroup = ?',
     checkFeedback:'SELECT * FROM feedbackRatingInfo WHERE id = ?',
     getTextInfo:'SELECT * FROM feedbackTextInfo WHERE id = ?',
+    completeSubmission:'UPDATE stepperStatus SET completeSubmission = ? WHERE name = ?',
   }
   
   module.exports = sqlMap;

@@ -229,4 +229,14 @@ module.exports = {
       })
     })
   },
+  completeSubmission(req, res, next) {
+    var completeSubmission = req.body.completeSubmission, name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.completeSubmission;
+      connection.query(sql, [completeSubmission,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }

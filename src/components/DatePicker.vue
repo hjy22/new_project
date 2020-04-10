@@ -118,7 +118,7 @@ export default {
     if(this.identity=='lecturer'){
       this.getDDL(this.identity)
     }else if(this.identity=='student'){
-      this.getPreTime(this.groupID)
+      this.getPreTime()
     }
   },
   methods:{
@@ -149,9 +149,9 @@ export default {
           }
         })
     },
-    getPreTime(groupID){
+    getPreTime(){
       this.$http.get('/api/getMarking', {
-          params: {name: groupID}
+          params: {name: this.groupID}
         }).then( (res) => {
           console.log('res', res);
           if(res.data[0].PreTime!=null){
