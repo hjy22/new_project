@@ -58,8 +58,12 @@ router.get('/getMarking', (req, res, next) => {
   api.getMarking(req, res, next);
 });
 
-router.post('/saveMarking', (req, res, next) => {
-  api.saveMarking(req, res, next);
+router.post('/saveRatingToDB', (req, res, next) => {
+  api.saveRatingToDB(req, res, next);
+});
+
+router.post('/saveTextToDB', (req, res, next) => {
+  api.saveTextToDB(req, res, next);
 });
 
 router.post('/setPreTime', (req, res, next) => {
@@ -78,6 +82,9 @@ router.post('/setMarkingLocation', (req, res, next) => {
   api.setMarkingLocation(req, res, next);
 });
 
+router.get('/checkFeedback', (req, res, next) => {
+  api.checkFeedback(req, res, next);
+});
 
 
 module.exports = router;

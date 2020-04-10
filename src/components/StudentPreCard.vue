@@ -57,7 +57,6 @@ export default {
           params: {name: groupID}
         }).then( (res) => {
           console.log('res', res);
-          console.log(res.data[0].PreLocation)
           if(res.data[0].PreLocation!=null){
             this.upload = true
           }

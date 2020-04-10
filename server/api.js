@@ -149,10 +149,20 @@ module.exports = {
       })
     })
   },
-  saveMarking(req, res, next) {
+  saveRatingToDB(req, res, next) {
     var id = req.body.id, name = req.body.name,content = req.body.content;
     pool.getConnection((err, connection) => {
-      var sql = sqlMap.saveMarking;
+      var sql = sqlMap.saveRatingToDB;
+      connection.query(sql, [id,name,content], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  saveTextToDB(req, res, next) {
+    var id = req.body.id, name = req.body.name,content = req.body.content;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.saveTextToDB;
       connection.query(sql, [id,name,content], (err, result) => {
           res.json(result);
           connection.release();
@@ -194,6 +204,16 @@ module.exports = {
     pool.getConnection((err, connection) => {
       var sql = sqlMap.setMarkingLocation;
       connection.query(sql, [location,name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
+  checkFeedback(req, res, next) {
+    var id = req.query.id;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.checkFeedback;
+      connection.query(sql, [id],(err, result) => {
           res.json(result);
           connection.release();
       })

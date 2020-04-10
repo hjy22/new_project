@@ -13,11 +13,13 @@ var sqlMap = {
     getMarking:'SELECT * FROM schedule WHERE name = ?',
     getFeedbackCheck:"SELECT * FROM feedbackRating WHERE selected = 'true'",
     getFeedbackText:"SELECT * FROM feedbackText WHERE selected = 'true'",
-    saveMarking:'INSERT INTO feedbackInfo(id,name,content) VALUES (?,?,?)',
+    saveRatingToDB:'INSERT INTO feedbackRatingInfo(id,name,content) VALUES (?,?,?)',
+    saveTextToDB:'INSERT INTO feedbackTextInfo(id,name,content) VALUES (?,?,?)',
     setPreTime:'UPDATE schedule SET PreTime = ? WHERE name = ?',
     setMarkingTime:'UPDATE schedule SET MarkingTime = ? WHERE AssessingGroup = ?',
     setLocation:'UPDATE schedule SET PreLocation = ? WHERE name = ?',
     setMarkingLocation:'UPDATE schedule SET MarkingLocation = ? WHERE AssessingGroup = ?',
+    checkFeedback:'SELECT * FROM feedbackRatingInfo WHERE id = ?',
   }
   
   module.exports = sqlMap;

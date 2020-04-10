@@ -48,7 +48,7 @@
 
       <v-stepper-content step="3">
           <v-row justify="center">
-              <ViewFeedback :index="teamIndex"/>
+              <ViewFeedback :index="teamID"/>
         
           </v-row>
 
@@ -71,7 +71,7 @@ import ViewFeedback from "@/components/ViewFeedback";
   export default {
     data () {
       return {
-        teamIndex:0,
+        teamID:"",
         e1: 1,
       }
     },
@@ -84,8 +84,7 @@ import ViewFeedback from "@/components/ViewFeedback";
     },
     methods:{
       getTeamIndex(){
-        var teamID = this.$store.getters.getStudentGroup
-        this.teamIndex = Number(teamID)-1
+        this.teamID = this.$store.getters.getStudentGroup
       }
     },
     computed: {

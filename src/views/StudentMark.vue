@@ -1,6 +1,6 @@
 <template>
 <v-content>
-  <!-- <v-btn @click="saveMarking">a</v-btn> -->
+  <div v-if="upload==false">
   <v-card>
     <p class="title text-center headline">Marking for Group{{markingGroup}}</p>
         <v-row justify="center">
@@ -55,6 +55,11 @@
         >submit</v-btn>
         </v-container>
       </v-card>
+      </div>
+      <div v-else>
+        <div class="headline text-center">
+          Your group has uploaded the feedback for group{{markingGroup}} already!</div>
+      </div>
 </v-content>
 </template>
 
@@ -66,27 +71,22 @@ import { mapGetters } from "vuex";
     data () {
       return {
         teamIndex:0,
-        teamInfo:[],
         teamID:"",
         feedbackSheet:[],
         feedbackTextField:[],
-        model:null,
         markingGroup:"",
         ratingArray:[],
         textArray:[],
-        dialog: false,
-        notifications: false,
-        sound: true,
-        widgets: false,
+        upload:false,
       }
     },
     created () {
-      this.getTeamInfo()
-      // this.getMarkingInfo()
+      this.getTeamID()
       this.getMarking(this.teamID)
-      // this.getInfo() // 本地JSON
       this.getFeedbackCheck()
       this.getFeedbackText()
+      
+      
     },
      methods:{
         getMarking(groupName){
@@ -95,6 +95,7 @@ import { mapGetters } from "vuex";
       }).then( (res) => {
           console.log('res', res);
           this.markingGroup = res.data[0].AssessingGroup
+          this.checkFeedback(this.markingGroup)
       })
         },
        getFeedbackCheck(){
@@ -112,42 +113,44 @@ import { mapGetters } from "vuex";
           this.feedbackTextField = res.data
         })
        },
-       getTeamInfo(){
+       getTeamID(){
         this.teamID = this.$store.getters.getStudentGroup
       },
 
       saveMarking(){
         // console.log(this.feedbackSheet[0].name)
         for(var i = 0;i<this.ratingArray.length;i++){
-          this.saveMarkingToDB(this.markingGroup,this.feedbackSheet[i].name,this.ratingArray[i])
+          this.saveRatingToDB(this.markingGroup,this.feedbackSheet[i].name,this.ratingArray[i])
         }
         for(var i = 0;i<this.textArray.length;i++){
-          this.saveMarkingToDB(this.markingGroup,this.feedbackTextField[i].name,this.textArray[i])
+          this.saveTextToDB(this.markingGroup,this.feedbackTextField[i].name,this.textArray[i])
         }
       },
-      saveMarkingToDB(id,name,content){
-        this.$http.post('/api/saveMarking', {
+      saveRatingToDB(id,name,content){
+        this.$http.post('/api/saveRatingToDB', {
           id: id, name: name, content:content
         }).then( (res) => {
           console.log('res', res);
         })
       },
-
-       getInfo() {
-        axios.get('../static/CourseInfo.json').then(response => {
-            this.feedbackSheet = response.data[0].feedbackCheckBox;
-            this.feedbackTextField = response.data[0].feedbackTextField;
-        }, response => {
-            console.log("error");
-        });
-
-        axios.get('../static/COMP107.json').then(response => {
-            this.teamInfo = response.data[this.teamIndex];
-        }, response => {
-            console.log("error");
-        });
-        
+      saveTextToDB(id,name,content){
+        this.$http.post('/api/saveTextToDB', {
+          id: id, name: name, content:content
+        }).then( (res) => {
+          console.log('res', res);
+        })
       },
+      checkFeedback(id) {
+      this.$http.get('/api/checkFeedback', {
+        params: {id: id}
+      }).then( (res) => {
+        console.log('res', res);
+        console.log(res.data.length)
+        if(res.data.length!=0){
+          this.upload = true
+        }
+      })
+    },
      },
      computed: {
       ...mapGetters(["getStudentGroup"])
