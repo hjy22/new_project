@@ -86,5 +86,9 @@ router.get('/checkFeedback', (req, res, next) => {
   api.checkFeedback(req, res, next);
 });
 
+router.get('/getTextInfo', (req, res, next) => {
+  api.getTextInfo(req, res, next);
+});
+
 
 module.exports = router;

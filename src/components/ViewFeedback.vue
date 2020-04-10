@@ -6,7 +6,7 @@
       </template>
       <v-card>
         <v-toolbar dark color="primary">
-          <v-toolbar-title>Team{{getFeedbackTeam()}} Feedback (Marked by Team{{getMarkerTeam()}})</v-toolbar-title>
+          <v-toolbar-title>Team{{teamID}} Feedback (Marked by Team{{markingGroup}})</v-toolbar-title>
           <v-spacer></v-spacer>
           <v-toolbar-items>
             <v-icon dark text @click="dialog = false">mdi-close</v-icon>
@@ -19,7 +19,7 @@
                   
             <v-list three-line subheader>
           <v-subheader>Rating</v-subheader>
-          <v-flex  v-for="(rating, id) in feedbackInfo.rating" :key="id">
+          <v-flex  v-for="(rating, id) in feedbackRating" :key="id">
             <v-list-item>
 
               <v-list-item-content>
@@ -32,7 +32,7 @@
           
         >
           <v-rating
-                      :value="rating.scores"
+                      :value="parseInt(rating.content)"
                       length="4"
                       size="32"
                       color="amber"
@@ -46,7 +46,7 @@
             <v-icon  v-on="on" size="16">mdi-alert-circle-outline</v-icon>
              <!-- <div v-on="on" class="font-italic">detail</div> -->
            </template>
-          <span class="justify-space-between">{{getComment(rating.name,rating.scores)}}</span>
+          <span class="justify-space-between">{{getComment(rating.name,rating.content)}}</span>
     </v-tooltip>
         </v-row>
                 </v-list-item>
@@ -58,7 +58,7 @@
               <v-container>
             <v-list three-line subheader>
             <v-subheader>TextField</v-subheader>
-            <v-flex v-for="(text, id) in feedbackInfo.textField" :key="id">
+            <v-flex v-for="(text, id) in feedbackText" :key="id">
                 <v-list-item>
                 <v-list-item-content>
                         <v-list-item-subtitle>
@@ -85,28 +85,52 @@
 <script>
 import axios from 'axios'
   export default {
-    props:["index"],
+    props:["teamID"],
     data () {
       return {
-        feedbackInfo:[],
+        feedbackRating:[],
+        feedbackText:[],
         feedbackSheet:[],
         model:null,
         dialog: false,
         notifications: false,
         sound: true,
         widgets: false,
+        markingGroup:"",
       }
     },
     created () {
-      this.getInfo() // 本地JSON
+      this.getInfo() 
+      this.getRatingInfo(this.teamID)
+      this.getTextInfo(this.teamID)
+      this.getMarking(this.teamID)
     },
      methods:{
+       getRatingInfo(id){
+      this.$http.get('/api/checkFeedback', {
+        params: {id: id}
+      }).then( (res) => {
+        console.log('res', res);
+        this.feedbackRating = res.data;
+      })
+       },
+       getTextInfo(id){
+      this.$http.get('/api/getTextInfo', {
+        params: {id: id}
+      }).then( (res) => {
+        console.log('res', res);
+        this.feedbackText = res.data;
+      })
+       },
+       getMarking(groupName){
+          this.$http.get('/api/getMarking', {
+        params: {name: groupName}
+      }).then( (res) => {
+          console.log('res', res);
+          this.markingGroup = res.data[0].AssessingGroup
+      })
+        },
        getInfo() {
-        axios.get('../static/FeedbackInfo.json').then(response => {
-            this.feedbackInfo = response.data[this.index];
-        }, response => {
-            console.log("error");
-        });
         axios.get('../static/FeedbackSheet.json').then(response => {
             this.feedbackSheet = response.data.checkBox;
         }, response => {
@@ -132,12 +156,6 @@ import axios from 'axios'
           }
           return jsonLength;
       }, 
-      getFeedbackTeam(){
-        return this.feedbackInfo.id
-      },
-      getMarkerTeam(){
-        return this.feedbackInfo.marker
-      }
      }
   }
 </script>

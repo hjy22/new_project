@@ -219,4 +219,14 @@ module.exports = {
       })
     })
   },
+  getTextInfo(req, res, next) {
+    var id = req.query.id;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.getTextInfo;
+      connection.query(sql, [id],(err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }

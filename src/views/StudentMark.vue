@@ -85,8 +85,6 @@ import { mapGetters } from "vuex";
       this.getMarking(this.teamID)
       this.getFeedbackCheck()
       this.getFeedbackText()
-      
-      
     },
      methods:{
         getMarking(groupName){

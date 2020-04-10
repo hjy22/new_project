@@ -48,7 +48,7 @@
 
       <v-stepper-content step="3">
           <v-row justify="center">
-              <ViewFeedback :index="teamID"/>
+              <ViewFeedback :teamID="teamID"/>
         
           </v-row>
 
