@@ -40,12 +40,10 @@
                 cols="12"
                 md="4"
             >
-                <v-form ref="form1">
+                <v-form ref="form1"  v-model="valid1">
                 <v-text-field
-                    label="Name"
-                ></v-text-field>
-                <v-text-field
-                    label="Email"
+                  :rules="[ lecturerIDRules ]"
+                    label="ID"
                 ></v-text-field>
                 </v-form>
             </v-col>
@@ -56,7 +54,10 @@
             <v-chip
                 class="mr-2"
             >
-            <v-btn @click="jump('LecturerHome','Lecturer','HOME')" text><v-icon >mdi-check</v-icon>
+            <v-btn 
+            :disabled="!valid1" 
+            @click="form1Validate" 
+            text><v-icon >mdi-check</v-icon>
                 Submit</v-btn>
                 
             </v-chip>
@@ -77,7 +78,7 @@
                 cols="12"
                 md="4"
             >
-                <v-form ref="form2"  v-model="valid">
+                <v-form ref="form2"  v-model="valid2">
                 <v-text-field 
                     v-model="teamNum"
                     label="Team ID"
@@ -102,8 +103,8 @@
                 @click="validate;jump('StudentHome','Student','HOME',teamNum)" 
                 text> -->
                 <v-btn 
-                @click="validate()"
-                :disabled="!valid" 
+                @click="form2Validate()"
+                :disabled="!valid2" 
                 text>
                 <v-icon >mdi-check</v-icon>
                 Submit</v-btn>
@@ -130,7 +131,9 @@ import axios from 'axios'
         tabs: null,
         groupName:[],
         memberID:[],
-        valid: true,
+        valid1:true,
+        valid2: true,
+        lecturerID:"",
       //   teamNumRules: [
       //   v => !!v || 'Team number is required',
       //   v => (v && v <= 9 && v > 0) || 'Team number does not valid',
@@ -138,22 +141,28 @@ import axios from 'axios'
       }
     },
     created(){
+      this.getLecturerID()
       this.getGroupInfo()
     },
     methods: {
       jump(page,identity,name,teamID) {
-        // console.log(this.$store.getters.getCurrentIdentity)
-        // console.log(this.$store.getters.getStudentGroup)
-      this.$store.dispatch("toggleUserIdentity", { status: identity });
-      this.$store.dispatch("toggleUserView",{status: name});
-      this.$store.dispatch("toggleStudentGroup",{status: teamID});
-      // console.log(this.$store.getters.getCurrentIdentity)
-      this.$router.push(page);
+        this.$store.dispatch("toggleUserIdentity", { status: identity });
+        this.$store.dispatch("toggleUserView",{status: name});
+        this.$store.dispatch("toggleStudentGroup",{status: teamID});
+        this.$router.push(page);
+      },
+    form1Validate () {
+        this.jump('LecturerHome','Lecturer','HOME')
     },
-    validate () {
-      // if (this.$refs.form2.validate()) {
+    form2Validate () {
         this.jump('StudentHome','Student','HOME',this.teamNum)
-      // }
+    },
+    lecturerIDRules(value){
+      if(value == this.lecturerID){
+        return true
+      }else{
+        return "Your ID is invalid"
+      }
     },
     teamNumRules (value) {
     for(var i=0;i<this.groupName.length;i++){
@@ -171,6 +180,14 @@ import axios from 'axios'
       }
     }
      return "Your ID does not valid";  
+    },
+    getLecturerID(){
+      this.$http.get('/api/getDDL', {
+        params: {code:"COMP107"}
+      }).then( (res) => {
+        // console.log('res', res);
+        this.lecturerID = res.data[0].lecturerID
+      })
     },
       getGroupInfo() {
         this.$http.get('/api/getGroupInfo', {

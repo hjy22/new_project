@@ -33,58 +33,58 @@
 </template>
 
 <script>
-import axios from 'axios'
-import { mapGetters } from "vuex";
-import StudentMenu from "@/components/StudentMenu";
-import GroupCard from "@/components/GroupCard";
-import EmailDialog from "@/components/EmailDialog";
+// import axios from 'axios'
+// import { mapGetters } from "vuex";
+// import StudentMenu from "@/components/StudentMenu";
+// import GroupCard from "@/components/GroupCard";
+// import EmailDialog from "@/components/EmailDialog";
 import InfoCard from "@/components/InfoCard";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 
 export default {
   name:"StudentHome",
   components: {
-    StudentMenu,
-    Footer,
+    // StudentMenu,
+    // Footer,
     InfoCard,
-    GroupCard,
-    EmailDialog,
+    // GroupCard,
+    // EmailDialog,
   },
   data () {
       return {
-        Info: [],
-        marker:null,
-        presenter:null,
+        // Info: [],
+        // marker:null,
+        // presenter:null,
       }
     },
   created () {
-      this.getMemberInfo() // 本地JSON
-      this.getTeamNum()
+      // this.getMemberInfo() // 本地JSON
+      // this.getTeamNum()
     },
     methods: {
       // 本地json获取商品数据
-     getMemberInfo() {
-        axios.get('../static/COMP107.json').then(response => {
+    //  getMemberInfo() {
+    //     axios.get('../static/COMP107.json').then(response => {
             
-            this.Info = response.data;
-        }, response => {
-        });
+    //         this.Info = response.data;
+    //     }, response => {
+    //     });
+    // },
+      // getJsonLength(jsonData){
+      //     var jsonLength = 0;
+      //     for(var item in jsonData){
+      //       jsonLength++;
+      //     }
+      //     return jsonLength;
+      // },   
+      // getTeamNum(){
+      //   this.marker = this.$store.getters.getStudentGroup
+      //   this.presenter = Number(this.marker)-1
+      // }
     },
-      getJsonLength(jsonData){
-          var jsonLength = 0;
-          for(var item in jsonData){
-            jsonLength++;
-          }
-          return jsonLength;
-      },   
-      getTeamNum(){
-        this.marker = this.$store.getters.getStudentGroup
-        this.presenter = Number(this.marker)-1
-      }
-    },
-    computed: {
-    ...mapGetters(["getStudentGroup"])
-  }
+  //   computed: {
+  //   ...mapGetters(["getStudentGroup"])
+  // }
 }
 </script>
 
