@@ -94,4 +94,8 @@ router.post('/completeSubmission', (req, res, next) => {
   api.completeSubmission(req, res, next);
 });
 
+router.get('/getStudentID', (req, res, next) => {
+  api.getStudentID(req, res, next);
+});
+
 module.exports = router;

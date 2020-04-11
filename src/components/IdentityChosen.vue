@@ -77,17 +77,16 @@
                 cols="12"
                 md="4"
             >
-                <v-form ref="form2">
-                <v-text-field
-                    label="Name"
-                ></v-text-field>
-                <v-text-field
-                    label="Email"
-                ></v-text-field>
+                <v-form ref="form2"  v-model="valid">
                 <v-text-field 
                     v-model="teamNum"
-                    label="ID"
-                    :rules="teamNumRules"
+                    label="Team ID"
+                    :rules="[ teamNumRules ]"
+                ></v-text-field>
+                <v-text-field
+                  v-model="studentID"
+                    label="Your ID"
+                    :rules="[ studentIDRules ]"
                 ></v-text-field>
                 </v-form>
             </v-col>
@@ -103,7 +102,8 @@
                 @click="validate;jump('StudentHome','Student','HOME',teamNum)" 
                 text> -->
                 <v-btn 
-                @click="validate()" 
+                @click="validate()"
+                :disabled="!valid" 
                 text>
                 <v-icon >mdi-check</v-icon>
                 Submit</v-btn>
@@ -121,18 +121,24 @@
 
 <script>
 import { mapGetters } from "vuex";
-import Vue from 'vue'
+import axios from 'axios'
   export default {
     data () {
       return {
         teamNum:null,
+        studentID:null,
         tabs: null,
-        teamNumRules: [
-        v => !!v || 'Team number is required',
-        v => (v && v <= 9 && v > 0) || 'Team number does not valid',
-        //要把team10输入时，marker的组改成1
-      ],
+        groupName:[],
+        memberID:[],
+        valid: true,
+      //   teamNumRules: [
+      //   v => !!v || 'Team number is required',
+      //   v => (v && v <= 9 && v > 0) || 'Team number does not valid',
+      // ],
       }
+    },
+    created(){
+      this.getGroupInfo()
     },
     methods: {
       jump(page,identity,name,teamID) {
@@ -145,16 +151,52 @@ import Vue from 'vue'
       this.$router.push(page);
     },
     validate () {
-      if (this.$refs.form2.validate()) {
+      // if (this.$refs.form2.validate()) {
         this.jump('StudentHome','Student','HOME',this.teamNum)
+      // }
+    },
+    teamNumRules (value) {
+    for(var i=0;i<this.groupName.length;i++){
+      if(value==this.groupName[i].name){
+        this.getStudentID()
+        return true
       }
     }
-    // pass(){
-    //   this.$router.replace({name:'StudentHome',query:{
-    //     index: this.teamNum
-    //   }
-    //   })
-    // }
+     return "Team number does not valid";  
     },
+    studentIDRules(value){
+      for(var i=0;i<this.memberID.length;i++){
+      if(value==this.memberID[i]){
+        return true
+      }
+    }
+     return "Your ID does not valid";  
+    },
+      getGroupInfo() {
+        this.$http.get('/api/getGroupInfo', {
+      }).then( (res) => {
+        // console.log('res', res);
+        for(var i=0;i<res.data.length;i++){
+            this.groupName.push({
+            name: res.data[i].Name
+        })
+        }
+      })
+    },
+    getStudentID() {
+      this.memberID.length=0
+        this.$http.get('/api/getStudentID', {
+          params: {name: this.teamNum}
+      }).then( (res) => {
+        // console.log('res', res);
+        for(var i=0;i<res.data.length;i++){
+            this.memberID[i]=res.data[i].id
+        }
+      })
+    },
+    
+
+
+    }
   }
 </script>
