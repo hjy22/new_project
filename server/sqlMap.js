@@ -23,6 +23,7 @@ var sqlMap = {
     getTextInfo:'SELECT * FROM feedbackTextInfo WHERE id = ?',
     completeSubmission:'UPDATE stepperStatus SET completeSubmission = ? WHERE name = ?',
     getStudentID:'SELECT * FROM ttt WHERE name = ?',
+    checkFeedbackUplaod:"SELECT * FROM feedbackRating WHERE selected = 'true'",
   }
   
   module.exports = sqlMap;

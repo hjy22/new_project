@@ -1,4 +1,6 @@
 <template>
+<v-content>
+  <div v-if="upload==false">
   <v-row justify="center">
     <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <template v-slot:activator="{ on }">
@@ -66,6 +68,11 @@
       </v-card>
     </v-dialog>
   </v-row>
+  </div>
+      <div v-else>
+        <div class="headline text-center">You have uploaded this year feedback sheet already</div>
+      </div>
+</v-content>
 </template>
 
 <script>
@@ -73,6 +80,7 @@ import axios from 'axios'
   export default {
     data () {
       return {
+        upload:"",
         checkBoxInfo:[],
         textFieldInfo:[],
         dialog: false,
@@ -82,8 +90,21 @@ import axios from 'axios'
     },
     created () {
       this.getInfo() // 本地JSON
+      this.checkFeedback()
     },
      methods:{
+       checkFeedback(){
+         this.$http.get('/api/checkFeedbackUplaod', {
+          }).then( (res) => {
+            console.log('res', res);
+            if(res.data.length!=0){
+              this.upload = true
+            }else{
+              this.upload = false
+            }
+          })
+          
+       },
        getInfo() {
         axios.get('../static/CourseInfo.json').then(response => {
             this.checkBoxInfo = response.data[0].feedbackCheckBox;

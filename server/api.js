@@ -249,4 +249,13 @@ module.exports = {
       })
     })
   },
+  checkFeedbackUplaod(req, res, next) {
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.checkFeedbackUplaod;
+      connection.query(sql,(err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }

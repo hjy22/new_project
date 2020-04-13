@@ -98,4 +98,8 @@ router.get('/getStudentID', (req, res, next) => {
   api.getStudentID(req, res, next);
 });
 
+router.get('/checkFeedbackUplaod', (req, res, next) => {
+  api.checkFeedbackUplaod(req, res, next);
+});
+
 module.exports = router;

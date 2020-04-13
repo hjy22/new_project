@@ -15,6 +15,8 @@ import  VueResource  from 'vue-resource'
 
 Vue.use(XLSX)
 Vue.use(ElementUI)
+
+Vue.use(VueResource)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

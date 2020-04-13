@@ -19,7 +19,12 @@
                 v-on="on"
                 ></v-text-field>
             </template>
-            <v-date-picker v-model="date" scrollable>
+            
+            <v-date-picker 
+            v-model="date"
+            :min="minDate"
+            :max="ddl"
+            scrollable>
                 <v-spacer></v-spacer>
                 <v-btn text color="primary" @click="modal = false">Cancel</v-btn>
                 <v-btn text color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
@@ -111,13 +116,20 @@ export default {
     modal: false,
     menu2: false,
     dialog: false,
+    minDate:"",
+    ddl:"2020-04-25",
     time:"",
     upload:false,
   }),
   created(){
-    if(this.identity=='lecturer'){
-      this.getDDL(this.identity)
-    }else if(this.identity=='student'){
+    // if(this.identity=='lecturer'){
+    //   this.getDDL(this.identity)
+    // }else if(this.identity=='student'){
+    //   this.getPreTime()
+    // }
+    this.minDate = this.date
+    this.getDDL()
+    if(this.identity=='student'){
       this.getPreTime()
     }
   },
@@ -139,13 +151,18 @@ export default {
         this.upload=true
       })
     },
-    getDDL(identity){
+    getDDL(){
+      
       this.$http.get('/api/getDDL', {
           params: {code: "COMP107"}
         }).then( (res) => {
           console.log('res', res);
+          if(this.identity=="lecturer"){
           if(res.data[0].ddl!=""){
             this.upload = true
+          }
+          }else if(this.identity=="student"){
+            this.ddl=res.data[0].ddl
           }
         })
     },
