@@ -146,6 +146,7 @@ import { mapGetters } from "vuex";
 
       saveMarking(){
         this.getStepper()
+        this.upload = true;
         // console.log(this.feedbackSheet[0].name)
         for(var i = 0;i<this.ratingArray.length;i++){
           this.saveRatingToDB(this.markingGroup,this.feedbackSheet[i].name,this.ratingArray[i])
