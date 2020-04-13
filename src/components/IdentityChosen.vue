@@ -140,7 +140,7 @@ import axios from 'axios'
       // ],
       }
     },
-    created(){
+    mounted(){
       this.getLecturerID()
       this.getGroupInfo()
     },

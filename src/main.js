@@ -11,6 +11,7 @@ import VueAxios from 'vue-axios'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import XLSX from 'xlsx'
+import  VueResource  from 'vue-resource'
 
 Vue.use(XLSX)
 Vue.use(ElementUI)
@@ -26,7 +27,7 @@ new Vue({
   template: '<App/>'
 })
 
-Vue.use(VueAxios, axios)
+Vue.use(VueResource,VueAxios, axios)
 
 
 
