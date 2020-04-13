@@ -1,17 +1,22 @@
 <template>
   <v-row justify="center">
-    <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+    <!-- <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <template v-slot:activator="{ on }">
         <v-btn color="primary" dark v-on="on">View Feedback</v-btn>
-      </template>
-      <v-card>
-        <v-toolbar dark color="primary">
-          <v-toolbar-title>Team{{teamID}} Feedback (Marked by Team{{markingGroup}})</v-toolbar-title>
-          <v-spacer></v-spacer>
+      </template> -->
+      <!-- <v-card max-width="800"> -->
+        <!-- <v-toolbar dark color="primary"> -->
+          <!-- <p>Team{{teamID}} Feedback (Marked by Team{{markingGroup}})</p> -->
+          <!-- <v-spacer></v-spacer>
           <v-toolbar-items>
             <v-icon dark text @click="dialog = false">mdi-close</v-icon>
           </v-toolbar-items>
-        </v-toolbar>
+        </v-toolbar> -->
+        <!-- <v-row justify="center"> -->
+         <v-container>
+            <p class="text-center headline">Team{{teamID}} Feedback (Marked by Team{{markingGroup}})</p>
+            </v-container>
+        <!-- </v-row> -->
 
         <v-row justify="center">
             <v-col>
@@ -84,8 +89,8 @@
         </v-container>
         </v-col>
         </v-row>
-      </v-card>
-    </v-dialog>
+      <!-- </v-card> -->
+    <!-- </v-dialog> -->
   </v-row>
 </template>
 
