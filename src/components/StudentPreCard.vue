@@ -3,24 +3,68 @@
         <v-list-item-content>
           <v-container>
           <DatePicker :identity="'student'" :header="'Presentation Time'" :groupID="teamID" :name="'Group'+teamID"/>
-  <div v-if="upload==false">
-            
+          <div v-if="upload==false">
             <v-row justify="center">
                 <v-col sm="6" md="6">
                 <v-text-field
+                :rules="locationRules"
                     label="Place"
                     v-model="location"
                 ></v-text-field>
                 </v-col>
             </v-row>
             <v-row justify="center">
-            <v-btn
-          color="red lighten-2"
-          dark
-          @click="setLocation"
+              <v-dialog
+      v-model="dialog"
+      width="500"
+    >
+      <template v-slot:activator="{ on }">
+        <v-btn
+          v-on="on"
+          @click="submit"
+          :disabled="!location"
         >
           Submit
         </v-btn>
+      </template>
+            <!-- <v-btn
+          @click="setLocation"
+        >
+          Submit
+        </v-btn> -->
+        <v-card>
+        <v-card-title
+          class="headline grey lighten-2"
+          primary-title
+        >
+          Comfirmation
+        </v-card-title>
+
+        <v-card-text>
+            You set {{location}} as your presentation location.
+        </v-card-text>
+
+        <v-divider></v-divider>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn
+            color="primary"
+            text
+            @click="setLocation"
+          >
+            Yes
+          </v-btn>
+          <v-btn
+            color="primary"
+            text
+            @click="dialog=false"
+          >
+            No
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+      </v-dialog>
             </v-row>
             </div>
       <div v-else>
@@ -41,6 +85,9 @@ export default {
       teamID:"",
       location:"",
       upload:false,
+      locationRules: [
+        v => !!v || 'Location is required',
+      ],
     }
   },
   components: {

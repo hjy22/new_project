@@ -42,7 +42,9 @@
         <v-col cols="12" sm="6" md="3">
             {{header}}: {{date}}
           <v-text-field
+          ref="form1"
           v-model="time"
+            :rules="timeRules"
             label="Time"
             value="12:30"
             type="time"
@@ -59,9 +61,9 @@
     >
       <template v-slot:activator="{ on }">
         <v-btn
-          color="red lighten-2"
-          dark
           v-on="on"
+          @click="submit"
+          :disabled="!time"
         >
           Submit
         </v-btn>
@@ -113,6 +115,9 @@
 export default {
   props: ['identity','header','groupID','name'],
     data: () => ({
+      timeRules: [
+        v => !!v || 'Time is required',
+      ],
     date: new Date().toISOString().substr(0, 10),
     menu: false,
     modal: false,
@@ -136,6 +141,9 @@ export default {
     }
   },
   methods:{
+    submit () {
+        this.$refs.form1.validate()
+      },
     uploadTime(){
       if(this.identity=='lecturer'){
         this.uploadDDL()
