@@ -151,8 +151,9 @@
             for(var i=0;i<this.outputs.length;i++){
               var currentGroup = this.outputs[i].Group
               this.addInfo(currentGroup,this.outputs[i].ID)
-              this.addStepper(currentGroup)
+              
               if(previousGroup!=currentGroup){
+                this.addStepper(currentGroup)
                 if(i==0){
                   this.addGroup(currentGroup,lastGroup)
                 }else{

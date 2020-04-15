@@ -38,6 +38,7 @@
                             outlined
                             :label="text.name"
                             rows="2"
+                            clearable
                             row-height="20"
                             ></v-textarea>
                 </v-list-item-content>

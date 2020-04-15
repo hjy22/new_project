@@ -42,7 +42,6 @@
         <v-col cols="12" sm="6" md="3">
             {{header}}: {{date}}
           <v-text-field
-          ref="form1"
           v-model="time"
             :rules="timeRules"
             label="Time"
@@ -62,7 +61,6 @@
       <template v-slot:activator="{ on }">
         <v-btn
           v-on="on"
-          @click="submit"
           :disabled="!time"
         >
           Submit
@@ -141,9 +139,6 @@ export default {
     }
   },
   methods:{
-    submit () {
-        this.$refs.form1.validate()
-      },
     uploadTime(){
       if(this.identity=='lecturer'){
         this.uploadDDL()

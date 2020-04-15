@@ -71,7 +71,7 @@
                 <v-list-item>
                 <v-list-item-content>
                   <v-list-item-title class="title">{{text.name}}</v-list-item-title>
-                        <v-list-item-subtitle>
+                        <v-list-item-subtitle class="subtitle-1">
                             <!-- <v-textarea
                             outlined
                             disabled

@@ -21,7 +21,6 @@
       <template v-slot:activator="{ on }">
         <v-btn
           v-on="on"
-          @click="submit"
           :disabled="!location"
         >
           Submit
@@ -85,6 +84,7 @@ export default {
       teamID:"",
       location:"",
       upload:false,
+      dialog: false,
       locationRules: [
         v => !!v || 'Location is required',
       ],
