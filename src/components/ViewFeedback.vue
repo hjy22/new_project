@@ -62,7 +62,7 @@
             <v-col>
               <v-container>
             <v-list three-line subheader>
-            <v-subheader>TextField</v-subheader>
+            <v-subheader>Command</v-subheader>
             <v-flex v-for="(text, id) in feedbackText" :key="id">
               <v-card
                 class="mx-auto"

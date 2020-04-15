@@ -44,6 +44,8 @@
           <v-text-field
           v-model="time"
             label="Time"
+            value="12:30"
+            type="time"
           ></v-text-field>
         </v-col>
          </v-row>
@@ -117,7 +119,7 @@ export default {
     menu2: false,
     dialog: false,
     minDate:"",
-    ddl:"2020-04-25",
+    ddl:"",
     time:"",
     upload:false,
   }),
@@ -158,7 +160,7 @@ export default {
         }).then( (res) => {
           console.log('res', res);
           if(this.identity=="lecturer"){
-          if(res.data[0].ddl!=""){
+          if(res.data[0].ddl!=null){
             this.upload = true
           }
           }else if(this.identity=="student"){

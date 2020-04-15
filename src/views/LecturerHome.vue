@@ -5,7 +5,7 @@
     <v-container>
     <v-layout>
       <!-- <v-flex v-for="(Info, id) in getLecturerHomePageInfoList" :key="id" xs12 sm8 md4 offset-md4> -->
-        <InfoCard :name="'Anna'" :ID="'0001'" :character="'Lecturer'"/>
+        <InfoCard :name="'Anna'"  :character="'Lecturer'"/>
       <!-- </v-flex> -->
       </v-layout>
     </v-container>
@@ -26,6 +26,7 @@
       <div v-else>
         
         <UploadFile/>
+        <br/>
       </div>
       </v-col>
     </v-row>

@@ -29,7 +29,7 @@
             <v-col>
               <v-container>
             <v-list three-line subheader>
-            <v-subheader>TextField</v-subheader>
+            <v-subheader>Command</v-subheader>
             <v-flex v-for="(text, id) in feedbackTextField" :key="id">
                 <v-list-item>
                 <v-list-item-content>
@@ -110,6 +110,9 @@ import { mapGetters } from "vuex";
         }).then( (res) => {
           // console.log('res', res);
           this.feedbackTextField = res.data
+          for(var i=0;i<this.feedbackTextField.length;i++){
+            this.textArray[i]=this.feedbackTextField[i].intro
+          }
         })
        },
        getTeamID(){
@@ -174,7 +177,7 @@ import { mapGetters } from "vuex";
         params: {id: id}
       }).then( (res) => {
         console.log('res', res);
-        console.log(res.data.length)
+        // console.log(res.data.length)
         if(res.data.length!=0){
           this.upload = true
         }

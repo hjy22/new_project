@@ -110,7 +110,7 @@ import axios from 'axios'
             this.checkBoxInfo = response.data[0].feedbackCheckBox;
             this.textFieldInfo = response.data[0].feedbackTextField;
             // this.organisation = this.checkBoxInfo[0].modelName
-            console.log(this.checkBoxInfo)
+            // console.log(this.checkBoxInfo)
         }, response => {
             console.log("error");
         });
@@ -131,6 +131,7 @@ import axios from 'axios'
       },
       saveFeedbackSheet(){
         this.dialog=false
+        this.upload = true
         for(var i =0;i<this.selectedCheck.length;i++){
           console.log(this.selectedCheck[i])
           this.saveFeedbackCheck(this.selectedCheck[i])

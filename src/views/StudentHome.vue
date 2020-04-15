@@ -2,7 +2,7 @@
 <!-- <v-app> -->
 <v-content>
   <!-- <StudentMenu/> -->
-  <InfoCard name="aaaa" ID="1111" character="student"/>
+  <InfoCard :group="teamID"  character="Student"/>
     <!-- <v-container>
     <v-row
       justify='center'
@@ -34,7 +34,7 @@
 
 <script>
 // import axios from 'axios'
-// import { mapGetters } from "vuex";
+import { mapGetters } from "vuex";
 // import StudentMenu from "@/components/StudentMenu";
 // import GroupCard from "@/components/GroupCard";
 // import EmailDialog from "@/components/EmailDialog";
@@ -52,16 +52,19 @@ export default {
   },
   data () {
       return {
-        // Info: [],
+        teamID:"",
         // marker:null,
         // presenter:null,
       }
     },
   created () {
       // this.getMemberInfo() // 本地JSON
-      // this.getTeamNum()
+      this.getTeamID()
     },
     methods: {
+      getTeamID(){
+        this.teamID = this.$store.getters.getStudentGroup
+      },
       // 本地json获取商品数据
     //  getMemberInfo() {
     //     axios.get('../static/COMP107.json').then(response => {
@@ -82,9 +85,9 @@ export default {
       //   this.presenter = Number(this.marker)-1
       // }
     },
-  //   computed: {
-  //   ...mapGetters(["getStudentGroup"])
-  // }
+    computed: {
+    ...mapGetters(["getStudentGroup"])
+  }
 }
 </script>
 

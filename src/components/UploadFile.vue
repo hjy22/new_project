@@ -1,5 +1,9 @@
 <template>
-<v-container>
+<v-content>
+  <div v-if="upload==true">
+      <div class="headline text-center">You have uploaded the student information already</div>
+      </div>
+      <div v-else>
     <v-card
     class="mx-auto"
     max-width="400px"
@@ -23,13 +27,17 @@
     style="margin-left: 300px"
     >Upload Student Information</el-button> -->
     
-     <el-button slot="trigger" size="medium" type="primary">Select File</el-button>
+     <el-button style="margin-left: 150px" slot="trigger" size="medium" type="primary">Select File</el-button>
     
     </el-upload>
     <br/>
+    <v-row justify="center">
     <el-button size="medium" type="success" @click="save">Upload</el-button>
+    </v-row>
+    <br/>
     </v-card>
-    </v-container>
+      </div>
+    </v-content>
 </template>
 
 <script>
@@ -38,6 +46,7 @@
       return {
          outputs: [], // 保存读取出来的数据
       fileData:'', // 保存选择的文件
+      upload:false,
       }
     },
     methods: {
@@ -142,6 +151,7 @@
             for(var i=0;i<this.outputs.length;i++){
               var currentGroup = this.outputs[i].Group
               this.addInfo(currentGroup,this.outputs[i].ID)
+              this.addStepper(currentGroup)
               if(previousGroup!=currentGroup){
                 if(i==0){
                   this.addGroup(currentGroup,lastGroup)
@@ -152,7 +162,16 @@
               }
               previousGroup = currentGroup
             }
+            this.upload = true;
         },
+        addStepper(groupName) {
+      // axios.post('/', {})
+      this.$http.post('/api/addStepper', {
+        name: groupName
+      }).then( (res) => {
+        console.log('res', res);
+      })
+    },
     addGroup(groupName,markingGroup) {
       // axios.post('/', {})
       this.$http.post('/api/addGroup', {

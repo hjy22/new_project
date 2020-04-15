@@ -4,7 +4,7 @@
         <v-card 
             color="gray-2" 
             max-height="300"
-            max-width="344"
+            max-width="400"
             class="mx-auto"
         >
         <v-layout>
@@ -18,9 +18,13 @@
             <v-flex xs7>
             <v-card-title primary-title>
                 <div>
+                    <div v-if="character=='Lecturer'">
                 <div class="headline">Name: {{ name }}</div>
-                <div>ID: {{ ID }}</div>
-                <div>Identity: {{ character }}</div>
+                </div>
+            <div v-else-if="character=='Student'">
+                <div class="headline">Team{{ group }}</div>
+            </div>
+                <div class="headline">Identity: {{ character }}</div>
                 </div>
             </v-card-title>
             </v-flex>
@@ -33,7 +37,7 @@
 
 <script>
 export default {
-    props: ['name', 'ID', 'character']
+    props: ['name', 'group', 'character']
         // people: 
         //   { name: 'Florida', ID: '0001', character: 'Lecturer'},
         //   { name: 'Jack', ID: '2013123456', character: 'Student'}

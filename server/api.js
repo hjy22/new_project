@@ -22,6 +22,16 @@ module.exports = {
       })
     })
   },
+  addStepper(req, res, next) {
+    var name = req.body.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.addStepper;
+      connection.query(sql, [name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
   getStepperStatus(req, res, next) {
     var name = req.query.name;
     pool.getConnection((err, connection) => {

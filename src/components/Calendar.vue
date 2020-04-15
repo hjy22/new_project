@@ -194,11 +194,13 @@ export default {
         params: {code: "COMP107"}
       }).then( (res) => {
         console.log('res', res);
+        if(res.data[0].ddl!=null){
         this.events.push({
           name: "Deadline",
           start:  res.data[0].ddl,
           color: "red",
         })
+        }
       })
       
     },

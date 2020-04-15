@@ -6,6 +6,10 @@ router.post('/addInfo', (req, res, next) => {
   api.addInfo(req, res, next);
 });
 
+router.post('/addStepper', (req, res, next) => {
+  api.addStepper(req, res, next);
+});
+
 router.get('/getStepperStatus', (req, res, next) => {
   api.getStepperStatus(req, res, next);
 });

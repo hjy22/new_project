@@ -22,6 +22,7 @@ var sqlMap = {
     completeSubmission:'UPDATE stepperStatus SET completeSubmission = ? WHERE name = ?',
     getStudentID:'SELECT * FROM studentInfo WHERE name = ?',
     checkFeedbackUplaod:"SELECT * FROM feedbackRating WHERE selected = 'true'",
+    addStepper:"INSERT INTO stepperStatus(name,stepper,completeSubmission) VALUES (?,'1','false')",
   }
   
   module.exports = sqlMap;
