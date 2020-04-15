@@ -12,26 +12,6 @@ const pool = mysql.createPool({
 });
 
 module.exports = {
-  getValue(req, res, next) {
-    var id = req.query.id;
-    pool.getConnection((err, connection) => {
-      var sql = sqlMap.getValue;
-      connection.query(sql, [id], (err, result) => {
-          res.json(result);
-          connection.release();
-      })
-    })
-  },
-  setValue(req, res, next) {
-    var id = req.body.id, name = req.body.name;
-    pool.getConnection((err, connection) => {
-      var sql = sqlMap.setValue;
-      connection.query(sql, [name, id], (err, result) => {
-          res.json(result);
-          connection.release();
-      })
-    })
-  },
   addInfo(req, res, next) {
     var id = req.body.id, name = req.body.name;
     pool.getConnection((err, connection) => {

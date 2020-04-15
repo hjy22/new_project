@@ -1,7 +1,5 @@
 var sqlMap = {
-    getValue: 'SELECT * FROM a WHERE id = ?',
-    setValue: 'UPDATE a SET name = ? WHERE id = ?',
-    addInfo: 'INSERT INTO ttt(name,id) VALUES (?,?)',
+    addInfo: 'INSERT INTO studentInfo(name,id) VALUES (?,?)',
     getStepperStatus: 'SELECT * FROM stepperStatus WHERE name = ?',
     setStepperStatus: 'UPDATE stepperStatus SET stepper = ? WHERE name = ?',
     addGroup:'INSERT INTO schedule(name,AssessingGroup) VALUES (?,?)',
@@ -22,7 +20,7 @@ var sqlMap = {
     checkFeedback:'SELECT * FROM feedbackRatingInfo WHERE id = ?',
     getTextInfo:'SELECT * FROM feedbackTextInfo WHERE id = ?',
     completeSubmission:'UPDATE stepperStatus SET completeSubmission = ? WHERE name = ?',
-    getStudentID:'SELECT * FROM ttt WHERE name = ?',
+    getStudentID:'SELECT * FROM studentInfo WHERE name = ?',
     checkFeedbackUplaod:"SELECT * FROM feedbackRating WHERE selected = 'true'",
   }
   
