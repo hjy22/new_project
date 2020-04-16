@@ -2,7 +2,7 @@ var sqlMap = {
     addInfo: 'INSERT INTO studentInfo(name,id) VALUES (?,?)',
     getStepperStatus: 'SELECT * FROM stepperStatus WHERE name = ?',
     setStepperStatus: 'UPDATE stepperStatus SET stepper = ? WHERE name = ?',
-    addGroup:'INSERT INTO schedule(name,AssessingGroup) VALUES (?,?)',
+    addGroup:"INSERT INTO schedule(name,AssessingGroup,Feedback) VALUES (?,?,'false')",
     getGroupInfo:'SELECT * FROM schedule',
     uploadDDL:'UPDATE courseInfo SET ddl = ? WHERE code = ?',
     getDDL:'SELECT * FROM courseInfo WHERE code = ?',
@@ -23,6 +23,7 @@ var sqlMap = {
     getStudentID:'SELECT * FROM studentInfo WHERE name = ?',
     checkFeedbackUplaod:"SELECT * FROM feedbackRating WHERE selected = 'true'",
     addStepper:"INSERT INTO stepperStatus(name,stepper,completeSubmission) VALUES (?,'1','false')",
+    setFeedbackDone:"UPDATE schedule SET Feedback = 'true' WHERE Name = ?"
   }
   
   module.exports = sqlMap;

@@ -98,4 +98,7 @@ router.get('/checkFeedbackUplaod', (req, res, next) => {
   api.checkFeedbackUplaod(req, res, next);
 });
 
+router.post('/setFeedbackDone', (req, res, next) => {
+  api.setFeedbackDone(req, res, next);
+});
 module.exports = router;

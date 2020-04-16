@@ -33,11 +33,6 @@ export default new Router({
       component: () => import('@/views/LecturerCourse.vue'),
     },
     {
-      path: '/LecturerInfor',
-      name: 'LecturerInfor',
-      component: () => import('@/views/LecturerInfor.vue'),
-    },
-    {
       path: '/LecturerInfo',
       name: 'LecturerInfo',
       component: () => import('@/views/LecturerInfo.vue'),

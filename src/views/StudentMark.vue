@@ -147,6 +147,13 @@ import { mapGetters } from "vuex";
         console.log('res', res);
       })
     },
+    setFeedbackDone(){
+      this.$http.post('/api/setFeedbackDone', {
+         name: this.markingGroup
+      }).then( (res) => {
+        console.log('res', res);
+      })
+    },
 
       saveMarking(){
         this.getStepper()
@@ -158,6 +165,8 @@ import { mapGetters } from "vuex";
         for(var i = 0;i<this.textArray.length;i++){
           this.saveTextToDB(this.markingGroup,this.feedbackTextField[i].name,this.textArray[i])
         }
+        this.setFeedbackDone()
+
       },
       saveRatingToDB(id,name,content){
         this.$http.post('/api/saveRatingToDB', {

@@ -248,4 +248,14 @@ module.exports = {
       })
     })
   },
+  setFeedbackDone(req, res, next) {
+    var name = req.query.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.setFeedbackDone;
+      connection.query(sql, [name],(err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
 }
