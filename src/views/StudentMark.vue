@@ -93,7 +93,7 @@ import { mapGetters } from "vuex";
           this.$http.get('/api/getMarking', {
         params: {name: groupName}
       }).then( (res) => {
-          console.log('res', res);
+          // console.log('res', res);
           this.markingGroup = res.data[0].AssessingGroup
           this.checkFeedback(this.markingGroup)
       })
@@ -103,7 +103,6 @@ import { mapGetters } from "vuex";
         }).then( (res) => {
           // console.log('res', res);
           this.feedbackSheet = res.data
-          // console.log(this.feedbackSheet);
         })
        },
        getFeedbackText(){
@@ -137,28 +136,27 @@ import { mapGetters } from "vuex";
           this.$http.post('/api/completeSubmission', {
         completeSubmission: "true", name: this.markingGroup
       }).then( (res) => {
-        console.log('res', res);
+        // console.log('res', res);
       })
         },
       setStepper(){
       this.$http.post('/api/setStepperStatus', {
         stepper: "3", name: this.markingGroup
       }).then( (res) => {
-        console.log('res', res);
+        // console.log('res', res);
       })
     },
     setFeedbackDone(){
       this.$http.post('/api/setFeedbackDone', {
          name: this.markingGroup
       }).then( (res) => {
-        console.log('res', res);
+        // console.log('res', res);
       })
     },
 
       saveMarking(){
         this.getStepper()
         this.upload = true;
-        // console.log(this.feedbackSheet[0].name)
         for(var i = 0;i<this.ratingArray.length;i++){
           this.saveRatingToDB(this.markingGroup,this.feedbackSheet[i].name,this.ratingArray[i])
         }
@@ -172,14 +170,14 @@ import { mapGetters } from "vuex";
         this.$http.post('/api/saveRatingToDB', {
           id: id, name: name, content:content
         }).then( (res) => {
-          console.log('res', res);
+          // console.log('res', res);
         })
       },
       saveTextToDB(id,name,content){
         this.$http.post('/api/saveTextToDB', {
           id: id, name: name, content:content
         }).then( (res) => {
-          console.log('res', res);
+          // console.log('res', res);
         })
       },
       checkFeedback(id) {

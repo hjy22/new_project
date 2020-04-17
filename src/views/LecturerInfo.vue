@@ -18,7 +18,6 @@ export default {
     }
   },
   created(){
-    // this.getCourseInfo()
     this.getEventsInfo()
   },
   components: {
@@ -28,7 +27,7 @@ export default {
   getEventsInfo(){
            this.$http.get('/api/getGroupInfo', {
           }).then( (res) => {
-            console.log('res', res);
+            // console.log('res', res);
             if(res.data.length!=0){
               this.upload = true
             }

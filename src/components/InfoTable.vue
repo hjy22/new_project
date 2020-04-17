@@ -1,29 +1,5 @@
 <template>
 <v-content>
-  <!-- <v-simple-table fixed-header sortable height="600px">
-    <template v-slot:default>
-      <thead>
-        <tr>
-          <th class="text-left">Name</th>
-          <th class="text-left">PreTime</th>
-          <th class="text-left">PreLocation</th>
-          <th class="text-left">AssessingGroup</th>
-          <th class="text-left">MarkingTime</th>
-          <th class="text-left">MarkingLocation</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="item in groupInfo" :key="item.name">
-          <td>{{ item.Name }}</td>
-          <td>{{ item.PreTime }}</td>
-          <td>{{ item.PreLocation }}</td>
-          <td>{{ item.AssessingGroup }}</td>
-          <td>{{ item.MarkingTime }}</td>
-          <td>{{ item.MarkingLocation }}</td>
-        </tr>
-      </tbody>
-    </template>
-  </v-simple-table> -->
    <v-data-table
     :headers="headers"
     :items="groupInfo"
@@ -96,9 +72,6 @@ import ViewFeedback from "@/components/ViewFeedback";
             this.groupInfo = res.data
           })
         },
-        test(a){
-      // console.log("a"+a)
-    }
     },
     
   }

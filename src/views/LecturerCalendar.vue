@@ -23,20 +23,13 @@ export default {
     Calendar,
   },
   created(){
-    // this.getCourseInfo()
     this.getEventsInfo()
   },
   methods:{
-  // returnCom(id) {
-  //   const returnEle = document.querySelector("#"+id);
-  //   if (!!returnEle) {
-  //     returnEle.scrollIntoView(true);
-  //   }
-  // }
   getEventsInfo(){
            this.$http.get('/api/getGroupInfo', {
           }).then( (res) => {
-            console.log('res', res);
+            // console.log('res', res);
             if(res.data.length!=0){
               this.upload = true
             }
