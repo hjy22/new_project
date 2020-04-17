@@ -4,7 +4,7 @@
         <v-card 
             color="gray-2" 
             max-height="300"
-            max-width="400"
+            max-width="450"
             class="mx-auto"
         >
         <v-layout>
@@ -23,6 +23,7 @@
                 </div>
             <div v-else-if="character=='Student'">
                 <div class="headline">Team{{ group }}</div>
+                <div class="headline">Marking for Team{{ marking }}</div>
             </div>
                 <div class="headline">Identity: {{ character }}</div>
                 </div>
@@ -37,10 +38,7 @@
 
 <script>
 export default {
-    props: ['name', 'group', 'character']
-        // people: 
-        //   { name: 'Florida', ID: '0001', character: 'Lecturer'},
-        //   { name: 'Jack', ID: '2013123456', character: 'Student'}
+    props: ['name', 'group', 'character','marking']
 }
 </script>
 

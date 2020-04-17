@@ -8,7 +8,7 @@
     item-key="name"
     class="elevation-1"
   >
-   <template v-slot:item.Feedback="{ item }">
+   <!-- <template v-slot:item.Feedback="{ item }">
      <div v-if="item.Feedback=='true'">
        <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <template v-slot:activator="{ on }">
@@ -26,7 +26,12 @@
         <ViewFeedback :teamID="item.Name"/>
         </v-card>
     </v-dialog>
-        <!-- <v-btn @click="test" v-model="item.Feedback" >VIEW </v-btn> -->
+        
+        </div>
+      </template> -->
+      <template v-slot:item.Feedback="{ item }">
+        <div v-if="item.Feedback=='true'">
+         <ViewFeedback :teamID="item.Name"/>
         </div>
       </template>
   </v-data-table>
@@ -72,6 +77,9 @@ import ViewFeedback from "@/components/ViewFeedback";
             this.groupInfo = res.data
           })
         },
+        a(){
+          console.log("ok")
+        }
     },
     
   }

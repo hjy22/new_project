@@ -1,22 +1,22 @@
 <template>
   <v-row justify="center">
-    <!-- <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+    <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <template v-slot:activator="{ on }">
         <v-btn color="primary" dark v-on="on">View Feedback</v-btn>
-      </template> -->
-      <!-- <v-card max-width="800"> -->
-        <!-- <v-toolbar dark color="primary"> -->
+      </template>
+      <v-card max-width="800">
+        <v-toolbar dark color="primary">
           <!-- <p>Team{{teamID}} Feedback (Marked by Team{{markingGroup}})</p> -->
-          <!-- <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
           <v-toolbar-items>
             <v-icon dark text @click="dialog = false">mdi-close</v-icon>
           </v-toolbar-items>
-        </v-toolbar> -->
-        <!-- <v-row justify="center"> -->
+        </v-toolbar>
+        <v-row justify="center">
          <v-container>
             <p class="text-center headline">Team{{teamID}} Feedback (Marked by Team{{markingGroup}})</p>
             </v-container>
-        <!-- </v-row> -->
+        </v-row>
 
         <v-row justify="center">
             <v-col>
@@ -89,8 +89,8 @@
         </v-container>
         </v-col>
         </v-row>
-      <!-- </v-card> -->
-    <!-- </v-dialog> -->
+      </v-card>
+    </v-dialog>
   </v-row>
 </template>
 
@@ -122,7 +122,7 @@ import axios from 'axios'
       this.$http.get('/api/checkFeedback', {
         params: {id: id}
       }).then( (res) => {
-        console.log('res', res);
+        // console.log('res', res);
         this.feedbackRating = res.data;
       })
        },
@@ -130,7 +130,7 @@ import axios from 'axios'
       this.$http.get('/api/getTextInfo', {
         params: {id: id}
       }).then( (res) => {
-        console.log('res', res);
+        // console.log('res', res);
         this.feedbackText = res.data;
       })
        },
@@ -138,7 +138,7 @@ import axios from 'axios'
           this.$http.get('/api/getMarking', {
         params: {name: groupName}
       }).then( (res) => {
-          console.log('res', res);
+          // console.log('res', res);
           this.markingGroup = res.data[0].AssessingGroup
       })
         },
@@ -146,7 +146,7 @@ import axios from 'axios'
         axios.get('../static/FeedbackSheet.json').then(response => {
             this.feedbackSheet = response.data.checkBox;
         }, response => {
-            console.log("error");
+            // console.log("error");
         });
         
       },

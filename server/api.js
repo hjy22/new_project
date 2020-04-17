@@ -249,13 +249,24 @@ module.exports = {
     })
   },
   setFeedbackDone(req, res, next) {
-    var name = req.query.name;
+    var name = req.body.name;
     pool.getConnection((err, connection) => {
       var sql = sqlMap.setFeedbackDone;
-      connection.query(sql, [name],(err, result) => {
+      connection.query(sql, [name], (err, result) => {
           res.json(result);
           connection.release();
       })
     })
   },
+  // setFeedbackDone(req, res, next) {
+  //   var name = req.query.name;
+  //   console.log(name)
+  //   pool.getConnection((err, connection) => {
+  //     var sql = sqlMap.setFeedbackDone;
+  //     connection.query(sql, [name],(err, result) => {
+  //         res.json(result);
+  //         connection.release();
+  //     })
+  //   })
+  // },
 }

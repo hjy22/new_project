@@ -42,7 +42,7 @@
             <v-col>
               <v-container>
             <v-list three-line subheader>
-            <v-subheader>TextField</v-subheader>
+            <v-subheader>Command</v-subheader>
             <v-flex v-for="(text, id) in textFieldInfo" :key="id">
                 <v-list-item>
                 <v-list-item-action>

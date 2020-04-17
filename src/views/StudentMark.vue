@@ -147,10 +147,11 @@ import { mapGetters } from "vuex";
       })
     },
     setFeedbackDone(){
+      console.log(this.markingGroup)
       this.$http.post('/api/setFeedbackDone', {
          name: this.markingGroup
       }).then( (res) => {
-        // console.log('res', res);
+        console.log('res', res);
       })
     },
 
