@@ -54,6 +54,10 @@ router.get('/getMarking', (req, res, next) => {
   api.getMarking(req, res, next);
 });
 
+router.get('/getAssessing', (req, res, next) => {
+  api.getAssessing(req, res, next);
+});
+
 router.post('/saveRatingToDB', (req, res, next) => {
   api.saveRatingToDB(req, res, next);
 });

@@ -9,6 +9,7 @@ var sqlMap = {
     saveFeedbackCheck:'UPDATE feedbackRating SET selected = ? WHERE name = ?',
     saveFeedbackText:'UPDATE feedbackText SET selected = ? WHERE name = ?',
     getMarking:'SELECT * FROM schedule WHERE name = ?',
+    getAssessing:'SELECT * FROM schedule WHERE AssessingGroup = ?',
     getFeedbackCheck:"SELECT * FROM feedbackRating WHERE selected = 'true'",
     getFeedbackText:"SELECT * FROM feedbackText WHERE selected = 'true'",
     saveRatingToDB:'INSERT INTO feedbackRatingInfo(id,name,content) VALUES (?,?,?)',

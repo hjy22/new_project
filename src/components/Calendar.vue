@@ -1,6 +1,4 @@
 <template>
-    <div id="app">
-  <v-app id="inspire">
     <v-row class="fill-height">
       <v-col>
         <v-sheet height="64">
@@ -92,8 +90,6 @@
         </v-sheet>
       </v-col>
     </v-row>
-  </v-app>
-</div>
 </template>
 
 <script>

@@ -135,11 +135,11 @@ import axios from 'axios'
       })
        },
        getMarking(groupName){
-          this.$http.get('/api/getMarking', {
+          this.$http.get('/api/getAssessing', {
         params: {name: groupName}
       }).then( (res) => {
           // console.log('res', res);
-          this.markingGroup = res.data[0].AssessingGroup
+          this.markingGroup = res.data[0].Name
       })
         },
        getInfo() {

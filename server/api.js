@@ -52,6 +52,16 @@ module.exports = {
       })
     })
   },
+  getAssessing(req, res, next) {
+    var name = req.query.name;
+    pool.getConnection((err, connection) => {
+      var sql = sqlMap.getAssessing;
+      connection.query(sql, [name], (err, result) => {
+          res.json(result);
+          connection.release();
+      })
+    })
+  },
   setStepperStatus(req, res, next) {
     var stepper = req.body.stepper, name = req.body.name;
     pool.getConnection((err, connection) => {

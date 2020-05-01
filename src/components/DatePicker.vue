@@ -45,7 +45,7 @@
           v-model="time"
             :rules="timeRules"
             label="Time"
-            value="12:30"
+            value="00:00"
             type="time"
           ></v-text-field>
         </v-col>
