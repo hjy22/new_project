@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-  <!-- <v-app id="inspire"> -->
     <v-card
       color="grey lighten-4"
       flat
@@ -8,8 +7,6 @@
       tile
     >
       <v-toolbar >
-  
-        <!-- <v-toolbar-title>Title</v-toolbar-title> -->
         <v-spacer/>
         <v-btn @click="jump('StudentHome','Student','HOME')" text>HOME</v-btn>
         <v-spacer/>
@@ -35,7 +32,6 @@
         </v-btn>
       </v-toolbar>
     </v-card>
-  <!-- </v-app> -->
 </div>
 </template>
 

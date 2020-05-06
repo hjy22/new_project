@@ -1,14 +1,11 @@
 <template>
   <div id="app">
-  <!-- <v-app id="inspire"> -->
     <v-card
       color="grey lighten-4"
       flat
       height="auto"
       tile
     >
-    <!-- <p>{{userCurrentView}}</p> -->
-      <!-- <v-toolbar v-if="this.$store.getters.getCurrentView === 'Lecturer'"> -->
         <v-toolbar>
   
          <v-toolbar-title>{{this.$store.getters.getUserCurrentView}}</v-toolbar-title>
@@ -37,7 +34,6 @@
         </v-btn>
       </v-toolbar>
     </v-card>
-  <!-- </v-app> -->
 </div>
 </template>
 

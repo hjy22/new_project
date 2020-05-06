@@ -6,7 +6,6 @@
       </template>
       <v-card max-width="800">
         <v-toolbar dark color="primary">
-          <!-- <p>Team{{teamID}} Feedback (Marked by Team{{markingGroup}})</p> -->
           <v-spacer></v-spacer>
           <v-toolbar-items>
             <v-icon dark text @click="dialog = false">mdi-close</v-icon>
@@ -45,11 +44,9 @@
                       half-increments
                       readonly
                     ></v-rating>
-                    <!-- <v-icon size="16">mdi-alert-circle-outline</v-icon> -->
                     <v-tooltip top offset-overflow max-width="300px">
           <template  v-slot:activator="{ on }">
             <v-icon  v-on="on" size="16">mdi-alert-circle-outline</v-icon>
-             <!-- <div v-on="on" class="font-italic">detail</div> -->
            </template>
           <span class="justify-space-between">{{getComment(rating.name,rating.content)}}</span>
     </v-tooltip>
@@ -72,13 +69,6 @@
                 <v-list-item-content>
                   <v-list-item-title class="title">{{text.name}}</v-list-item-title>
                         <v-list-item-subtitle class="subtitle-1">
-                            <!-- <v-textarea
-                            outlined
-                            disabled
-                            :label="text.content"
-                            rows="2"
-                            row-height="20"
-                            ></v-textarea> -->
                             {{text.content}}
                         </v-list-item-subtitle>
                 </v-list-item-content>
@@ -122,7 +112,6 @@ import axios from 'axios'
       this.$http.get('/api/checkFeedback', {
         params: {id: id}
       }).then( (res) => {
-        // console.log('res', res);
         this.feedbackRating = res.data;
       })
        },
@@ -130,7 +119,6 @@ import axios from 'axios'
       this.$http.get('/api/getTextInfo', {
         params: {id: id}
       }).then( (res) => {
-        // console.log('res', res);
         this.feedbackText = res.data;
       })
        },
@@ -138,7 +126,6 @@ import axios from 'axios'
           this.$http.get('/api/getAssessing', {
         params: {name: groupName}
       }).then( (res) => {
-          // console.log('res', res);
           this.markingGroup = res.data[0].Name
       })
         },
@@ -146,7 +133,6 @@ import axios from 'axios'
         axios.get('../static/FeedbackSheet.json').then(response => {
             this.feedbackSheet = response.data.checkBox;
         }, response => {
-            // console.log("error");
         });
         
       },

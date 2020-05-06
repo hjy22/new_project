@@ -128,9 +128,6 @@ export default {
       const endYear = end.year
       const suffixYear = startYear === endYear ? '' : endYear
 
-      // const startDay = start.day + this.nth(start.day)
-      // const endDay = end.day + this.nth(end.day)
-
       const startDay = start.day 
       const endDay = end.day 
 

@@ -26,7 +26,7 @@
       </v-card-title>
 
       <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+        {{ new Date().getFullYear() }} — <strong>Vuetify</strong> - Recommand: NOT use in IE8 and IE9
       </v-card-text>
     </v-card>
   </v-footer>

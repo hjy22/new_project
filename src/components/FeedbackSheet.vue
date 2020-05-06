@@ -23,8 +23,6 @@
                 <v-container>
             <v-list three-line subheader>
           <v-subheader>Rating</v-subheader>
-          <!-- <p>{{ selectedCheck }}</p>
-          <p>{{ selectedText }}</p> -->
           <v-flex  v-for="(checkBox, id) in checkBoxInfo" :key="id">
               <v-list-item>
             <v-list-item-action>
@@ -89,7 +87,7 @@ import axios from 'axios'
       }
     },
     created () {
-      this.getInfo() // 本地JSON
+      this.getInfo() 
       this.checkFeedback()
     },
      methods:{
@@ -109,8 +107,6 @@ import axios from 'axios'
         axios.get('../static/CourseInfo.json').then(response => {
             this.checkBoxInfo = response.data[0].feedbackCheckBox;
             this.textFieldInfo = response.data[0].feedbackTextField;
-            // this.organisation = this.checkBoxInfo[0].modelName
-            // console.log(this.checkBoxInfo)
         }, response => {
             console.log("error");
         });

@@ -14,9 +14,6 @@
 
     <v-stepper-items>
       <v-stepper-content step="1">
-        <!-- <v-card
-          class="mb-12"
-        > -->
         <StudentPreCard/>
         <v-row justify="center">
         <v-btn
@@ -28,18 +25,9 @@
         </v-row>
       </v-stepper-content>
       <v-stepper-content step="2">
-        <!-- <v-card
-          class="mb-12"
-          height="200px"
-        > -->
+
         <div class="headline text-center">Waiting Marker Submiting Feedback Sheet</div>
-        <!-- </v-card> -->
-        <!-- <v-btn
-          color="primary"
-          @click="stepper = 3"
-        >
-          Continue
-        </v-btn> -->
+
       </v-stepper-content>
 
       <v-stepper-content step="3">
@@ -47,13 +35,6 @@
               <ViewFeedback :teamID="teamID"/>
         
           </v-row>
-
-        <!-- <v-btn
-          color="primary"
-          @click="stepper = 1"
-        >
-          Continue
-        </v-btn> -->
 
       </v-stepper-content>
     </v-stepper-items>
@@ -88,7 +69,6 @@ import ViewFeedback from "@/components/ViewFeedback";
           this.$http.get('/api/getStepperStatus', {
         params: {name: teamID}
       }).then( (res) => {
-        // console.log('res', res);
         this.stepper = res.data[0].stepper;
         this.complete = res.data[0].completeSubmission;
       })

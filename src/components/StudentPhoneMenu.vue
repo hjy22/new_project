@@ -20,11 +20,6 @@
       <v-icon>mdi-fountain-pen-tip</v-icon>
     </v-btn>
 
-    <!-- <v-btn @click="jump('LecturerInfo','Student','INFO')">
-      <span>Info</span>
-      <v-icon>mdi-account-box-multiple</v-icon>
-    </v-btn> -->
-
   </v-bottom-navigation>
 </template>
 

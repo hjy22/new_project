@@ -1,9 +1,9 @@
 module.exports = {
     mysql: {
-      host: 'localhost',  // 新建数据库连接时的 主机名或ID地址 内容
+      host: 'localhost',  // localhost ID address
       user: 'root', 
-      password: '1234', // root 密码
-      database: 'myproject', // 数据库名
+      password: '1234', // root PIN
+      database: 'myproject', // table name
       port: '3306'
     }
   }

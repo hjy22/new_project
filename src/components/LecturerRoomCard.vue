@@ -50,13 +50,12 @@ export default {
       }
     },
     created () {
-      this.getTeamInfo() // 本地JSON
+      this.getTeamInfo() 
     },
      methods:{
        getTeamInfo() {
         axios.get('../static/COMP107.json').then(response => {
             this.teamInfo = response.data;
-            // console.log(response.data[this.index]);
         }, response => {
             console.log("error");
         });

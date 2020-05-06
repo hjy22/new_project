@@ -1,5 +1,5 @@
 const routerApi = require('./router');
-const bodyParser = require('body-parser'); // post 数据是需要
+const bodyParser = require('body-parser'); 
 const express = require('express');
 const app = express();
 

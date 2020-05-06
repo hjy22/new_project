@@ -50,7 +50,6 @@
             </v-row>
 
             <v-row justify="center">
-            <!-- <v-card-text> -->
             <v-chip
                 class="mr-2"
             >
@@ -61,9 +60,7 @@
                 Submit</v-btn>
                 
             </v-chip>
-            <!-- </v-card-text> -->
             </v-row>
-        <!-- </v-card> -->
             </v-container>
         </v-card>
       </v-tab-item>
@@ -92,16 +89,11 @@
                 </v-form>
             </v-col>
             </v-row>
-            <!-- <v-divider class="mt-6 mx-4"></v-divider> -->
 
-            <!-- <v-card-text> -->
               <v-row justify="center">
             <v-chip
                 class="mr-2"
             >
-                <!-- <v-btn 
-                @click="validate;jump('StudentHome','Student','HOME',teamNum)" 
-                text> -->
                 <v-btn 
                 @click="form2Validate()"
                 :disabled="!valid2" 
@@ -110,8 +102,6 @@
                 Submit</v-btn>
             </v-chip>
             </v-row>
-            <!-- </v-card-text> -->
-        <!-- </v-card> -->
             </v-container>
         </v-card>
       </v-tab-item>
@@ -134,10 +124,6 @@ import axios from 'axios'
         valid1:true,
         valid2: true,
         lecturerID:"",
-      //   teamNumRules: [
-      //   v => !!v || 'Team number is required',
-      //   v => (v && v <= 9 && v > 0) || 'Team number does not valid',
-      // ],
       }
     },
     mounted(){
@@ -185,14 +171,12 @@ import axios from 'axios'
       this.$http.get('/api/getDDL', {
         params: {code:"COMP107"}
       }).then( (res) => {
-        // console.log('res', res);
         this.lecturerID = res.data[0].lecturerID
       })
     },
       getGroupInfo() {
         this.$http.get('/api/getGroupInfo', {
       }).then( (res) => {
-        // console.log('res', res);
         for(var i=0;i<res.data.length;i++){
             this.groupName.push({
             name: res.data[i].Name
@@ -205,7 +189,6 @@ import axios from 'axios'
         this.$http.get('/api/getStudentID', {
           params: {name: this.teamNum}
       }).then( (res) => {
-        // console.log('res', res);
         for(var i=0;i<res.data.length;i++){
             this.memberID[i]=res.data[i].id
         }

@@ -8,27 +8,6 @@
     item-key="name"
     class="elevation-1"
   >
-   <!-- <template v-slot:item.Feedback="{ item }">
-     <div v-if="item.Feedback=='true'">
-       <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
-      <template v-slot:activator="{ on }">
-        <v-btn color="primary" dark v-on="on">VIEW</v-btn>
-      </template>
-      <v-card>
-        <v-toolbar dark color="primary">
-          <v-btn icon dark @click="dialog = false">
-            <v-icon>mdi-close</v-icon>
-          </v-btn>
-          <v-toolbar-title>Team{{item.Name}} Feedback</v-toolbar-title>
-          <v-spacer></v-spacer>
-        </v-toolbar>
-        <v-divider></v-divider>
-        <ViewFeedback :teamID="item.Name"/>
-        </v-card>
-    </v-dialog>
-        
-        </div>
-      </template> -->
       <template v-slot:item.Feedback="{ item }">
         <div v-if="item.Feedback=='true'">
          <ViewFeedback :teamID="item.Name"/>
@@ -71,9 +50,7 @@ import ViewFeedback from "@/components/ViewFeedback";
     methods:{
       getGroupInfo(){
            this.$http.get('/api/getGroupInfo', {
-            // params: {}
           }).then( (res) => {
-            // console.log('res', res);
             this.groupInfo = res.data
           })
         },

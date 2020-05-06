@@ -30,10 +30,6 @@
                 <v-btn text color="primary" @click="$refs.dialog.save(date)">OK</v-btn>
             </v-date-picker>
             </v-dialog>
-            <!-- <v-file-input accept="PDF/*" label="Upload Assignment Detail File"></v-file-input>
-            <v-btn class="ma-2" color="primary" dark>Upload
-                <v-icon dark right>mdi-checkbox-marked-circle</v-icon>
-            </v-btn> -->
         </v-col>
         <v-spacer></v-spacer>
         </v-row>
@@ -52,7 +48,6 @@
          </v-row>
 
          <v-row justify="center">
-         <!-- <v-btn color="primary" @click="uploadDDL">UPLOAD deadline</v-btn> -->
          
          <v-dialog
       v-model="dialog"
@@ -127,11 +122,6 @@ export default {
     upload:false,
   }),
   created(){
-    // if(this.identity=='lecturer'){
-    //   this.getDDL(this.identity)
-    // }else if(this.identity=='student'){
-    //   this.getPreTime()
-    // }
     this.minDate = this.date
     this.getDDL()
     if(this.identity=='student'){

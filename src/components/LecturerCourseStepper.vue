@@ -1,6 +1,5 @@
 <template>
 <v-content>
-  <!-- <v-btn size="small" type="primary" @click="tt">导入</v-btn> -->
   <v-stepper v-model="stepper">
     <v-stepper-header>
       <v-stepper-step :complete="stepper > 1" step="1">Upload File</v-stepper-step>
@@ -13,9 +12,6 @@
 
     <v-stepper-items>
       <v-stepper-content step="1">
-        <!-- <v-card
-          class="mb-12"
-        > -->
         <el-upload
         class="upload-demo"
         action=""
@@ -24,46 +20,20 @@
         :on-exceed="handleExceed"
         accept=".xls, .xlsx"
         :auto-upload="false">
-    <!-- <el-button 
-    size="medium" 
-    type="primary"
-    style="margin-left: 300px"
-    >Upload Student Information</el-button> -->
     
      <el-button slot="trigger" size="medium" type="primary">Select File</el-button>
     
     </el-upload>
     <br/>
     <el-button size="medium" type="success" @click="save">Upload</el-button>
-    <!-- <v-btn
-          color="primary"
-          @click="addValue"
-        >
-          Submit
-        </v-btn> -->
-
-        <!-- <v-row justify="center">
-        <v-btn
-          color="primary"
-          @click="stepper = 2"
-        >
-          Continue
-        </v-btn>
-        </v-row> -->
 
 
-        <!-- </v-card> -->
       </v-stepper-content>
 
       <v-stepper-content step="2">
-        <!-- <v-card
-          class="mb-12"
-          height="200px"
-        > -->
         <LecturerCourseCard/>
         <v-row justify="center">
         </v-row>
-        <!-- </v-card> -->
       </v-stepper-content>
 
     </v-stepper-items>
@@ -80,8 +50,8 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
     data () {
       return {
         stepper: "",
-         outputs: [], // 保存读取出来的数据
-      fileData:'', // 保存选择的文件
+         outputs: [], 
+      fileData:'', 
       }
     },
     components:{
@@ -94,7 +64,6 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
     },
     methods: {
       
-            //上传文件时处理方法  
         handleChange(file, fileList){
             this.fileTemp = file.raw;
             if(this.fileTemp){
@@ -114,7 +83,6 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
                 })
             }
         },
-        //超出最大上传文件数量时的处理方法
         handleExceed(){
             this.$message({
                 type:'warning',
@@ -122,27 +90,24 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
             })
             return;
         },
-        //移除文件的操作方法
         handleRemove(file,fileList){
             this.fileTemp = null
         },
               importfxx(obj) {
             let _this = this;
             let inputDOM = this.$refs.inputer;
-            // 通过DOM取文件数据
  
             this.file = event.currentTarget.files[0];
  
-            var rABS = false; //是否将文件读取为二进制字符串
+            var rABS = false; 
             var f = this.file;
  
             var reader = new FileReader();
-            //if (!FileReader.prototype.readAsBinaryString) {
             FileReader.prototype.readAsBinaryString = function(f) {
                 var binary = "";
-                var rABS = false; //是否将文件读取为二进制字符串
+                var rABS = false; 
                 var pt = this;
-                var wb; //读取完成的数据
+                var wb; 
                 var outdata;
                 var reader = new FileReader();
                 reader.onload = function(e) {
@@ -151,11 +116,9 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
                     for (var i = 0; i < length; i++) {
                         binary += String.fromCharCode(bytes[i]);
                     }
-                    //此处引入，用于解析excel
                     var XLSX = require("xlsx");
                     if (rABS) {
                         wb = XLSX.read(btoa(fixdata(binary)), {
-                        //手动转化
                         type: "base64"
                         });
                     } else {
@@ -164,8 +127,6 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
                         });
                     }
                     outdata = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]); 
-                    //outdata就是读取的数据（不包含标题行即表头，表头会作为对象的下标）
-                    //此处可对数据进行处理
                     let arr = [];
                     outdata.map(v => {
                         let obj = {}
@@ -204,22 +165,16 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
               }
               previousGroup = currentGroup
             }
-              // this.stepper=2
-              // this.setStepper()
         },
         
         getStepper(){
           this.$http.get('/api/getStepperStatus', {
         params: {name: "LCourse"}
       }).then( (res) => {
-        // console.log('res', res);
         this.stepper = res.data[0].stepper;
-        // console.log(this.e1);
-        // return stepper
       })
         },
         setStepper(){
-      // axios.post('/', {})
       this.$http.post('/api/setStepperStatus', {
         stepper: "2", name: "LCourse"
       }).then( (res) => {
@@ -230,13 +185,11 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
       this.$http.get('/api/getValue', {
         params: {id: 4}
       }).then( (res) => {
-        // console.log('res', res);
         this.inpContent = res.data[0].name;
         console.log(this.inpContent);
       })
     },
     setValue() {
-      // axios.post('/', {})
       this.$http.post('/api/setValue', {
         name: "sad",id: "3"
       }).then( (res) => {
@@ -244,7 +197,6 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
       })
     },
     addValue(name,id) {
-      // axios.post('/', {})
       this.$http.post('/api/addInfo', {
         name: name,id: id
       }).then( (res) => {
@@ -252,7 +204,6 @@ import LecturerCourseCard from "@/components/LecturerCourseCard";
       })
     },
     addGroup(groupName,markingGroup) {
-      // axios.post('/', {})
       this.$http.post('/api/addGroup', {
         name: groupName, AssessingGroup:markingGroup
       }).then( (res) => {
